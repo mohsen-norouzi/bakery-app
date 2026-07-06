@@ -1,9 +1,18 @@
 import "./App.css";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
 
 function App() {
 	return (
-		<div className="flex items-center justify-center h-screen">
-			<h1 className="text-4xl font-bold">Bakery App</h1>
+		<div className="relative isolate min-h-screen bg-cream font-sans">
+			<img
+				src="/img/hero-1.png"
+				alt=""
+				aria-hidden="true"
+				className="absolute inset-0 -z-10 h-full w-full object-cover"
+			/>
+			<Header />
+			<Hero />
 		</div>
 	);
 }

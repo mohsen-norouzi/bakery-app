@@ -1,1 +1,30 @@
 @import "tailwindcss";
+
+@theme {
+	--font-display: "Playfair Display", serif;
+	--font-sans: "Poppins", sans-serif;
+
+	--color-cream: #f6ede1;
+	--color-brown: #522c09;
+	--color-tan: #a67c52;
+
+	--animate-spin-slow: spin-slow 8s linear infinite;
+}
+
+@keyframes spin-slow {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@layer base {
+	button:not(:disabled),
+	[role="button"]:not([aria-disabled="true"]) {
+		cursor: pointer;
+	}
+
+	button:disabled,
+	[role="button"][aria-disabled="true"] {
+		cursor: not-allowed;
+	}
+}
