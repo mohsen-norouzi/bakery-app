@@ -1,14 +1,13 @@
-import ImagePlaceholder from "./ImagePlaceholder";
 import { ArrowRightIcon, HeartIcon } from "./icons";
 
 function OurStory() {
 	return (
 		<section className="relative isolate overflow-hidden bg-sand">
-			<ImagePlaceholder
-				width={1920}
-				height={640}
-				label="1920×640 background (mascot + leaves + floor shadow)"
-				className="absolute inset-0 -z-10 h-full w-full"
+			<img
+				src="/img/our-story.png"
+				alt=""
+				aria-hidden="true"
+				className="absolute inset-0 -z-10 h-full w-full object-cover"
 			/>
 
 			<div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
