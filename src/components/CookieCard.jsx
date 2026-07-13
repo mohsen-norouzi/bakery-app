@@ -1,0 +1,33 @@
+import ImagePlaceholder from "./ImagePlaceholder";
+import { PlusIcon } from "./icons";
+
+function CookieCard({ name, description, price }) {
+	return (
+		<div className="flex h-full flex-col rounded-2xl bg-sand p-4">
+			<ImagePlaceholder
+				width={400}
+				height={400}
+				label="400×400"
+				className="rounded-xl"
+			/>
+
+			<h3 className="mt-4 font-display text-lg text-brown">{name}</h3>
+			<p className="mt-1 text-sm text-brown/60">{description}</p>
+
+			<div className="mt-auto flex items-center justify-between pt-4">
+				<span className="text-xs font-medium tracking-[0.1em] text-brown/70">
+					FROM €{price}
+				</span>
+				<button
+					type="button"
+					aria-label={`Add ${name} to cart`}
+					className="flex h-8 w-8 items-center justify-center rounded-full border border-brown/30 text-brown transition-colors hover:bg-brown/5"
+				>
+					<PlusIcon className="h-3.5 w-3.5" />
+				</button>
+			</div>
+		</div>
+	);
+}
+
+export default CookieCard;
