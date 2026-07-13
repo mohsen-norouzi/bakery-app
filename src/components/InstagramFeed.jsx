@@ -1,5 +1,5 @@
 import ImagePlaceholder from "./ImagePlaceholder";
-import { ArrowRightIcon, HeartIcon } from "./icons";
+import { ArrowRightIcon, HeartIcon, InstagramIcon } from "./icons";
 
 const PHOTOS = [1, 2, 3, 4, 5];
 
@@ -26,12 +26,7 @@ function InstagramFeed() {
 						</p>
 
 						<div className="mt-6 flex items-center gap-2 text-brown">
-							<ImagePlaceholder
-								width={20}
-								height={20}
-								label="20×20"
-								className="h-5 w-5 rounded-md"
-							/>
+							<InstagramIcon className="h-5 w-5" />
 							<span className="text-sm font-medium tracking-[0.05em]">
 								@BAVOBAKES
 							</span>

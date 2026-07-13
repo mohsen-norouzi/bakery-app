@@ -1,6 +1,6 @@
 import DeliveryCard from "./DeliveryCard";
 import ImagePlaceholder from "./ImagePlaceholder";
-import { HeartIcon } from "./icons";
+import { BicycleIcon, HeartIcon, StorefrontIcon } from "./icons";
 
 const CARDS = [
 	{
@@ -8,12 +8,14 @@ const CARDS = [
 		description:
 			"We deliver across Barcelona with care. Perfect for birthdays, surprises, or just because.",
 		linkLabel: "VIEW DELIVERY INFO",
+		icon: BicycleIcon,
 	},
 	{
 		title: "Pickup in Les Corts",
 		description:
 			"Prefer to pick up? You're welcome! We're located in Les Corts, Barcelona.",
 		linkLabel: "VIEW LOCATION",
+		icon: StorefrontIcon,
 	},
 ];
 

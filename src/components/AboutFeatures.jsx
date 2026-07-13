@@ -1,26 +1,29 @@
-import ImagePlaceholder from "./ImagePlaceholder";
-import { HeartIcon } from "./icons";
+import { CookingPotIcon, GiftIcon, HeartIcon, LeafIcon } from "./icons";
 
 const FEATURES = [
 	{
 		title: "Real Ingredients",
 		description:
 			"We use only the finest, real ingredients — no preservatives, no shortcuts.",
+		icon: LeafIcon,
 	},
 	{
 		title: "Made in Small Batches",
 		description:
 			"Every batch is baked with care to ensure the perfect taste and freshness.",
+		icon: CookingPotIcon,
 	},
 	{
 		title: "Made with Love",
 		description:
 			"From our kitchen to your door, each cookie is made to spread love and happiness.",
+		icon: HeartIcon,
 	},
 	{
 		title: "Perfect for Sharing",
 		description:
 			"Beautifully packaged and perfect for gifting, celebrating, or simply treating yourself.",
+		icon: GiftIcon,
 	},
 ];
 
@@ -43,12 +46,7 @@ function AboutFeatures() {
 					{FEATURES.map((feature) => (
 						<div key={feature.title} className="lg:px-8">
 							<div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-sand">
-								<ImagePlaceholder
-									width={28}
-									height={28}
-									label="28×28"
-									className="h-7 w-7"
-								/>
+								<feature.icon className="h-7 w-7 text-brown" />
 							</div>
 
 							<h3 className="mt-5 font-display text-lg text-brown">

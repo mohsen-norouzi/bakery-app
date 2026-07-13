@@ -1,22 +1,25 @@
-import ImagePlaceholder from "./ImagePlaceholder";
-import { HeartIcon } from "./icons";
+import { ClockIcon, HeartIcon, MailIcon, MapPinIcon, PhoneIcon } from "./icons";
 
 const CONTACT_DETAILS = [
 	{
 		label: "Email Us",
 		lines: ["hello@bavobakes.com"],
+		icon: MailIcon,
 	},
 	{
 		label: "Call Us",
 		lines: ["+34 666 61 10 91"],
+		icon: PhoneIcon,
 	},
 	{
 		label: "Our Kitchen",
 		lines: ["Les Corts, Barcelona"],
+		icon: MapPinIcon,
 	},
 	{
 		label: "Response Time",
 		lines: ["We usually reply", "within 24 hours."],
+		icon: ClockIcon,
 	},
 ];
 
@@ -54,12 +57,7 @@ function ContactHero() {
 						{CONTACT_DETAILS.map((detail) => (
 							<div key={detail.label}>
 								<div className="flex h-12 w-12 items-center justify-center rounded-full bg-sand">
-									<ImagePlaceholder
-										width={20}
-										height={20}
-										label="20×20"
-										className="h-5 w-5"
-									/>
+									<detail.icon className="h-5 w-5 text-brown" />
 								</div>
 
 								<p className="mt-3 text-xs font-medium tracking-[0.15em] text-brown">

@@ -1,7 +1,6 @@
 import { useCart } from "../context/CartContext";
 import { buildWhatsAppOrderUrl } from "../lib/whatsapp";
-import ImagePlaceholder from "./ImagePlaceholder";
-import { HeartIcon } from "./icons";
+import { HeartIcon, WhatsappIcon } from "./icons";
 
 function ContactOrderInfo() {
 	const { items } = useCart();
@@ -26,12 +25,7 @@ function ContactOrderInfo() {
 
 					<div className="mt-6 flex items-center gap-3">
 						<div className="flex h-12 w-12 items-center justify-center rounded-full bg-cream">
-							<ImagePlaceholder
-								width={20}
-								height={20}
-								label="20×20"
-								className="h-5 w-5"
-							/>
+							<WhatsappIcon className="h-5 w-5 text-brown" />
 						</div>
 						<a
 							href={buildWhatsAppOrderUrl(items)}

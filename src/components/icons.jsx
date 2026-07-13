@@ -1,144 +1,117 @@
+import {
+	ArrowDown,
+	ArrowLeft,
+	ArrowRight,
+	Bicycle,
+	Clock,
+	CookingPot,
+	EnvelopeSimple,
+	Gift,
+	Headset,
+	Heart,
+	InstagramLogo,
+	Leaf,
+	List,
+	MapPin,
+	Minus,
+	Phone,
+	Plus,
+	ShieldCheck,
+	ShoppingBag,
+	Smiley,
+	SquaresFour,
+	Storefront,
+	WhatsappLogo,
+} from "@phosphor-icons/react";
+
 export function BagIcon({ className = "h-4 w-4" }) {
-	return (
-		<svg
-			viewBox="0 0 24 24"
-			fill="none"
-			stroke="currentColor"
-			strokeWidth={1.5}
-			className={className}
-			aria-hidden="true"
-		>
-			<path d="M6 8h12l-1 12H7L6 8Z" strokeLinejoin="round" />
-			<path d="M9 8V6a3 3 0 0 1 6 0v2" strokeLinecap="round" />
-		</svg>
-	);
+	return <ShoppingBag className={className} weight="regular" aria-hidden="true" />;
 }
 
 export function HeartIcon({ className = "h-4 w-4" }) {
-	return (
-		<svg
-			viewBox="0 0 24 24"
-			fill="none"
-			stroke="currentColor"
-			strokeWidth={1.5}
-			className={className}
-			aria-hidden="true"
-		>
-			<path
-				d="M12 20s-7-4.35-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 5c-2.5 4.65-9.5 9-9.5 9Z"
-				strokeLinejoin="round"
-			/>
-		</svg>
-	);
+	return <Heart className={className} weight="regular" aria-hidden="true" />;
 }
 
 export function ArrowRightIcon({ className = "h-4 w-4" }) {
-	return (
-		<svg
-			viewBox="0 0 24 24"
-			fill="none"
-			stroke="currentColor"
-			strokeWidth={1.5}
-			className={className}
-			aria-hidden="true"
-		>
-			<path d="M4 12h16M14 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
-		</svg>
-	);
+	return <ArrowRight className={className} weight="regular" aria-hidden="true" />;
 }
 
 export function PlusIcon({ className = "h-4 w-4" }) {
-	return (
-		<svg
-			viewBox="0 0 24 24"
-			fill="none"
-			stroke="currentColor"
-			strokeWidth={1.5}
-			className={className}
-			aria-hidden="true"
-		>
-			<path d="M12 5v14M5 12h14" strokeLinecap="round" />
-		</svg>
-	);
+	return <Plus className={className} weight="regular" aria-hidden="true" />;
 }
 
 export function MinusIcon({ className = "h-4 w-4" }) {
-	return (
-		<svg
-			viewBox="0 0 24 24"
-			fill="none"
-			stroke="currentColor"
-			strokeWidth={1.5}
-			className={className}
-			aria-hidden="true"
-		>
-			<path d="M5 12h14" strokeLinecap="round" />
-		</svg>
-	);
+	return <Minus className={className} weight="regular" aria-hidden="true" />;
 }
 
 export function ArrowLeftIcon({ className = "h-4 w-4" }) {
-	return (
-		<svg
-			viewBox="0 0 24 24"
-			fill="none"
-			stroke="currentColor"
-			strokeWidth={1.5}
-			className={className}
-			aria-hidden="true"
-		>
-			<path d="M20 12H4M10 6l-6 6 6 6" strokeLinecap="round" strokeLinejoin="round" />
-		</svg>
-	);
+	return <ArrowLeft className={className} weight="regular" aria-hidden="true" />;
 }
 
 export function GridIcon({ className = "h-4 w-4" }) {
-	return (
-		<svg
-			viewBox="0 0 24 24"
-			fill="none"
-			stroke="currentColor"
-			strokeWidth={1.5}
-			className={className}
-			aria-hidden="true"
-		>
-			<rect x="4" y="4" width="7" height="7" rx="1" />
-			<rect x="13" y="4" width="7" height="7" rx="1" />
-			<rect x="4" y="13" width="7" height="7" rx="1" />
-			<rect x="13" y="13" width="7" height="7" rx="1" />
-		</svg>
-	);
+	return <SquaresFour className={className} weight="regular" aria-hidden="true" />;
 }
 
 export function ListIcon({ className = "h-4 w-4" }) {
-	return (
-		<svg
-			viewBox="0 0 24 24"
-			fill="none"
-			stroke="currentColor"
-			strokeWidth={1.5}
-			className={className}
-			aria-hidden="true"
-		>
-			<path
-				d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01"
-				strokeLinecap="round"
-			/>
-		</svg>
-	);
+	return <List className={className} weight="regular" aria-hidden="true" />;
 }
 
 export function ArrowDownIcon({ className = "h-4 w-4" }) {
-	return (
-		<svg
-			viewBox="0 0 24 24"
-			fill="none"
-			stroke="currentColor"
-			strokeWidth={1.5}
-			className={className}
-			aria-hidden="true"
-		>
-			<path d="M12 4v16M6 14l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-		</svg>
-	);
+	return <ArrowDown className={className} weight="regular" aria-hidden="true" />;
+}
+
+export function BicycleIcon({ className = "h-4 w-4" }) {
+	return <Bicycle className={className} weight="regular" aria-hidden="true" />;
+}
+
+export function StorefrontIcon({ className = "h-4 w-4" }) {
+	return <Storefront className={className} weight="regular" aria-hidden="true" />;
+}
+
+export function InstagramIcon({ className = "h-4 w-4" }) {
+	return <InstagramLogo className={className} weight="regular" aria-hidden="true" />;
+}
+
+export function WhatsappIcon({ className = "h-4 w-4" }) {
+	return <WhatsappLogo className={className} weight="regular" aria-hidden="true" />;
+}
+
+export function LeafIcon({ className = "h-4 w-4" }) {
+	return <Leaf className={className} weight="regular" aria-hidden="true" />;
+}
+
+export function CookingPotIcon({ className = "h-4 w-4" }) {
+	return <CookingPot className={className} weight="regular" aria-hidden="true" />;
+}
+
+export function GiftIcon({ className = "h-4 w-4" }) {
+	return <Gift className={className} weight="regular" aria-hidden="true" />;
+}
+
+export function MailIcon({ className = "h-4 w-4" }) {
+	return <EnvelopeSimple className={className} weight="regular" aria-hidden="true" />;
+}
+
+export function PhoneIcon({ className = "h-4 w-4" }) {
+	return <Phone className={className} weight="regular" aria-hidden="true" />;
+}
+
+export function MapPinIcon({ className = "h-4 w-4" }) {
+	return <MapPin className={className} weight="regular" aria-hidden="true" />;
+}
+
+export function ClockIcon({ className = "h-4 w-4" }) {
+	return <Clock className={className} weight="regular" aria-hidden="true" />;
+}
+
+export function ShieldCheckIcon({ className = "h-4 w-4" }) {
+	return <ShieldCheck className={className} weight="regular" aria-hidden="true" />;
+}
+
+export function SmileyIcon({ className = "h-4 w-4" }) {
+	return <Smiley className={className} weight="regular" aria-hidden="true" />;
+}
+
+export function HeadsetIcon({ className = "h-4 w-4" }) {
+	return <Headset className={className} weight="regular" aria-hidden="true" />;
 }

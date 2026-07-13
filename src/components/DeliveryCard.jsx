@@ -1,16 +1,10 @@
-import ImagePlaceholder from "./ImagePlaceholder";
 import { ArrowRightIcon } from "./icons";
 
-function DeliveryCard({ title, description, linkLabel, className = "" }) {
+function DeliveryCard({ title, description, linkLabel, icon: Icon, className = "" }) {
 	return (
 		<div className={`p-8 ${className}`}>
 			<div className="flex h-14 w-14 items-center justify-center rounded-full bg-sand">
-				<ImagePlaceholder
-					width={24}
-					height={24}
-					label="24×24"
-					className="h-6 w-6"
-				/>
+				<Icon className="h-6 w-6 text-brown" />
 			</div>
 
 			<h3 className="mt-5 font-display text-lg text-brown">{title}</h3>

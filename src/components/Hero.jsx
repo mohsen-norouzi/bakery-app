@@ -1,6 +1,5 @@
 import Button from "./Button";
-import ImagePlaceholder from "./ImagePlaceholder";
-import { ArrowDownIcon, ArrowRightIcon, HeartIcon } from "./icons";
+import { ArrowDownIcon, ArrowRightIcon } from "./icons";
 
 function Hero() {
 	return (

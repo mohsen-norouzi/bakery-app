@@ -1,19 +1,22 @@
 import ImagePlaceholder from "./ImagePlaceholder";
-import { HeartIcon } from "./icons";
+import { HeadsetIcon, HeartIcon, ShieldCheckIcon, SmileyIcon } from "./icons";
 
 const PROMISES = [
 	{
 		title: "Quality You Can Trust",
 		description: "We use premium ingredients and bake with the highest standards.",
+		icon: ShieldCheckIcon,
 	},
 	{
 		title: "Happiness in Every Bite",
 		description: "Our cookies are made to bring joy to your everyday moments.",
+		icon: SmileyIcon,
 	},
 	{
 		title: "Customer Care We Love",
 		description:
 			"We're here for you, always ready to make your experience special.",
+		icon: HeadsetIcon,
 	},
 ];
 
@@ -36,12 +39,7 @@ function AboutPromise() {
 					<div className="mt-8 divide-y divide-brown/10 border-t border-brown/10">
 						{PROMISES.map((promise) => (
 							<div key={promise.title} className="flex items-start gap-4 py-5">
-								<ImagePlaceholder
-									width={24}
-									height={24}
-									label="24×24"
-									className="h-6 w-6 shrink-0"
-								/>
+								<promise.icon className="h-6 w-6 shrink-0 text-brown" />
 								<div>
 									<h3 className="font-display text-base text-brown">
 										{promise.title}
