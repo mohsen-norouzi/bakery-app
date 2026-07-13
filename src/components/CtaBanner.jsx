@@ -1,5 +1,4 @@
 import Button from "./Button";
-import ImagePlaceholder from "./ImagePlaceholder";
 import { ArrowRightIcon } from "./icons";
 
 function CtaBanner({
@@ -11,15 +10,18 @@ function CtaBanner({
 	primaryTo,
 	secondaryTo,
 	align = "right",
+	backgroundSrc = "/img/cta-bg.png",
 }) {
 	return (
 		<section className="relative isolate overflow-hidden bg-sand">
-			<ImagePlaceholder
-				width={1920}
-				height={480}
-				label="1920×480 background (mascot + heart line + paper texture)"
-				className="absolute inset-0 -z-10 h-full w-full"
-			/>
+			{backgroundSrc && (
+				<img
+					src={backgroundSrc}
+					alt=""
+					aria-hidden="true"
+					className="absolute inset-0 -z-10 h-full w-full object-cover"
+				/>
+			)}
 
 			<div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-20">
 				<div
