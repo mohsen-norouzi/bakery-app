@@ -12,12 +12,13 @@ const COOKIES = [
 		description: "Rich cocoa dough with double the chocolate.",
 	},
 	{
-		name: "Oatmeal & Raisin",
-		description: "Chewy oatmeal cookies with sweet raisins.",
+		name: "Chocolate Sea Salt",
+		description: "Rich chocolate with a touch of sea salt.",
 	},
 	{
 		name: "White Chocolate Macadamia",
 		description: "Buttery cookies with white chocolate and macadamia.",
+		available: false,
 	},
 ];
 
