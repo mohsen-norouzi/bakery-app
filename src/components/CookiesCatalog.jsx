@@ -22,28 +22,33 @@ const COOKIES = [
 		badge: "Popular",
 	},
 	{
+		name: "Chocolate Sea Salt",
+		description: "Rich chocolate with a touch of sea salt.",
+	},
+	{
 		name: "Oatmeal & Raisin",
 		description: "Chewy oatmeal cookies with sweet raisins.",
+		available: false,
 	},
 	{
 		name: "White Chocolate Macadamia",
 		description: "Buttery cookies with white chocolate and macadamia.",
-	},
-	{
-		name: "Dark Chocolate Sea Salt",
-		description: "Deep dark chocolate with a touch of sea salt.",
+		available: false,
 	},
 	{
 		name: "Hazelnut Chocolate",
 		description: "Roasted hazelnuts with rich chocolate chunks.",
+		available: false,
 	},
 	{
 		name: "Peanut Butter",
 		description: "Soft, nutty, and perfectly satisfying.",
+		available: false,
 	},
 	{
-		name: "Chocolate Pretzel",
-		description: "Sweet and salty with a satisfying crunch.",
+		name: "Dark Chocolate Sea Salt",
+		description: "Deep dark chocolate with a touch of sea salt.",
+		available: false,
 	},
 ];
 

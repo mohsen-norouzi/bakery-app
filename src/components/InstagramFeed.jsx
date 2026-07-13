@@ -1,7 +1,12 @@
-import ImagePlaceholder from "./ImagePlaceholder";
 import { ArrowRightIcon, HeartIcon, InstagramIcon } from "./icons";
 
-const PHOTOS = [1, 2, 3, 4, 5];
+const PHOTOS = [
+	{ src: "/img/cookie-gallery/stack.jpg", alt: "Stack of freshly baked cookies" },
+	{ src: "/img/cookie-gallery/gift.jpg", alt: "Cookies wrapped as a gift" },
+	{ src: "/img/cookie-gallery/box.jpg", alt: "Box of assorted cookies" },
+	{ src: "/img/cookie-gallery/bag.jpg", alt: "Cookies in a paper bag" },
+	{ src: "/img/cookie-gallery/plate.jpg", alt: "Cookie served on a plate" },
+];
 
 function InstagramFeed() {
 	return (
@@ -25,30 +30,39 @@ function InstagramFeed() {
 							moments you share with our cookies.
 						</p>
 
-						<div className="mt-6 flex items-center gap-2 text-brown">
+						<a
+							href="https://instagram.com/bavobakes"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="mt-6 inline-flex items-center gap-2 text-brown"
+						>
 							<InstagramIcon className="h-5 w-5" />
 							<span className="text-sm font-medium tracking-[0.05em]">
 								@BAVOBAKES
 							</span>
-						</div>
+						</a>
 					</div>
 
 					<div>
 						<div className="grid grid-cols-3 gap-4 sm:grid-cols-5">
 							{PHOTOS.map((photo) => (
-								<ImagePlaceholder
-									key={photo}
+								<img
+									key={photo.src}
+									src={photo.src}
+									alt={photo.alt}
 									width={300}
 									height={380}
-									label="300×380"
-									className="rounded-xl"
+									loading="lazy"
+									className="aspect-[30/38] w-full rounded-xl object-cover"
 								/>
 							))}
 						</div>
 
 						<div className="mt-8 text-center">
 							<a
-								href="#"
+								href="https://instagram.com/bavobakes"
+								target="_blank"
+								rel="noopener noreferrer"
 								className="inline-flex items-center gap-2 border-b border-brown/40 pb-1 text-xs font-medium tracking-[0.15em] text-brown"
 							>
 								VIEW MORE ON INSTAGRAM
