@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import FloatingOrderButton from "./components/FloatingOrderButton";
+import PageMeta from "./components/PageMeta";
 import { CartProvider } from "./context/CartContext";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -10,6 +11,7 @@ import Home from "./pages/Home";
 function App() {
 	return (
 		<BrowserRouter>
+			<PageMeta />
 			<CartProvider>
 				<div className="bg-cream font-sans">
 					<Routes>

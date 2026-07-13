@@ -1,0 +1,21 @@
+{
+  "name": "Bavo Bakes",
+  "short_name": "Bavo Bakes",
+  "description": "Homemade cookies baked fresh to order in Barcelona.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f6ede1",
+  "theme_color": "#522c09",
+  "icons": [
+    {
+      "src": "/img/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
