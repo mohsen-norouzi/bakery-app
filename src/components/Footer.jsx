@@ -1,12 +1,14 @@
+import { WHATSAPP_ORDER_URL } from "../lib/whatsapp";
+import Button from "./Button";
 import FooterColumn from "./FooterColumn";
-import Logo from "./Logo";
 import { ArrowRightIcon, HeartIcon } from "./icons";
+import Logo from "./Logo";
 
 const CONNECT_LINKS = [
-	{ label: "Instagram", to: "https://instagram.com/sweetfromhome.bcn" },
-	{ label: "TikTok", to: "https://tiktok.com/@sweetfromhome.bcn" },
-	{ label: "WhatsApp", to: "https://wa.me/15551234567" },
-	{ label: "Email", to: "mailto:hello@sweetfromhome.com" },
+	{ label: "Instagram", to: "https://instagram.com/bavobakes.bcn" },
+	{ label: "TikTok", to: "https://tiktok.com/@bavobakes.bcn" },
+	{ label: "WhatsApp", to: "https://wa.me/666611091" },
+	{ label: "Email", to: "mailto:hello@bavobakes.com" },
 ];
 
 function Footer() {
@@ -14,7 +16,12 @@ function Footer() {
 		<footer className="bg-cream">
 			<div className="mx-auto max-w-7xl px-6 py-16 lg:px-10">
 				<div className="flex flex-col gap-16 lg:flex-row lg:items-start lg:justify-between">
-					<Logo stacked />
+					<div className="flex flex-col items-center gap-6">
+						<Logo stacked />
+						<Button to={WHATSAPP_ORDER_URL} className="text-center">
+							Order on WhatsApp
+						</Button>
+					</div>
 
 					<div className="grid grid-cols-2 gap-x-10 gap-y-12 sm:grid-cols-3 lg:flex lg:gap-20">
 						<FooterColumn
@@ -70,7 +77,7 @@ function Footer() {
 				</div>
 
 				<div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-brown/15 pt-8 text-xs text-brown/60 sm:flex-row">
-					<p>© 2024 Sweet from Home. All rights reserved.</p>
+					<p>© 2024 Bavo Bakes. All rights reserved.</p>
 					<div className="flex gap-6">
 						<a href="#" className="transition-colors hover:text-brown">
 							Privacy Policy

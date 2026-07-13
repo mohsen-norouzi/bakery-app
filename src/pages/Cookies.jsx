@@ -4,6 +4,7 @@ import CtaBanner from "../components/CtaBanner";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import ImagePlaceholder from "../components/ImagePlaceholder";
+import { WHATSAPP_ORDER_URL } from "../lib/whatsapp";
 
 function Cookies() {
 	return (
@@ -27,6 +28,7 @@ function Cookies() {
 				primaryLabel="CONTACT US"
 				primaryTo="/contact"
 				secondaryLabel="ORDER NOW"
+				secondaryTo={WHATSAPP_ORDER_URL}
 				align="left"
 			/>
 			<Footer />

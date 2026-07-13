@@ -24,8 +24,8 @@ function AboutHero() {
 					<div className="mt-6 h-px w-16 bg-brown/30" />
 
 					<p className="mt-6 max-w-md text-brown/70">
-						Sweet from Home began in a small kitchen with a simple goal — to
-						bake cookies that bring people joy and create sweet moments worth
+						Bavo Bakes began in a small kitchen with a simple goal — to bake
+						cookies that bring people joy and create sweet moments worth
 						sharing.
 					</p>
 

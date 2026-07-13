@@ -4,19 +4,24 @@ function Logo({ stacked = false }) {
 	return (
 		<Link
 			to="/"
-			className={`flex gap-3 ${stacked ? "flex-col items-center" : "items-center"}`}
+			className={`flex items-center gap-3 ${stacked ? "flex-col" : ""}`}
 		>
 			<img
 				src="/img/logo.png"
-				alt="Sweet from Home"
-				className="w-14 shrink-0"
+				alt=""
+				aria-hidden="true"
+				className="h-10 w-auto shrink-0"
 			/>
-			<div className={`leading-tight ${stacked ? "text-center" : ""}`}>
-				<p className="font-display text-xl text-brown">Sweet from Home</p>
-				<p className="text-[10px] tracking-[0.3em] text-brown/60">
-					· HOMEMADE COOKIES ·
-				</p>
-			</div>
+			<span className="flex flex-col leading-none">
+				<span className="whitespace-nowrap font-display text-2xl text-brown">
+					Bavo <span className="text-brown/50">Bakes</span>
+				</span>
+				<span className="mt-1.5 flex w-full items-center justify-between text-[10px] text-brown/60 uppercase">
+					<span>Homemade</span>
+					<span aria-hidden="true">•</span>
+					<span>Cookies</span>
+				</span>
+			</span>
 		</Link>
 	);
 }

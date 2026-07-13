@@ -4,7 +4,7 @@ import { HeartIcon } from "./icons";
 const CONTACT_DETAILS = [
 	{
 		label: "Email Us",
-		lines: ["hello@sweetfromhome.com"],
+		lines: ["hello@bavobakes.com"],
 	},
 	{
 		label: "Call Us",

@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { WHATSAPP_ORDER_URL } from "../lib/whatsapp";
 import Button from "./Button";
 import { BagIcon } from "./icons";
 import Logo from "./Logo";
@@ -39,7 +40,7 @@ function Header() {
 				</nav>
 
 				<div className="justify-self-end">
-					<Button variant="outline">
+					<Button variant="outline" to={WHATSAPP_ORDER_URL}>
 						<BagIcon />
 						ORDER NOW
 					</Button>

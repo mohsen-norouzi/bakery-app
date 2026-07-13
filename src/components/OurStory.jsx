@@ -25,7 +25,7 @@ function OurStory() {
 					</h2>
 
 					<p className="mt-4 text-brown/70">
-						Sweet from Home started in a small kitchen in Barcelona with one
+						Bavo Bakes started in a small kitchen in Barcelona with one
 						simple goal: to bake cookies that make people smile.
 					</p>
 

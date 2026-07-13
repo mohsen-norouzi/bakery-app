@@ -8,6 +8,20 @@ const VARIANTS = {
 function Button({ children, variant = "solid", className = "", to, ...props }) {
 	const classes = `inline-flex items-center justify-center gap-2 rounded-xl px-7 py-3.5 text-xs font-medium tracking-[0.15em] transition-colors ${VARIANTS[variant]} ${className}`;
 
+	if (to && /^(https?:|mailto:|tel:)/.test(to)) {
+		return (
+			<a
+				href={to}
+				target="_blank"
+				rel="noopener noreferrer"
+				className={classes}
+				{...props}
+			>
+				{children}
+			</a>
+		);
+	}
+
 	if (to) {
 		return (
 			<Link to={to} className={classes} {...props}>
