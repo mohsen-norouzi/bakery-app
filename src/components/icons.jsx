@@ -62,6 +62,21 @@ export function PlusIcon({ className = "h-4 w-4" }) {
 	);
 }
 
+export function ArrowLeftIcon({ className = "h-4 w-4" }) {
+	return (
+		<svg
+			viewBox="0 0 24 24"
+			fill="none"
+			stroke="currentColor"
+			strokeWidth={1.5}
+			className={className}
+			aria-hidden="true"
+		>
+			<path d="M20 12H4M10 6l-6 6 6 6" strokeLinecap="round" strokeLinejoin="round" />
+		</svg>
+	);
+}
+
 export function ArrowDownIcon({ className = "h-4 w-4" }) {
 	return (
 		<svg
