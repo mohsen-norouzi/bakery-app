@@ -1,6 +1,14 @@
-import Button from "./Button";
+import { useState } from "react";
 import CookieCard from "./CookieCard";
-import { ArrowDownIcon, GridIcon, ListIcon } from "./icons";
+import { GridIcon, ListIcon } from "./icons";
+import SortDropdown from "./SortDropdown";
+
+const SORT_OPTIONS = [
+	"Most Popular",
+	"Price: Low to High",
+	"Price: High to Low",
+	"Newest",
+];
 
 const COOKIES = [
 	{
@@ -40,6 +48,9 @@ const COOKIES = [
 ];
 
 function CookiesCatalog() {
+	const [sortBy, setSortBy] = useState(SORT_OPTIONS[0]);
+	const [view, setView] = useState("grid");
+
 	return (
 		<section className="bg-cream">
 			<div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
@@ -57,28 +68,39 @@ function CookiesCatalog() {
 					</div>
 
 					<div className="flex items-center gap-4">
-						<label className="flex items-center gap-2 text-sm text-brown/70">
+						<div className="flex items-center gap-2 text-sm text-brown/70">
 							Sort by
-							<select className="rounded-full border border-brown/20 bg-cream px-3 py-1.5 text-sm text-brown focus:outline-none">
-								<option>Most Popular</option>
-								<option>Price: Low to High</option>
-								<option>Price: High to Low</option>
-								<option>Newest</option>
-							</select>
-						</label>
+							<SortDropdown
+								options={SORT_OPTIONS}
+								value={sortBy}
+								onChange={setSortBy}
+							/>
+						</div>
 
 						<div className="flex items-center gap-1 rounded-full border border-brown/20 p-1">
 							<button
 								type="button"
+								onClick={() => setView("grid")}
 								aria-label="Grid view"
-								className="flex h-8 w-8 items-center justify-center rounded-full bg-brown text-cream"
+								aria-pressed={view === "grid"}
+								className={`flex h-8 w-8 items-center justify-center rounded-full transition-colors ${
+									view === "grid"
+										? "bg-brown text-cream"
+										: "text-brown hover:bg-brown/5"
+								}`}
 							>
 								<GridIcon className="h-4 w-4" />
 							</button>
 							<button
 								type="button"
+								onClick={() => setView("list")}
 								aria-label="List view"
-								className="flex h-8 w-8 items-center justify-center rounded-full text-brown transition-colors hover:bg-brown/5"
+								aria-pressed={view === "list"}
+								className={`flex h-8 w-8 items-center justify-center rounded-full transition-colors ${
+									view === "list"
+										? "bg-brown text-cream"
+										: "text-brown hover:bg-brown/5"
+								}`}
 							>
 								<ListIcon className="h-4 w-4" />
 							</button>
@@ -90,17 +112,16 @@ function CookiesCatalog() {
 					{COOKIES.length} COOKIES
 				</div>
 
-				<div className="mt-8 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+				<div
+					className={
+						view === "grid"
+							? "mt-8 grid gap-6 sm:grid-cols-2 xl:grid-cols-4"
+							: "mt-8 flex flex-col gap-4"
+					}
+				>
 					{COOKIES.map((cookie) => (
-						<CookieCard key={cookie.name} {...cookie} />
+						<CookieCard key={cookie.name} {...cookie} layout={view} />
 					))}
-				</div>
-
-				<div className="mt-12 flex justify-center">
-					<Button variant="outline">
-						LOAD MORE COOKIES
-						<ArrowDownIcon className="h-4 w-4" />
-					</Button>
 				</div>
 			</div>
 		</section>

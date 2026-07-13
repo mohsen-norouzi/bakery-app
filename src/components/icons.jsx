@@ -3,6 +3,8 @@ import {
 	ArrowLeft,
 	ArrowRight,
 	Bicycle,
+	CaretDown,
+	Check,
 	Clock,
 	CookingPot,
 	EnvelopeSimple,
@@ -114,4 +116,12 @@ export function SmileyIcon({ className = "h-4 w-4" }) {
 
 export function HeadsetIcon({ className = "h-4 w-4" }) {
 	return <Headset className={className} weight="regular" aria-hidden="true" />;
+}
+
+export function CaretDownIcon({ className = "h-4 w-4" }) {
+	return <CaretDown className={className} weight="regular" aria-hidden="true" />;
+}
+
+export function CheckIcon({ className = "h-4 w-4" }) {
+	return <Check className={className} weight="bold" aria-hidden="true" />;
 }
