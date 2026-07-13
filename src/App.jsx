@@ -1,7 +1,10 @@
 import "./App.css";
+import BeautifullyPackaged from "./components/BeautifullyPackaged";
+import DeliveryPickup from "./components/DeliveryPickup";
 import FeaturedCookies from "./components/FeaturedCookies";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
+import HowItWorks from "./components/HowItWorks";
 import OurStory from "./components/OurStory";
 import WhyChooseUs from "./components/WhyChooseUs";
 
@@ -22,6 +25,9 @@ function App() {
 			<FeaturedCookies />
 			<OurStory />
 			<WhyChooseUs />
+			<HowItWorks />
+			<BeautifullyPackaged />
+			<DeliveryPickup />
 		</div>
 	);
 }
