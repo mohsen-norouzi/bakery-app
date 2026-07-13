@@ -12,7 +12,7 @@ function CookieImage({ name, layout }) {
 	const className =
 		layout === "list"
 			? "h-36 w-36 rounded-xl object-contain"
-			: "aspect-square w-full rounded-xl object-contain";
+			: "aspect-square w-full object-contain";
 
 	if (failed) {
 		return (
@@ -109,7 +109,8 @@ function CookieCard({
 		</div>
 	);
 
-	const cardClass = `rounded-2xl bg-sand p-4${available ? "" : " opacity-90"}`;
+	const cardClass = `overflow-hidden rounded-2xl bg-sand${available ? "" : " opacity-90"}`;
+	const textBodyClass = "flex flex-1 flex-col px-5 pb-5 pt-4";
 
 	const footer = (
 		<div className="mt-auto flex items-center justify-between pt-4">
@@ -124,12 +125,12 @@ function CookieCard({
 
 	if (layout === "list") {
 		return (
-			<div className={`flex gap-4 ${cardClass}`}>
+			<div className={`flex gap-5 p-5 ${cardClass}`}>
 				{imageEl}
 
-				<div className="flex min-w-0 flex-1 flex-col">
+				<div className="flex min-w-0 flex-1 flex-col justify-center">
 					<h3 className="font-display text-lg text-brown">{name}</h3>
-					<p className="mt-1 text-sm text-brown/60">{description}</p>
+					<p className="mt-2 text-sm text-brown/60">{description}</p>
 					{footer}
 				</div>
 			</div>
@@ -138,11 +139,13 @@ function CookieCard({
 
 	return (
 		<div className={`flex h-full flex-col ${cardClass}`}>
-			{imageEl}
+			<div className="relative">{imageEl}</div>
 
-			<h3 className="mt-4 font-display text-lg text-brown">{name}</h3>
-			<p className="mt-1 text-sm text-brown/60">{description}</p>
-			{footer}
+			<div className={textBodyClass}>
+				<h3 className="font-display text-lg text-brown">{name}</h3>
+				<p className="mt-2 text-sm text-brown/60">{description}</p>
+				{footer}
+			</div>
 		</div>
 	);
 }

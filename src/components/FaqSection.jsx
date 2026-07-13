@@ -76,7 +76,7 @@ function FaqSection() {
 						/>
 					</div>
 
-					<div className="rounded-2xl bg-sand px-8">
+					<div className="rounded-2xl bg-sand p-8">
 						{FAQS.map((faq) => (
 							<FaqItem key={faq.question} {...faq} />
 						))}
