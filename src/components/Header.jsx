@@ -8,7 +8,7 @@ const NAV_LINKS = [
 	{ label: "Gift Boxes", to: "#" },
 	{ label: "About", to: "/about" },
 	{ label: "FAQ", to: "#" },
-	{ label: "Contact", to: "#" },
+	{ label: "Contact", to: "/contact" },
 ];
 
 function Header() {
