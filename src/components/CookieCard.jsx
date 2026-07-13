@@ -1,15 +1,22 @@
 import ImagePlaceholder from "./ImagePlaceholder";
 import { PlusIcon } from "./icons";
 
-function CookieCard({ name, description, price }) {
+function CookieCard({ name, description, price, badge }) {
 	return (
 		<div className="flex h-full flex-col rounded-2xl bg-sand p-4">
-			<ImagePlaceholder
-				width={400}
-				height={400}
-				label="400×400"
-				className="rounded-xl"
-			/>
+			<div className="relative">
+				<ImagePlaceholder
+					width={400}
+					height={400}
+					label="400×400"
+					className="rounded-xl"
+				/>
+				{badge && (
+					<span className="absolute top-3 left-3 rounded-full bg-cream px-3 py-1 text-[10px] font-medium tracking-widest text-brown">
+						{badge.toUpperCase()}
+					</span>
+				)}
+			</div>
 
 			<h3 className="mt-4 font-display text-lg text-brown">{name}</h3>
 			<p className="mt-1 text-sm text-brown/60">{description}</p>

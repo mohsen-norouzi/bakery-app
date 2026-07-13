@@ -1,8 +1,15 @@
+import { NavLink } from "react-router-dom";
 import Button from "./Button";
 import { BagIcon } from "./icons";
 import Logo from "./Logo";
 
-const NAV_LINKS = ["Cookies", "Gift Boxes", "About", "FAQ", "Contact"];
+const NAV_LINKS = [
+	{ label: "Cookies", to: "/cookies" },
+	{ label: "Gift Boxes", to: "#" },
+	{ label: "About", to: "#" },
+	{ label: "FAQ", to: "#" },
+	{ label: "Contact", to: "#" },
+];
 
 function Header() {
 	return (
@@ -13,13 +20,19 @@ function Header() {
 				<nav className="hidden justify-self-center lg:block">
 					<ul className="flex items-center gap-9">
 						{NAV_LINKS.map((link) => (
-							<li key={link}>
-								<a
-									href="#"
-									className="text-xs font-medium tracking-[0.15em] text-brown/80 transition-colors hover:text-brown"
+							<li key={link.label}>
+								<NavLink
+									to={link.to}
+									className={({ isActive }) =>
+										`text-xs font-medium tracking-[0.15em] text-brown/80 transition-colors hover:text-brown ${
+											isActive
+												? "border-b border-brown text-brown"
+												: ""
+										}`
+									}
 								>
-									{link.toUpperCase()}
-								</a>
+									{link.label.toUpperCase()}
+								</NavLink>
 							</li>
 						))}
 					</ul>

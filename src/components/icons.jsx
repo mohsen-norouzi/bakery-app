@@ -77,6 +77,42 @@ export function ArrowLeftIcon({ className = "h-4 w-4" }) {
 	);
 }
 
+export function GridIcon({ className = "h-4 w-4" }) {
+	return (
+		<svg
+			viewBox="0 0 24 24"
+			fill="none"
+			stroke="currentColor"
+			strokeWidth={1.5}
+			className={className}
+			aria-hidden="true"
+		>
+			<rect x="4" y="4" width="7" height="7" rx="1" />
+			<rect x="13" y="4" width="7" height="7" rx="1" />
+			<rect x="4" y="13" width="7" height="7" rx="1" />
+			<rect x="13" y="13" width="7" height="7" rx="1" />
+		</svg>
+	);
+}
+
+export function ListIcon({ className = "h-4 w-4" }) {
+	return (
+		<svg
+			viewBox="0 0 24 24"
+			fill="none"
+			stroke="currentColor"
+			strokeWidth={1.5}
+			className={className}
+			aria-hidden="true"
+		>
+			<path
+				d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01"
+				strokeLinecap="round"
+			/>
+		</svg>
+	);
+}
+
 export function ArrowDownIcon({ className = "h-4 w-4" }) {
 	return (
 		<svg

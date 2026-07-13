@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
+
 function Logo({ stacked = false }) {
 	return (
-		<a
-			href="#"
+		<Link
+			to="/"
 			className={`flex gap-3 ${stacked ? "flex-col items-center" : "items-center"}`}
 		>
 			<img
@@ -15,7 +17,7 @@ function Logo({ stacked = false }) {
 					· HOMEMADE COOKIES ·
 				</p>
 			</div>
-		</a>
+		</Link>
 	);
 }
 

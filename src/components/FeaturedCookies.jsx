@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import CookieCard from "./CookieCard";
 import { ArrowRightIcon, HeartIcon } from "./icons";
 
@@ -44,13 +45,13 @@ function FeaturedCookies() {
 							you&apos;ll taste the love.
 						</p>
 
-						<a
-							href="#"
+						<Link
+							to="/cookies"
 							className="mt-8 inline-flex items-center gap-2 border-b border-brown/40 pb-1 text-xs font-medium tracking-[0.15em] text-brown"
 						>
 							VIEW ALL COOKIES
 							<ArrowRightIcon className="h-4 w-4" />
-						</a>
+						</Link>
 					</div>
 
 					<div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
