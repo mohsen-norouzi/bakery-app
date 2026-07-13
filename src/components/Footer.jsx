@@ -1,8 +1,5 @@
-import { useCart } from "../context/CartContext";
-import { buildWhatsAppOrderUrl } from "../lib/whatsapp";
-import Button from "./Button";
 import FooterColumn from "./FooterColumn";
-import { ArrowRightIcon, HeartIcon } from "./icons";
+import { HeartIcon } from "./icons";
 import Logo from "./Logo";
 
 const CONNECT_LINKS = [
@@ -13,20 +10,15 @@ const CONNECT_LINKS = [
 ];
 
 function Footer() {
-	const { items, itemCount } = useCart();
-
 	return (
 		<footer className="bg-cream">
-			<div className="mx-auto max-w-7xl px-6 py-16 lg:px-10">
-				<div className="flex flex-col gap-16 lg:flex-row lg:items-start lg:justify-between">
-					<div className="flex flex-col items-center gap-6">
-						<Logo stacked />
-						<Button to={buildWhatsAppOrderUrl(items)} className="text-center">
-							Order on WhatsApp{itemCount > 0 ? ` (${itemCount})` : ""}
-						</Button>
+			<div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-20">
+				<div className="grid gap-12 lg:grid-cols-[minmax(0,220px)_1fr] lg:items-start lg:gap-16">
+					<div className="flex justify-center lg:justify-start">
+						<Logo stacked large />
 					</div>
 
-					<div className="grid grid-cols-2 gap-x-10 gap-y-12 sm:grid-cols-3 lg:flex lg:gap-20">
+					<div className="grid grid-cols-2 gap-x-10 gap-y-10 sm:grid-cols-4">
 						<FooterColumn
 							title="SHOP"
 							links={[{ label: "All Cookies", to: "/cookies" }]}
@@ -40,52 +32,28 @@ function Footer() {
 						/>
 						<FooterColumn title="CONNECT" links={CONNECT_LINKS} />
 
-						<div className="shrink-0">
+						<div>
 							<div className="flex items-center gap-2 text-xs font-medium tracking-[0.15em] text-brown/50">
 								<span>MADE WITH LOVE</span>
 								<HeartIcon className="h-3 w-3 text-brown" />
 							</div>
-							<p className="mt-4 font-display text-lg text-brown italic">
+							<p className="mt-4 font-display text-base text-brown italic">
 								in Barcelona
 							</p>
 							<p className="mt-2 text-sm text-brown/60">
 								Thanks for supporting our small business.
 							</p>
 						</div>
-
-						<div className="col-span-2 sm:col-span-3 lg:w-64">
-							<h3 className="text-xs font-medium tracking-[0.15em] text-brown/50">
-								STAY IN THE LOOP
-							</h3>
-							<p className="mt-4 text-sm text-brown/60">
-								Be the first to know about new flavors and special offers.
-							</p>
-
-							<form className="mt-4 flex items-center gap-2 rounded-full border border-brown/20 p-1 pl-4">
-								<input
-									type="email"
-									placeholder="Your email"
-									className="w-full min-w-0 bg-transparent text-sm text-brown placeholder:text-brown/40 focus:outline-none"
-								/>
-								<button
-									type="submit"
-									aria-label="Subscribe"
-									className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brown text-cream"
-								>
-									<ArrowRightIcon className="h-4 w-4" />
-								</button>
-							</form>
-						</div>
 					</div>
 				</div>
 
-				<div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-brown/15 pt-8 text-xs text-brown/60 sm:flex-row">
+				<div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-brown/15 pt-8 text-xs text-brown/60 sm:flex-row">
 					<p>© 2024 Bavo Bakes. All rights reserved.</p>
 					<div className="flex gap-6">
-						<a href="#" className="transition-colors hover:text-brown">
+						<a href="/contact" className="transition-colors hover:text-brown">
 							Privacy Policy
 						</a>
-						<a href="#" className="transition-colors hover:text-brown">
+						<a href="/contact" className="transition-colors hover:text-brown">
 							Terms &amp; Conditions
 						</a>
 					</div>
