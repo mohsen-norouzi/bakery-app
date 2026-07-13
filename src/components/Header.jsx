@@ -6,7 +6,7 @@ import Logo from "./Logo";
 const NAV_LINKS = [
 	{ label: "Cookies", to: "/cookies" },
 	{ label: "Gift Boxes", to: "#" },
-	{ label: "About", to: "#" },
+	{ label: "About", to: "/about" },
 	{ label: "FAQ", to: "#" },
 	{ label: "Contact", to: "#" },
 ];
