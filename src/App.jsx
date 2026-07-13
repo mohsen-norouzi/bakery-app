@@ -2,6 +2,8 @@ import "./App.css";
 import FeaturedCookies from "./components/FeaturedCookies";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
+import OurStory from "./components/OurStory";
+import WhyChooseUs from "./components/WhyChooseUs";
 
 function App() {
 	return (
@@ -18,6 +20,8 @@ function App() {
 			</div>
 
 			<FeaturedCookies />
+			<OurStory />
+			<WhyChooseUs />
 		</div>
 	);
 }
