@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
-import { WHATSAPP_ORDER_URL } from "../lib/whatsapp";
+import { useCart } from "../context/CartContext";
+import { buildWhatsAppOrderUrl } from "../lib/whatsapp";
 import Button from "./Button";
 import { BagIcon } from "./icons";
 import Logo from "./Logo";
@@ -12,6 +13,8 @@ const NAV_LINKS = [
 ];
 
 function Header() {
+	const { items, itemCount } = useCart();
+
 	return (
 		<header>
 			<div className="mx-auto grid max-w-7xl grid-cols-[auto_1fr_auto] items-center gap-6 px-6 py-6 lg:px-10">
@@ -40,9 +43,9 @@ function Header() {
 				</nav>
 
 				<div className="justify-self-end">
-					<Button variant="outline" to={WHATSAPP_ORDER_URL}>
+					<Button variant="outline" to={buildWhatsAppOrderUrl(items)}>
 						<BagIcon />
-						ORDER NOW
+						ORDER NOW{itemCount > 0 ? ` (${itemCount})` : ""}
 					</Button>
 				</div>
 			</div>

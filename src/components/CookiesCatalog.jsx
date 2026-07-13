@@ -6,44 +6,36 @@ const COOKIES = [
 	{
 		name: "Chocolate Chip",
 		description: "Classic, soft, and loaded with chocolate.",
-		price: "3.00",
 		badge: "Best Seller",
 	},
 	{
 		name: "Double Chocolate",
 		description: "Rich cocoa dough with double the chocolate.",
-		price: "3.20",
 		badge: "Popular",
 	},
 	{
 		name: "Oatmeal & Raisin",
 		description: "Chewy oatmeal cookies with sweet raisins.",
-		price: "3.00",
 	},
 	{
 		name: "White Chocolate Macadamia",
 		description: "Buttery cookies with white chocolate and macadamia.",
-		price: "3.20",
 	},
 	{
 		name: "Dark Chocolate Sea Salt",
 		description: "Deep dark chocolate with a touch of sea salt.",
-		price: "3.20",
 	},
 	{
 		name: "Hazelnut Chocolate",
 		description: "Roasted hazelnuts with rich chocolate chunks.",
-		price: "3.20",
 	},
 	{
 		name: "Peanut Butter",
 		description: "Soft, nutty, and perfectly satisfying.",
-		price: "3.00",
 	},
 	{
 		name: "Chocolate Pretzel",
 		description: "Sweet and salty with a satisfying crunch.",
-		price: "3.20",
 	},
 ];
 

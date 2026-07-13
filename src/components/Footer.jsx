@@ -1,4 +1,5 @@
-import { WHATSAPP_ORDER_URL } from "../lib/whatsapp";
+import { useCart } from "../context/CartContext";
+import { buildWhatsAppOrderUrl } from "../lib/whatsapp";
 import Button from "./Button";
 import FooterColumn from "./FooterColumn";
 import { ArrowRightIcon, HeartIcon } from "./icons";
@@ -12,14 +13,16 @@ const CONNECT_LINKS = [
 ];
 
 function Footer() {
+	const { items, itemCount } = useCart();
+
 	return (
 		<footer className="bg-cream">
 			<div className="mx-auto max-w-7xl px-6 py-16 lg:px-10">
 				<div className="flex flex-col gap-16 lg:flex-row lg:items-start lg:justify-between">
 					<div className="flex flex-col items-center gap-6">
 						<Logo stacked />
-						<Button to={WHATSAPP_ORDER_URL} className="text-center">
-							Order on WhatsApp
+						<Button to={buildWhatsAppOrderUrl(items)} className="text-center">
+							Order on WhatsApp{itemCount > 0 ? ` (${itemCount})` : ""}
 						</Button>
 					</div>
 
@@ -37,7 +40,7 @@ function Footer() {
 						/>
 						<FooterColumn title="CONNECT" links={CONNECT_LINKS} />
 
-						<div>
+						<div className="shrink-0">
 							<div className="flex items-center gap-2 text-xs font-medium tracking-[0.15em] text-brown/50">
 								<span>MADE WITH LOVE</span>
 								<HeartIcon className="h-3 w-3 text-brown" />

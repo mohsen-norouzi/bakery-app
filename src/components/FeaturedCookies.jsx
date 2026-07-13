@@ -6,22 +6,18 @@ const COOKIES = [
 	{
 		name: "Chocolate Chip",
 		description: "Classic, soft, and loaded with chocolate.",
-		price: "3.00",
 	},
 	{
 		name: "Double Chocolate",
 		description: "Rich cocoa dough with double the chocolate.",
-		price: "3.20",
 	},
 	{
 		name: "Oatmeal & Raisin",
 		description: "Chewy oatmeal cookies with sweet raisins.",
-		price: "3.00",
 	},
 	{
 		name: "White Chocolate Macadamia",
 		description: "Buttery cookies with white chocolate and macadamia.",
-		price: "3.20",
 	},
 ];
 

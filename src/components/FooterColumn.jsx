@@ -5,7 +5,7 @@ const linkClassName =
 
 function FooterColumn({ title, links }) {
 	return (
-		<div>
+		<div className="shrink-0">
 			<h3 className="text-xs font-medium tracking-[0.15em] text-brown/50">
 				{title}
 			</h3>

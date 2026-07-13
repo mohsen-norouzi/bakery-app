@@ -4,9 +4,12 @@ import CtaBanner from "../components/CtaBanner";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import ImagePlaceholder from "../components/ImagePlaceholder";
-import { WHATSAPP_ORDER_URL } from "../lib/whatsapp";
+import { useCart } from "../context/CartContext";
+import { buildWhatsAppOrderUrl } from "../lib/whatsapp";
 
 function Cookies() {
+	const { items, itemCount } = useCart();
+
 	return (
 		<>
 			<div className="relative isolate">
@@ -27,8 +30,8 @@ function Cookies() {
 				subtext="Send us a message and we'll help you find your perfect box of cookies."
 				primaryLabel="CONTACT US"
 				primaryTo="/contact"
-				secondaryLabel="ORDER NOW"
-				secondaryTo={WHATSAPP_ORDER_URL}
+				secondaryLabel={`ORDER NOW${itemCount > 0 ? ` (${itemCount})` : ""}`}
+				secondaryTo={buildWhatsAppOrderUrl(items)}
 				align="left"
 			/>
 			<Footer />

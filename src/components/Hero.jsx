@@ -42,11 +42,13 @@ function Hero() {
 					</p>
 
 					<div className="mt-10 flex flex-wrap items-center gap-4">
-						<Button variant="solid">
+						<Button variant="solid" to="/cookies">
 							VIEW COOKIES
 							<ArrowRightIcon className="h-4 w-4" />
 						</Button>
-						<Button variant="outline">HOW IT WORKS</Button>
+						<Button variant="outline" to="/contact">
+							HOW IT WORKS
+						</Button>
 					</div>
 				</div>
 			</div>
