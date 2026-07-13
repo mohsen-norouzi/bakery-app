@@ -33,7 +33,7 @@ function InstagramFeed() {
 								className="h-5 w-5 rounded-md"
 							/>
 							<span className="text-sm font-medium tracking-[0.05em]">
-								@BAVOBAKES.BCN
+								@BAVOBAKES
 							</span>
 						</div>
 					</div>

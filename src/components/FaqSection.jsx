@@ -1,12 +1,24 @@
 import FaqItem from "./FaqItem";
 import ImagePlaceholder from "./ImagePlaceholder";
-import { ArrowRightIcon, HeartIcon } from "./icons";
+import { HeartIcon } from "./icons";
 
 const FAQS = [
 	{
 		question: "How do I place an order?",
-		answer:
-			"Send us a message through Instagram DM or our contact form and we'll confirm your order and pickup or delivery details.",
+		answer: (
+			<>
+				Send us a message on WhatsApp with your order details and
+				we&apos;ll confirm your pickup or delivery time. Not on WhatsApp?
+				Email{" "}
+				<a
+					href="mailto:hello@bavobakes.com"
+					className="text-brown underline underline-offset-2"
+				>
+					hello@bavobakes.com
+				</a>{" "}
+				or DM us on Instagram.
+			</>
+		),
 	},
 	{
 		question: "How long do cookies stay fresh?",
@@ -55,14 +67,6 @@ function FaqSection() {
 							Everything you need to know about our cookies, orders, and
 							delivery.
 						</p>
-
-						<a
-							href="#"
-							className="mt-6 inline-flex items-center gap-2 border-b border-brown/40 pb-1 text-xs font-medium tracking-[0.15em] text-brown"
-						>
-							VIEW ALL FAQS
-							<ArrowRightIcon className="h-4 w-4" />
-						</a>
 
 						<ImagePlaceholder
 							width={400}

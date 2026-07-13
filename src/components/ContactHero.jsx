@@ -8,11 +8,11 @@ const CONTACT_DETAILS = [
 	},
 	{
 		label: "Call Us",
-		lines: ["+1 (555) 123-4567", "Mon – Fri, 9am – 6pm"],
+		lines: ["+34 666 61 10 91"],
 	},
 	{
 		label: "Our Kitchen",
-		lines: ["123 Sweet Lane", "Bakeville, CA 90210"],
+		lines: ["Les Corts, Barcelona"],
 	},
 	{
 		label: "Response Time",
