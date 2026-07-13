@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
+import FloatingOrderButton from "./components/FloatingOrderButton";
 import { CartProvider } from "./context/CartContext";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -17,6 +18,7 @@ function App() {
 						<Route path="/about" element={<About />} />
 						<Route path="/contact" element={<Contact />} />
 					</Routes>
+					<FloatingOrderButton />
 				</div>
 			</CartProvider>
 		</BrowserRouter>
