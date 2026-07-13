@@ -33,7 +33,12 @@ function Home() {
 			<DeliveryPickup />
 			<Testimonials />
 			<InstagramFeed />
-			<CtaBanner />
+			<CtaBanner
+				heading="Ready to enjoy our homemade cookies?"
+				subtext="Baked fresh to order and delivered with love."
+				primaryLabel="ORDER NOW"
+				secondaryLabel="VIEW GIFT BOXES"
+			/>
 			<Footer />
 		</>
 	);

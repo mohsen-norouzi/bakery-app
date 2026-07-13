@@ -2,7 +2,14 @@ import Button from "./Button";
 import ImagePlaceholder from "./ImagePlaceholder";
 import { ArrowRightIcon } from "./icons";
 
-function CtaBanner() {
+function CtaBanner({
+	heading,
+	highlight,
+	subtext,
+	primaryLabel,
+	secondaryLabel,
+	align = "right",
+}) {
 	return (
 		<section className="relative isolate overflow-hidden bg-sand">
 			<ImagePlaceholder
@@ -13,20 +20,26 @@ function CtaBanner() {
 			/>
 
 			<div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-20">
-				<div className="ml-auto max-w-lg lg:pr-16">
+				<div
+					className={`max-w-lg ${align === "right" ? "ml-auto lg:pr-16" : ""}`}
+				>
 					<h2 className="font-display text-3xl leading-tight text-brown sm:text-4xl">
-						Ready to enjoy our homemade cookies?
+						{heading}
+						{highlight && (
+							<>
+								<br />
+								<span className="italic">{highlight}</span>
+							</>
+						)}
 					</h2>
-					<p className="mt-3 text-brown/70">
-						Baked fresh to order and delivered with love.
-					</p>
+					<p className="mt-3 text-brown/70">{subtext}</p>
 
 					<div className="mt-8 flex flex-wrap items-center gap-4">
 						<Button variant="solid">
-							ORDER NOW
+							{primaryLabel}
 							<ArrowRightIcon className="h-4 w-4" />
 						</Button>
-						<Button variant="outline">VIEW GIFT BOXES</Button>
+						<Button variant="outline">{secondaryLabel}</Button>
 					</div>
 				</div>
 			</div>

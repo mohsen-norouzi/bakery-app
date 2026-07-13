@@ -1,5 +1,8 @@
+import ContactSection from "../components/ContactSection";
 import CookiesCatalog from "../components/CookiesCatalog";
 import CookiesHero from "../components/CookiesHero";
+import CtaBanner from "../components/CtaBanner";
+import FaqSection from "../components/FaqSection";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import ImagePlaceholder from "../components/ImagePlaceholder";
@@ -19,6 +22,16 @@ function Cookies() {
 			</div>
 
 			<CookiesCatalog />
+			<CtaBanner
+				heading="Baked fresh."
+				highlight="Just for you."
+				subtext="Place your order today and enjoy homemade cookies, baked with love."
+				primaryLabel="ORDER NOW"
+				secondaryLabel="SHOP GIFT BOXES"
+				align="left"
+			/>
+			<FaqSection />
+			<ContactSection />
 			<Footer />
 		</>
 	);
