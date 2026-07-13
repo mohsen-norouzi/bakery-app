@@ -1,9 +1,13 @@
 import FooterColumn from "./FooterColumn";
-import ImagePlaceholder from "./ImagePlaceholder";
 import Logo from "./Logo";
 import { ArrowRightIcon, HeartIcon } from "./icons";
 
-const SOCIAL_LINKS = ["Instagram", "TikTok", "WhatsApp", "Email"];
+const CONNECT_LINKS = [
+	{ label: "Instagram", to: "https://instagram.com/sweetfromhome.bcn" },
+	{ label: "TikTok", to: "https://tiktok.com/@sweetfromhome.bcn" },
+	{ label: "WhatsApp", to: "https://wa.me/15551234567" },
+	{ label: "Email", to: "mailto:hello@sweetfromhome.com" },
+];
 
 function Footer() {
 	return (
@@ -15,16 +19,16 @@ function Footer() {
 					<div className="grid grid-cols-2 gap-x-10 gap-y-12 sm:grid-cols-3 lg:flex lg:gap-20">
 						<FooterColumn
 							title="SHOP"
-							links={["All Cookies", "Gift Boxes", "Build Your Box"]}
+							links={[{ label: "All Cookies", to: "/cookies" }]}
 						/>
 						<FooterColumn
 							title="INFO"
-							links={["About Us", "How It Works", "Delivery & Pickup", "FAQ"]}
+							links={[
+								{ label: "About Us", to: "/about" },
+								{ label: "Contact", to: "/contact" },
+							]}
 						/>
-						<FooterColumn
-							title="HELP"
-							links={["Care & Storage", "Allergens", "Contact Us"]}
-						/>
+						<FooterColumn title="CONNECT" links={CONNECT_LINKS} />
 
 						<div>
 							<div className="flex items-center gap-2 text-xs font-medium tracking-[0.15em] text-brown/50">
@@ -61,19 +65,6 @@ function Footer() {
 									<ArrowRightIcon className="h-4 w-4" />
 								</button>
 							</form>
-
-							<div className="mt-5 flex gap-3">
-								{SOCIAL_LINKS.map((label) => (
-									<a key={label} href="#" aria-label={label}>
-										<ImagePlaceholder
-											width={20}
-											height={20}
-											label="20×20"
-											className="h-8 w-8 rounded-full"
-										/>
-									</a>
-								))}
-							</div>
 						</div>
 					</div>
 				</div>

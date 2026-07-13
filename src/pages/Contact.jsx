@@ -1,4 +1,6 @@
 import ContactHero from "../components/ContactHero";
+import ContactOrderInfo from "../components/ContactOrderInfo";
+import FaqSection from "../components/FaqSection";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import ImagePlaceholder from "../components/ImagePlaceholder";
@@ -17,6 +19,8 @@ function Contact() {
 				<ContactHero />
 			</div>
 
+			<ContactOrderInfo />
+			<FaqSection />
 			<Footer />
 		</>
 	);

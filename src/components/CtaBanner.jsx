@@ -8,6 +8,8 @@ function CtaBanner({
 	subtext,
 	primaryLabel,
 	secondaryLabel,
+	primaryTo,
+	secondaryTo,
 	align = "right",
 }) {
 	return (
@@ -35,11 +37,13 @@ function CtaBanner({
 					<p className="mt-3 text-brown/70">{subtext}</p>
 
 					<div className="mt-8 flex flex-wrap items-center gap-4">
-						<Button variant="solid">
+						<Button variant="solid" to={primaryTo}>
 							{primaryLabel}
 							<ArrowRightIcon className="h-4 w-4" />
 						</Button>
-						<Button variant="outline">{secondaryLabel}</Button>
+						<Button variant="outline" to={secondaryTo}>
+							{secondaryLabel}
+						</Button>
 					</div>
 				</div>
 			</div>

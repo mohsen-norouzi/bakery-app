@@ -4,10 +4,9 @@ import { BagIcon } from "./icons";
 import Logo from "./Logo";
 
 const NAV_LINKS = [
+	{ label: "Home", to: "/" },
 	{ label: "Cookies", to: "/cookies" },
-	{ label: "Gift Boxes", to: "#" },
 	{ label: "About", to: "/about" },
-	{ label: "FAQ", to: "#" },
 	{ label: "Contact", to: "/contact" },
 ];
 
@@ -23,6 +22,7 @@ function Header() {
 							<li key={link.label}>
 								<NavLink
 									to={link.to}
+									end
 									className={({ isActive }) =>
 										`text-xs font-medium tracking-[0.15em] text-brown/80 transition-colors hover:text-brown ${
 											isActive
