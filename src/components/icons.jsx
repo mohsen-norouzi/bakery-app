@@ -24,6 +24,7 @@ import {
 	SquaresFour,
 	Storefront,
 	WhatsappLogo,
+	X,
 } from "@phosphor-icons/react";
 
 export function BagIcon({ className = "h-4 w-4" }) {
@@ -56,6 +57,10 @@ export function GridIcon({ className = "h-4 w-4" }) {
 
 export function ListIcon({ className = "h-4 w-4" }) {
 	return <List className={className} weight="regular" aria-hidden="true" />;
+}
+
+export function CloseIcon({ className = "h-4 w-4" }) {
+	return <X className={className} weight="regular" aria-hidden="true" />;
 }
 
 export function ArrowDownIcon({ className = "h-4 w-4" }) {

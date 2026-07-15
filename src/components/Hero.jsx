@@ -4,8 +4,8 @@ import { ArrowDownIcon, ArrowRightIcon } from "./icons";
 function Hero() {
 	return (
 		<section>
-			<div className="relative mx-auto max-w-7xl px-6 py-12 lg:px-10 lg:py-20">
-				<div className="absolute top-6 right-6 w-20 sm:w-24 lg:top-10 lg:right-10 lg:w-28">
+			<div className="relative mx-auto max-w-7xl px-6 py-10 sm:py-12 lg:px-10 lg:py-20">
+				<div className="absolute top-4 right-4 hidden w-20 sm:block sm:w-24 lg:top-10 lg:right-10 lg:w-28">
 					<img
 						src="/img/made-with-love.png"
 						alt="Made with love in Barcelona"
@@ -25,7 +25,7 @@ function Hero() {
 						<img src="/img/heart-filled.png" alt="" aria-hidden="true" className="h-3.5 w-3.5" />
 					</div>
 
-					<h1 className="mt-6 font-display text-5xl leading-[1.15] text-brown sm:text-6xl">
+					<h1 className="mt-6 font-display text-4xl leading-[1.15] text-brown sm:text-5xl lg:text-6xl">
 						Homemade Cookies,
 						<br />
 						<span className="text-tan italic">Made with Love</span>
@@ -51,7 +51,7 @@ function Hero() {
 					</div>
 				</div>
 			</div>
-			<div className="absolute bottom-6 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 text-xs font-medium tracking-[0.2em] text-brown/60 lg:bottom-10">
+			<div className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-xs font-medium tracking-[0.2em] text-brown/60 sm:flex lg:bottom-10">
 				<span>SCROLL</span>
 				<span>DOWN</span>
 				<ArrowDownIcon className="h-4 w-4" />

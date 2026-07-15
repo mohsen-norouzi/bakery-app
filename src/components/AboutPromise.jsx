@@ -22,9 +22,9 @@ const PROMISES = [
 
 function AboutPromise() {
 	return (
-		<section className="bg-sand">
+		<section className="overflow-x-hidden bg-sand">
 			<div className="grid lg:grid-cols-2">
-				<div className="flex flex-col justify-center px-6 py-16 lg:px-16 lg:py-24">
+				<div className="min-w-0 flex flex-col justify-center px-6 py-16 lg:px-16 lg:py-24">
 					<div className="flex items-center gap-2 text-xs font-medium tracking-[0.2em] text-brown/70">
 						<span>OUR PROMISE TO YOU</span>
 						<HeartIcon className="h-3.5 w-3.5 text-brown" />
@@ -57,7 +57,7 @@ function AboutPromise() {
 					width={1200}
 					height={1000}
 					label="1200×1000"
-					className="h-full min-h-[420px] w-full"
+					className="min-w-0 w-full aspect-6/5 lg:h-full lg:min-h-[420px] lg:aspect-auto"
 				/>
 			</div>
 		</section>

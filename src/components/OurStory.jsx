@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { ArrowRightIcon, HeartIcon } from "./icons";
 
 function OurStory() {
@@ -7,7 +8,11 @@ function OurStory() {
 				src="/img/our-story.png"
 				alt=""
 				aria-hidden="true"
-				className="absolute inset-0 -z-10 h-full w-full object-cover"
+				className="absolute inset-0 -z-20 h-full w-full object-cover object-[center_100%] sm:object-left lg:object-[58%_center]"
+			/>
+			<div
+				aria-hidden="true"
+				className="absolute inset-0 -z-10 bg-gradient-to-r from-sand from-45% via-sand/90 via-60% to-sand/35 sm:from-sand/95 sm:via-sand/75 sm:to-sand/20 lg:from-sand/70 lg:via-sand/30 lg:to-transparent"
 			/>
 
 			<div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
@@ -28,13 +33,13 @@ function OurStory() {
 						simple goal: to bake cookies that make people smile.
 					</p>
 
-					<a
-						href="#"
+					<Link
+						to="/about"
 						className="mt-8 inline-flex items-center gap-2 border-b border-brown/40 pb-1 text-xs font-medium tracking-[0.15em] text-brown"
 					>
 						READ OUR STORY
 						<ArrowRightIcon className="h-4 w-4" />
-					</a>
+					</Link>
 				</div>
 			</div>
 		</section>
