@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import FooterColumn from "./FooterColumn";
 import { HeartIcon } from "./icons";
 import Logo from "./Logo";
@@ -61,12 +62,15 @@ function Footer() {
 						</a>
 					</p>
 					<div className="flex gap-6">
-						<a href="/contact" className="transition-colors hover:text-brown">
+						<Link
+							to="/privacy"
+							className="transition-colors hover:text-brown"
+						>
 							Privacy Policy
-						</a>
-						<a href="/contact" className="transition-colors hover:text-brown">
+						</Link>
+						<Link to="/terms" className="transition-colors hover:text-brown">
 							Terms &amp; Conditions
-						</a>
+						</Link>
 					</div>
 				</div>
 			</div>
