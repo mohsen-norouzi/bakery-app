@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { getBakeryJsonLd, getPageSeo, SITE } from "../lib/seo";
+import { getBakeryJsonLd, getPageSeo, SITE, SITE_URL } from "../lib/seo";
 
 function upsertMeta(name, content, { property = false } = {}) {
 	const attr = property ? "property" : "name";
@@ -45,8 +45,6 @@ function PageMeta() {
 
 	useEffect(() => {
 		const seo = getPageSeo(pathname);
-		const origin =
-			typeof window !== "undefined" ? window.location.origin : seo.canonical;
 
 		document.title = seo.title;
 
@@ -56,6 +54,13 @@ function PageMeta() {
 		upsertMeta("og:type", "website", { property: true });
 		upsertMeta("og:url", seo.canonical, { property: true });
 		upsertMeta("og:image", seo.ogImage, { property: true });
+		upsertMeta("og:image:secure_url", seo.ogImage, { property: true });
+		upsertMeta("og:image:type", "image/jpeg", { property: true });
+		upsertMeta("og:image:width", "1200", { property: true });
+		upsertMeta("og:image:height", "675", { property: true });
+		upsertMeta("og:image:alt", `${SITE.name} — ${SITE.tagline}`, {
+			property: true,
+		});
 		upsertMeta("og:site_name", SITE.name, { property: true });
 		upsertMeta("og:locale", `${SITE.locale}_ES`, { property: true });
 		upsertMeta("twitter:card", "summary_large_image");
@@ -64,7 +69,7 @@ function PageMeta() {
 		upsertMeta("twitter:image", seo.ogImage);
 
 		upsertLink("canonical", seo.canonical);
-		upsertJsonLd("bakery-jsonld", getBakeryJsonLd(origin));
+		upsertJsonLd("bakery-jsonld", getBakeryJsonLd(SITE_URL));
 	}, [pathname]);
 
 	return null;

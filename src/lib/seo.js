@@ -1,4 +1,4 @@
-export const SITE_URL = "https://bavobakes.com";
+export const SITE_URL = "https://www.bavobakes.com";
 
 export const SITE = {
 	name: "Bavo Bakes",
@@ -7,7 +7,7 @@ export const SITE = {
 		"Handmade cookies baked fresh to order in Barcelona. Small batches, real ingredients, beautifully wrapped. Delivery and pickup available.",
 	locale: "en",
 	themeColor: "#522c09",
-	ogImage: "/img/hero-1.png",
+	ogImage: "/img/og-image.jpg",
 	email: "hello@bavobakes.com",
 	phone: "+34666611091",
 	city: "Barcelona",
@@ -39,14 +39,12 @@ const PAGES = {
 
 export function getPageSeo(pathname) {
 	const page = PAGES[pathname] ?? PAGES["/"];
-	const origin =
-		typeof window !== "undefined" ? window.location.origin : SITE_URL;
 
 	return {
 		title: page.title,
 		description: page.description,
-		canonical: `${origin}${pathname === "/" ? "" : pathname}`,
-		ogImage: `${origin}${SITE.ogImage}`,
+		canonical: `${SITE_URL}${pathname === "/" ? "" : pathname}`,
+		ogImage: `${SITE_URL}${SITE.ogImage}`,
 	};
 }
 
