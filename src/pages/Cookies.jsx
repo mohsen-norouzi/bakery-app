@@ -3,6 +3,7 @@ import CookiesHero from "../components/CookiesHero";
 import CtaBanner from "../components/CtaBanner";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import HeroBackground from "../components/HeroBackground";
 import { useCart } from "../context/CartContext";
 import { buildWhatsAppOrderUrl } from "../lib/whatsapp";
 
@@ -11,13 +12,8 @@ function Cookies() {
 
 	return (
 		<>
-			<div className="relative isolate">
-				<img
-					src="/img/cookies-bg.png"
-					alt=""
-					aria-hidden="true"
-					className="absolute inset-0 -z-10 h-full w-full object-cover object-right"
-				/>
+			<div className="relative isolate overflow-hidden bg-cream">
+				<HeroBackground src="/img/cookies-bg.png" align="right" />
 				<Header />
 				<CookiesHero />
 			</div>

@@ -7,7 +7,7 @@ function OurStory() {
 				src="/img/our-story.png"
 				alt=""
 				aria-hidden="true"
-				className="absolute inset-0 -z-10 h-full w-full object-cover"
+				className="absolute inset-0 -z-10 hidden h-full w-full object-cover md:block"
 			/>
 
 			<div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
