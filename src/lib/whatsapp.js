@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = "666611091";
+const WHATSAPP_NUMBER = "34666611091";
 
 export function buildWhatsAppOrderUrl(items = []) {
 	let message = "Hi Bavo! I'd like to place an order";

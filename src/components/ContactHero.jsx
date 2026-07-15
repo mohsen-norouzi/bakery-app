@@ -1,10 +1,11 @@
+import { buildWhatsAppOrderUrl } from "../lib/whatsapp";
 import RevealStagger from "./RevealStagger";
 import {
 	ClockIcon,
 	HeartIcon,
 	MailIcon,
 	MapPinIcon,
-	PhoneIcon,
+	WhatsappIcon,
 } from "./icons";
 
 const CONTACT_DETAILS = [
@@ -15,10 +16,11 @@ const CONTACT_DETAILS = [
 		icon: MailIcon,
 	},
 	{
-		label: "Call Us",
+		label: "WhatsApp",
 		lines: ["+34 666 61 10 91"],
-		href: "tel:+34666611091",
-		icon: PhoneIcon,
+		href: buildWhatsAppOrderUrl(),
+		external: true,
+		icon: WhatsappIcon,
 	},
 	{
 		label: "Our Kitchen",
@@ -83,6 +85,9 @@ function ContactHero() {
 								<a
 									key={detail.label}
 									href={detail.href}
+									{...(detail.external
+										? { target: "_blank", rel: "noopener noreferrer" }
+										: {})}
 									className="transition-opacity hover:opacity-80"
 								>
 									{body}

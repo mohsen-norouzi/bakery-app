@@ -5,7 +5,7 @@ import Logo from "./Logo";
 
 const CONNECT_LINKS = [
 	{ label: "Instagram", to: "https://instagram.com/bavobakes" },
-	{ label: "WhatsApp", to: "https://wa.me/666611091" },
+	{ label: "WhatsApp", to: "https://wa.me/34666611091" },
 	{ label: "Email", to: "mailto:hello@bavobakes.com" },
 ];
 
