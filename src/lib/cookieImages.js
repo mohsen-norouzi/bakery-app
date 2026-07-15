@@ -19,5 +19,5 @@ function slugifyCookieName(name) {
 
 export function getCookieImageSrc(name) {
 	const filename = COOKIE_IMAGES[name] ?? slugifyCookieName(name);
-	return `/img/cookies/${filename}.png`;
+	return `/img/cookies/${filename}.webp`;
 }

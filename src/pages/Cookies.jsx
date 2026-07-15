@@ -12,7 +12,7 @@ function Cookies() {
 
 	return (
 		<>
-			<PageHero src="/img/cookies-bg.png" align="right">
+			<PageHero src="/img/cookies-bg.webp" align="right">
 				<CookiesHero />
 			</PageHero>
 

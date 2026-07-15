@@ -10,7 +10,7 @@ function CtaBanner({
 	primaryTo,
 	secondaryTo,
 	align = "right",
-	backgroundSrc = "/img/cta-bg.png",
+	backgroundSrc = "/img/cta-bg.webp",
 }) {
 	const textOnLeft = align === "left";
 

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import RevealStagger from "./RevealStagger";
 import { ArrowRightIcon, HeartIcon } from "./icons";
 
@@ -22,13 +23,13 @@ function CookiesHero() {
 						ingredients and lots of love.
 					</p>
 
-					<a
-						href="#"
+					<Link
+						to="/contact"
 						className="mt-8 inline-flex items-center gap-2 self-start border-b border-brown/40 pb-1 text-xs font-medium tracking-[0.15em] text-brown"
 					>
 						HOW IT WORKS
 						<ArrowRightIcon className="h-4 w-4" />
-					</a>
+					</Link>
 				</RevealStagger>
 			</div>
 		</section>

@@ -3,11 +3,11 @@ import RevealStagger from "./RevealStagger";
 import { ArrowRightIcon, HeartIcon, InstagramIcon } from "./icons";
 
 const PHOTOS = [
-	{ src: "/img/cookie-gallery/stack.jpg", alt: "Stack of freshly baked cookies" },
-	{ src: "/img/cookie-gallery/gift.jpg", alt: "Cookies wrapped as a gift" },
-	{ src: "/img/cookie-gallery/box.jpg", alt: "Box of assorted cookies" },
-	{ src: "/img/cookie-gallery/bag.jpg", alt: "Cookies in a paper bag" },
-	{ src: "/img/cookie-gallery/plate.jpg", alt: "Cookie served on a plate" },
+	{ src: "/img/cookie-gallery/stack.webp", alt: "Stack of freshly baked cookies" },
+	{ src: "/img/cookie-gallery/gift.webp", alt: "Cookies wrapped as a gift" },
+	{ src: "/img/cookie-gallery/box.webp", alt: "Box of assorted cookies" },
+	{ src: "/img/cookie-gallery/bag.webp", alt: "Cookies in a paper bag" },
+	{ src: "/img/cookie-gallery/plate.webp", alt: "Cookie served on a plate" },
 ];
 
 function InstagramFeed() {

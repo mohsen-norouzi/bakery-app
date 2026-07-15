@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import FloatingOrderButton from "./components/FloatingOrderButton";
+import Header from "./components/Header";
 import PageEnter from "./components/PageEnter";
 import PageMeta from "./components/PageMeta";
 import { CartProvider } from "./context/CartContext";
@@ -8,6 +9,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Cookies from "./pages/Cookies";
 import Home from "./pages/Home";
+import NotFound from "./pages/NotFound";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 
@@ -17,6 +19,7 @@ function App() {
 			<PageMeta />
 			<CartProvider>
 				<div className="bg-cream font-sans">
+					<Header />
 					<PageEnter>
 						<Routes>
 							<Route path="/" element={<Home />} />
@@ -25,6 +28,7 @@ function App() {
 							<Route path="/contact" element={<Contact />} />
 							<Route path="/privacy" element={<Privacy />} />
 							<Route path="/terms" element={<Terms />} />
+							<Route path="*" element={<NotFound />} />
 						</Routes>
 					</PageEnter>
 					<FloatingOrderButton />

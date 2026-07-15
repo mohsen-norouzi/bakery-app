@@ -1,6 +1,12 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { getBakeryJsonLd, getPageSeo, SITE, SITE_URL } from "../lib/seo";
+import {
+	getBakeryJsonLd,
+	getCookieProductsJsonLd,
+	getPageSeo,
+	SITE,
+	SITE_URL,
+} from "../lib/seo";
 
 function upsertMeta(name, content, { property = false } = {}) {
 	const attr = property ? "property" : "name";
@@ -40,6 +46,10 @@ function upsertJsonLd(id, data) {
 	element.textContent = JSON.stringify(data);
 }
 
+function removeJsonLd(id) {
+	document.getElementById(id)?.remove();
+}
+
 function PageMeta() {
 	const { pathname } = useLocation();
 
@@ -49,6 +59,7 @@ function PageMeta() {
 		document.title = seo.title;
 
 		upsertMeta("description", seo.description);
+		upsertMeta("robots", seo.robots ?? "index, follow");
 		upsertMeta("og:title", seo.title, { property: true });
 		upsertMeta("og:description", seo.description, { property: true });
 		upsertMeta("og:type", "website", { property: true });
@@ -70,6 +81,12 @@ function PageMeta() {
 
 		upsertLink("canonical", seo.canonical);
 		upsertJsonLd("bakery-jsonld", getBakeryJsonLd(SITE_URL));
+
+		if (pathname === "/cookies") {
+			upsertJsonLd("products-jsonld", getCookieProductsJsonLd(SITE_URL));
+		} else {
+			removeJsonLd("products-jsonld");
+		}
 	}, [pathname]);
 
 	return null;

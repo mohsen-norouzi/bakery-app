@@ -8,7 +8,7 @@ import Reveal from "../components/Reveal";
 function Contact() {
 	return (
 		<>
-			<PageHero src="/img/contact-bg.png" tall>
+			<PageHero src="/img/contact-bg.webp" tall>
 				<ContactHero />
 			</PageHero>
 

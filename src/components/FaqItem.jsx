@@ -1,12 +1,12 @@
 import { useId, useState } from "react";
 import { PlusIcon } from "./icons";
 
-function FaqItem({ question, answer }) {
+function FaqItem({ question, answer, showDivider = true }) {
 	const [isOpen, setIsOpen] = useState(false);
 	const panelId = useId();
 
 	return (
-		<div className="border-b border-brown/10 py-5 last:border-0">
+		<div className="py-5">
 			<button
 				type="button"
 				onClick={() => setIsOpen((open) => !open)}
@@ -34,6 +34,17 @@ function FaqItem({ question, answer }) {
 					<p className="pt-3 text-sm text-brown/70">{answer}</p>
 				</div>
 			</div>
+
+			{showDivider && (
+				<div
+					aria-hidden="true"
+					className="mt-5 h-px w-full"
+					style={{
+						backgroundImage:
+							"repeating-linear-gradient(to right, rgba(82, 44, 9, 0.45) 0 6px, transparent 6px 12px)",
+					}}
+				/>
+			)}
 		</div>
 	);
 }
