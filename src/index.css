@@ -143,6 +143,11 @@
 }
 
 @layer base {
+	html,
+	body {
+		overflow-x: hidden;
+	}
+
 	button:not(:disabled),
 	[role="button"]:not([aria-disabled="true"]) {
 		cursor: pointer;

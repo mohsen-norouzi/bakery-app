@@ -32,8 +32,8 @@ function AboutHero() {
 					</p>
 
 					<div className="mt-8">
-						<Button variant="solid">
-							OUR STORY
+						<Button variant="solid" to="/cookies">
+							VIEW COOKIES
 							<ArrowRightIcon className="h-4 w-4" />
 						</Button>
 					</div>
