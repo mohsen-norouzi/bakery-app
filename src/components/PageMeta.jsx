@@ -55,9 +55,9 @@ function PageMeta() {
 		upsertMeta("og:url", seo.canonical, { property: true });
 		upsertMeta("og:image", seo.ogImage, { property: true });
 		upsertMeta("og:image:secure_url", seo.ogImage, { property: true });
-		upsertMeta("og:image:type", "image/jpeg", { property: true });
+		upsertMeta("og:image:type", "image/png", { property: true });
 		upsertMeta("og:image:width", "1200", { property: true });
-		upsertMeta("og:image:height", "675", { property: true });
+		upsertMeta("og:image:height", "630", { property: true });
 		upsertMeta("og:image:alt", `${SITE.name} — ${SITE.tagline}`, {
 			property: true,
 		});

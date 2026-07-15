@@ -7,7 +7,7 @@ export const SITE = {
 		"Handmade cookies baked fresh to order in Barcelona. Small batches, real ingredients, beautifully wrapped. Delivery and pickup available.",
 	locale: "en",
 	themeColor: "#522c09",
-	ogImage: "/img/og-image.jpg",
+	ogImage: "/img/og-image.png",
 	email: "hello@bavobakes.com",
 	phone: "+34666611091",
 	city: "Barcelona",
