@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-const RANGE = 10;
+const RANGE = 56;
 
 function ParallaxMap({ src, alt, width, height, trackRef }) {
 	const fallbackRef = useRef(null);
@@ -52,7 +52,7 @@ function ParallaxMap({ src, alt, width, height, trackRef }) {
 				draggable={false}
 				className="absolute inset-0 h-full w-full object-cover will-change-transform"
 				style={{
-					transform: `scale(1.32) translate(${offset.x}px, ${offset.y}px)`,
+					transform: `scale(1.55) translate(${offset.x}px, ${offset.y}px)`,
 					transition: "transform 900ms cubic-bezier(0.22, 1, 0.36, 1)",
 				}}
 			/>
