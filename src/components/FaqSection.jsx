@@ -1,5 +1,6 @@
 import FaqItem from "./FaqItem";
-import ImagePlaceholder from "./ImagePlaceholder";
+import Reveal from "./Reveal";
+import RevealStagger from "./RevealStagger";
 import { HeartIcon } from "./icons";
 
 const FAQS = [
@@ -51,36 +52,43 @@ function FaqSection() {
 		<section className="bg-cream">
 			<div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
 				<div className="grid gap-12 lg:grid-cols-[360px_1fr] lg:gap-10">
-					<div>
-						<div className="flex items-center gap-2 text-xs font-medium tracking-[0.2em] text-brown/70">
-							<span>FAQ</span>
-							<HeartIcon className="h-3.5 w-3.5 text-brown" />
+					<Reveal>
+						<div>
+							<div className="flex items-center gap-2 text-xs font-medium tracking-[0.2em] text-brown/70">
+								<span>FAQ</span>
+								<HeartIcon className="h-3.5 w-3.5 text-brown" />
+							</div>
+
+							<h2 className="mt-4 font-display text-4xl leading-tight text-brown">
+								Frequently asked
+								<br />
+								<span className="italic">questions.</span>
+							</h2>
+
+							<p className="mt-4 text-brown/70">
+								Everything you need to know about our cookies, orders, and
+								delivery.
+							</p>
+
+							<img
+								src="/img/faq.png"
+								alt="Bavo Bakes cookie box with a Made with love note"
+								width={800}
+								height={400}
+								className="mt-10 hidden w-full max-w-sm object-contain lg:block"
+							/>
 						</div>
+					</Reveal>
 
-						<h2 className="mt-4 font-display text-4xl leading-tight text-brown">
-							Frequently asked
-							<br />
-							<span className="italic">questions.</span>
-						</h2>
-
-						<p className="mt-4 text-brown/70">
-							Everything you need to know about our cookies, orders, and
-							delivery.
-						</p>
-
-						<ImagePlaceholder
-							width={400}
-							height={140}
-							label="400×140 (mascot + heart)"
-							className="mt-10 hidden w-full max-w-sm lg:block"
-						/>
-					</div>
-
-					<div className="rounded-2xl bg-sand p-8">
+					<RevealStagger
+						className="rounded-2xl bg-sand p-8"
+						stagger={100}
+						delay={120}
+					>
 						{FAQS.map((faq) => (
 							<FaqItem key={faq.question} {...faq} />
 						))}
-					</div>
+					</RevealStagger>
 				</div>
 			</div>
 		</section>

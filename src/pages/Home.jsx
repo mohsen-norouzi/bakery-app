@@ -6,6 +6,7 @@ import Hero from "../components/Hero";
 import HeroBackground from "../components/HeroBackground";
 import InstagramFeed from "../components/InstagramFeed";
 import OurStory from "../components/OurStory";
+import Reveal from "../components/Reveal";
 
 function Home() {
 	return (
@@ -17,10 +18,14 @@ function Home() {
 			</div>
 
 			<FeaturedCookies />
-			<OurStory />
+			<Reveal>
+				<OurStory />
+			</Reveal>
 			<DeliveryPickup />
 			<InstagramFeed />
-			<Footer />
+			<Reveal>
+				<Footer />
+			</Reveal>
 		</>
 	);
 }

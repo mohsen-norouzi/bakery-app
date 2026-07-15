@@ -1,10 +1,10 @@
+import { Link } from "react-router-dom";
 import FooterColumn from "./FooterColumn";
 import { HeartIcon } from "./icons";
 import Logo from "./Logo";
 
 const CONNECT_LINKS = [
 	{ label: "Instagram", to: "https://instagram.com/bavobakes" },
-	{ label: "TikTok", to: "https://tiktok.com/@bavobakes.bcn" },
 	{ label: "WhatsApp", to: "https://wa.me/666611091" },
 	{ label: "Email", to: "mailto:hello@bavobakes.com" },
 ];
@@ -13,7 +13,7 @@ function Footer() {
 	return (
 		<footer className="bg-cream">
 			<div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-20">
-				<div className="grid gap-12 lg:grid-cols-[minmax(0,220px)_1fr] lg:items-start lg:gap-16">
+				<div className="grid gap-12 lg:grid-cols-[auto_1fr] lg:items-start lg:gap-16">
 					<div className="flex justify-center lg:justify-start">
 						<Logo stacked large />
 					</div>
@@ -61,12 +61,15 @@ function Footer() {
 						</a>
 					</p>
 					<div className="flex gap-6">
-						<a href="/contact" className="transition-colors hover:text-brown">
+						<Link
+							to="/privacy"
+							className="transition-colors hover:text-brown"
+						>
 							Privacy Policy
-						</a>
-						<a href="/contact" className="transition-colors hover:text-brown">
+						</Link>
+						<Link to="/terms" className="transition-colors hover:text-brown">
 							Terms &amp; Conditions
-						</a>
+						</Link>
 					</div>
 				</div>
 			</div>

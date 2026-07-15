@@ -136,14 +136,27 @@ function Header() {
 							</button>
 						</div>
 
-						<p className="max-w-xs font-display text-2xl leading-snug text-brown">
+						<p
+							className={`max-w-xs font-display text-2xl leading-snug text-brown ${
+								menuClosing ? "" : "motion-safe:animate-menu-item-in"
+							}`}
+							style={menuClosing ? undefined : { animationDelay: "60ms" }}
+						>
 							Homemade cookies,
 							<span className="text-tan italic"> made with love.</span>
 						</p>
 
 						<ul className="mt-8 divide-y divide-brown/10 border-y border-brown/10">
-							{NAV_LINKS.map((link) => (
-								<li key={link.label}>
+							{NAV_LINKS.map((link, index) => (
+								<li
+									key={link.label}
+									className={menuClosing ? "" : "motion-safe:animate-menu-item-in"}
+									style={
+										menuClosing
+											? undefined
+											: { animationDelay: `${120 + index * 70}ms`, opacity: 0 }
+									}
+								>
 									<NavLink
 										to={link.to}
 										end
@@ -156,7 +169,16 @@ function Header() {
 							))}
 						</ul>
 
-						<div className="mt-auto pt-10">
+						<div
+							className={`mt-auto pt-10 ${
+								menuClosing ? "" : "motion-safe:animate-menu-item-in"
+							}`}
+							style={
+								menuClosing
+									? undefined
+									: { animationDelay: `${120 + NAV_LINKS.length * 70}ms`, opacity: 0 }
+							}
+						>
 							<Button
 								variant="solid"
 								to={buildWhatsAppOrderUrl(items)}
@@ -174,7 +196,7 @@ function Header() {
 								className="mt-6 inline-flex items-center gap-2 text-xs font-medium tracking-[0.15em] text-brown/70 transition-colors hover:text-brown"
 							>
 								<InstagramIcon className="h-4 w-4" />
-								@BAVOBAKES
+								BAVOBAKES
 							</a>
 						</div>
 					</nav>

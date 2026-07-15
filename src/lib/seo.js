@@ -35,6 +35,16 @@ const PAGES = {
 		description:
 			"Order cookies on WhatsApp, ask about delivery across Barcelona, or get in touch. We're happy to help you find your perfect box.",
 	},
+	"/privacy": {
+		title: "Privacy Policy | Bavo Bakes",
+		description:
+			"How Bavo Bakes collects and uses personal information when you contact us or order homemade cookies in Barcelona.",
+	},
+	"/terms": {
+		title: "Terms & Conditions | Bavo Bakes",
+		description:
+			"Order, delivery, pickup, and product terms for Bavo Bakes homemade cookies in Barcelona.",
+	},
 };
 
 export function getPageSeo(pathname) {
@@ -65,7 +75,6 @@ export function getBakeryJsonLd(origin = SITE_URL) {
 		},
 		sameAs: [
 			"https://instagram.com/bavobakes",
-			"https://tiktok.com/@bavobakes.bcn",
 			`https://wa.me/${SITE.phone.replace(/\D/g, "")}`,
 		],
 	};

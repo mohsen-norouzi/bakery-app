@@ -1,14 +1,42 @@
+import { useLayoutEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
 function Logo({ stacked = false, large = false, compact = false, onNavigate }) {
-	const iconSize = large ? "h-20" : compact ? "h-8" : "h-10";
-	const titleSize = large ? "text-4xl" : compact ? "text-lg" : "text-2xl";
+	const titleRef = useRef(null);
+	const taglineRef = useRef(null);
+
+	const iconSize = large ? "h-12" : compact ? "h-8" : "h-10";
+	const titleSize = large ? "text-2xl" : compact ? "text-xl" : "text-3xl";
+	const taglineClass = large
+		? "mt-1.5 flex text-[10px] tracking-[0.08em]"
+		: compact && !stacked
+			? "mt-1 hidden text-[10px] tracking-[0.08em] sm:flex"
+			: "mt-1.5 flex text-[10px] tracking-[0.08em]";
+
+	useLayoutEffect(() => {
+		const sync = () => {
+			const title = titleRef.current;
+			const tagline = taglineRef.current;
+			if (!title || !tagline) return;
+
+			tagline.style.width = `${title.getBoundingClientRect().width}px`;
+		};
+
+		sync();
+		document.fonts?.ready?.then(sync);
+
+		const observer = new ResizeObserver(sync);
+		if (titleRef.current) observer.observe(titleRef.current);
+		return () => observer.disconnect();
+	}, [compact, large, titleSize]);
 
 	return (
 		<Link
 			to="/"
 			onClick={onNavigate}
-			className={`flex min-w-0 items-center ${compact ? "gap-2" : "gap-3"} ${stacked ? "flex-col gap-4" : ""}`}
+			className={`flex min-w-0 items-center ${
+				stacked ? "flex-col gap-3" : compact ? "gap-2" : "gap-3"
+			}`}
 		>
 			<img
 				src="/img/logo.png"
@@ -16,14 +44,18 @@ function Logo({ stacked = false, large = false, compact = false, onNavigate }) {
 				aria-hidden="true"
 				className={`w-auto shrink-0 ${iconSize}`}
 			/>
-			<span className={`flex min-w-0 flex-col leading-none ${stacked ? "items-center text-center" : ""}`}>
+			<span
+				className={`inline-flex flex-col leading-none ${stacked ? "mx-auto items-center" : "items-start"}`}
+			>
 				<span
-					className={`truncate font-display text-brown ${titleSize}`}
+					ref={titleRef}
+					className={`whitespace-nowrap font-logo tracking-[0.1em] text-brown ${titleSize}`}
 				>
-					Bavo <span className="text-brown/50">Bakes</span>
+					Bavo <span className="text-tan">Bakes</span>
 				</span>
 				<span
-					className={`mt-2 flex items-center gap-2 text-brown/60 uppercase ${large ? "text-xs tracking-[0.2em]" : compact ? "mt-1 hidden text-[10px] sm:flex sm:justify-between sm:w-full" : "mt-1.5 w-full justify-between text-[10px]"}`}
+					ref={taglineRef}
+					className={`justify-between text-brown/60 uppercase ${taglineClass} ${compact && !stacked ? "" : "flex"}`}
 				>
 					<span>Homemade</span>
 					<span aria-hidden="true">•</span>

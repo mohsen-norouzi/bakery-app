@@ -3,19 +3,19 @@ import { ArrowRightIcon, HeartIcon } from "./icons";
 
 function OurStory() {
 	return (
-		<section className="relative isolate overflow-hidden bg-sand">
+		<section className="relative overflow-hidden bg-sand">
 			<img
 				src="/img/our-story.png"
 				alt=""
 				aria-hidden="true"
-				className="absolute inset-0 -z-20 h-full w-full object-cover object-[center_100%] sm:object-left lg:object-[58%_center]"
+				className="absolute inset-0 hidden h-full w-full object-cover object-left sm:block lg:object-[58%_center]"
 			/>
 			<div
 				aria-hidden="true"
-				className="absolute inset-0 -z-10 bg-gradient-to-r from-sand from-45% via-sand/90 via-60% to-sand/35 sm:from-sand/95 sm:via-sand/75 sm:to-sand/20 lg:from-sand/70 lg:via-sand/30 lg:to-transparent"
+				className="absolute inset-0 hidden bg-gradient-to-r from-sand/95 via-sand/75 to-sand/20 sm:block lg:from-sand/70 lg:via-sand/30 lg:to-transparent"
 			/>
 
-			<div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
+			<div className="relative mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
 				<div className="max-w-md">
 					<div className="flex items-center gap-2 text-xs font-medium tracking-[0.2em] text-brown/70">
 						<span>OUR STORY</span>

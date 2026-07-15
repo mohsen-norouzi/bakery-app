@@ -1,3 +1,5 @@
+import Reveal from "./Reveal";
+import RevealStagger from "./RevealStagger";
 import { CookingPotIcon, GiftIcon, HeartIcon, LeafIcon } from "./icons";
 
 const FEATURES = [
@@ -31,18 +33,24 @@ function AboutFeatures() {
 	return (
 		<section className="bg-cream">
 			<div className="mx-auto max-w-7xl px-6 py-16 text-center lg:px-10 lg:py-24">
-				<div className="flex items-center justify-center gap-2 text-xs font-medium tracking-[0.2em] text-brown/70">
-					<span>WHAT MAKES US SPECIAL</span>
-					<HeartIcon className="h-3.5 w-3.5 text-brown" />
-				</div>
+				<Reveal>
+					<div className="flex items-center justify-center gap-2 text-xs font-medium tracking-[0.2em] text-brown/70">
+						<span>WHAT MAKES US SPECIAL</span>
+						<HeartIcon className="h-3.5 w-3.5 text-brown" />
+					</div>
 
-				<h2 className="mx-auto mt-4 max-w-2xl font-display text-4xl leading-tight text-brown">
-					Quality ingredients. Thoughtful baking.
-					<br />
-					<span className="italic">Meaningful moments.</span>
-				</h2>
+					<h2 className="mx-auto mt-4 max-w-2xl font-display text-4xl leading-tight text-brown">
+						Quality ingredients. Thoughtful baking.
+						<br />
+						<span className="italic">Meaningful moments.</span>
+					</h2>
+				</Reveal>
 
-				<div className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-brown/15">
+				<RevealStagger
+					className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-brown/15"
+					stagger={160}
+					delay={150}
+				>
 					{FEATURES.map((feature) => (
 						<div key={feature.title} className="lg:px-8">
 							<div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-sand">
@@ -57,7 +65,7 @@ function AboutFeatures() {
 							</p>
 						</div>
 					))}
-				</div>
+				</RevealStagger>
 			</div>
 		</section>
 	);
