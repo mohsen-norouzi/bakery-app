@@ -49,6 +49,7 @@ function PageMeta() {
 		document.title = seo.title;
 
 		upsertMeta("description", seo.description);
+		upsertMeta("robots", seo.robots ?? "index, follow");
 		upsertMeta("og:title", seo.title, { property: true });
 		upsertMeta("og:description", seo.description, { property: true });
 		upsertMeta("og:type", "website", { property: true });

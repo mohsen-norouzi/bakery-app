@@ -47,14 +47,32 @@ const PAGES = {
 	},
 };
 
+const NOT_FOUND = {
+	title: "Page Not Found | Bavo Bakes",
+	description:
+		"That page doesn't exist. Browse homemade cookies from Bavo Bakes in Barcelona.",
+	robots: "noindex, follow",
+};
+
 export function getPageSeo(pathname) {
-	const page = PAGES[pathname] ?? PAGES["/"];
+	const page = PAGES[pathname];
+
+	if (!page) {
+		return {
+			title: NOT_FOUND.title,
+			description: NOT_FOUND.description,
+			canonical: SITE_URL,
+			ogImage: `${SITE_URL}${SITE.ogImage}`,
+			robots: NOT_FOUND.robots,
+		};
+	}
 
 	return {
 		title: page.title,
 		description: page.description,
 		canonical: `${SITE_URL}${pathname === "/" ? "" : pathname}`,
 		ogImage: `${SITE_URL}${SITE.ogImage}`,
+		robots: "index, follow",
 	};
 }
 
