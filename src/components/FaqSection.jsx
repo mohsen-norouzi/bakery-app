@@ -81,12 +81,16 @@ function FaqSection() {
 					</Reveal>
 
 					<RevealStagger
-						className="rounded-2xl bg-sand p-8"
+						className="rounded-2xl bg-sand px-8 py-2"
 						stagger={100}
 						delay={120}
 					>
-						{FAQS.map((faq) => (
-							<FaqItem key={faq.question} {...faq} />
+						{FAQS.map((faq, index) => (
+							<FaqItem
+								key={faq.question}
+								{...faq}
+								showDivider={index < FAQS.length - 1}
+							/>
 						))}
 					</RevealStagger>
 				</div>

@@ -41,7 +41,7 @@ function FloatingOrderButton() {
 
 	return (
 		<div
-			className={`fixed right-6 bottom-6 z-50 transition-all duration-300 ${
+			className={`fixed right-6 bottom-6 z-40 transition-all duration-300 ${
 				isShown
 					? "pointer-events-auto translate-y-0 opacity-100"
 					: "pointer-events-none translate-y-2 opacity-0"
