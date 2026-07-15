@@ -12,7 +12,7 @@ function Home() {
 	return (
 		<>
 			<div className="relative isolate min-h-screen overflow-hidden bg-cream">
-				<HeroBackground src="/img/hero-1.png" />
+				<HeroBackground src="/img/hero-1.webp" />
 				<Header />
 				<Hero />
 			</div>

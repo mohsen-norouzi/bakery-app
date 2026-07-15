@@ -5,7 +5,7 @@ function OurStory() {
 	return (
 		<section className="relative overflow-hidden bg-sand">
 			<img
-				src="/img/our-story.png"
+				src="/img/our-story.webp"
 				alt=""
 				aria-hidden="true"
 				className="absolute inset-0 hidden h-full w-full object-cover object-left sm:block lg:object-[58%_center]"

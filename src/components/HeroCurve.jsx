@@ -18,7 +18,7 @@ function HeroCurve({ className = "text-cream" }) {
 			<div className="absolute bottom-8 left-1/2 z-20 -translate-x-1/2 translate-y-1/2 sm:bottom-12">
 				<Reveal variant="fade" delay={400}>
 					<img
-						src="/img/hero-stamp.png"
+						src="/img/hero-stamp.webp"
 						alt=""
 						aria-hidden="true"
 						width={140}

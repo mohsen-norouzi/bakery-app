@@ -25,7 +25,7 @@ function AboutPromise() {
 	return (
 		<section className="relative overflow-hidden bg-sand">
 			<img
-				src="/img/our-promise-bg.png"
+				src="/img/our-promise-bg.webp"
 				alt=""
 				aria-hidden="true"
 				className="absolute inset-0 hidden h-full w-full object-cover object-right sm:block"

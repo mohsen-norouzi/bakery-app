@@ -71,7 +71,7 @@ function DeliveryPickup() {
 					>
 						<ParallaxMap
 							trackRef={sectionRef}
-							src="/img/map.png"
+							src="/img/map.webp"
 							alt="Illustrated map of Barcelona showing local delivery from Les Corts"
 							width={1774}
 							height={887}

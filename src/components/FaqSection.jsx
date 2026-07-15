@@ -71,7 +71,7 @@ function FaqSection() {
 							</p>
 
 							<img
-								src="/img/faq.png"
+								src="/img/faq.webp"
 								alt="Bavo Bakes cookie box with a Made with love note"
 								width={800}
 								height={400}

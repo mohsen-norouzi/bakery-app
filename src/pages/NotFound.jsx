@@ -26,7 +26,7 @@ function NotFound() {
 	return (
 		<div className="flex min-h-screen flex-col bg-cream">
 			<div className="relative isolate flex min-h-screen flex-1 flex-col overflow-hidden">
-				<HeroBackground src="/img/404.png" align="right" />
+				<HeroBackground src="/img/404.webp" align="right" />
 
 				<Header />
 
