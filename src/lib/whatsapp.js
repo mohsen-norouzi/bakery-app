@@ -1,7 +1,7 @@
 const WHATSAPP_NUMBER = "666611091";
 
 export function buildWhatsAppOrderUrl(items = []) {
-	let message = "Hi Bavo Bakes! I'd like to place an order";
+	let message = "Hi Bavo! I'd like to place an order";
 
 	if (items.length > 0) {
 		const summary = items

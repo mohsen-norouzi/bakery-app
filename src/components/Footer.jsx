@@ -48,7 +48,18 @@ function Footer() {
 				</div>
 
 				<div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-brown/15 pt-8 text-xs text-brown/60 sm:flex-row">
-					<p>© 2024 Bavo Bakes. All rights reserved.</p>
+					<p>© 2026 Bavo Bakes. All rights reserved.</p>
+					<p>
+						Design &amp; build —{" "}
+						<a
+							href="https://itsmohsen.com"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="transition-colors hover:text-brown"
+						>
+							Mohsen
+						</a>
+					</p>
 					<div className="flex gap-6">
 						<a href="/contact" className="transition-colors hover:text-brown">
 							Privacy Policy
