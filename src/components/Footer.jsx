@@ -5,7 +5,6 @@ import Logo from "./Logo";
 
 const CONNECT_LINKS = [
 	{ label: "Instagram", to: "https://instagram.com/bavobakes" },
-	{ label: "TikTok", to: "https://tiktok.com/@bavobakes.bcn" },
 	{ label: "WhatsApp", to: "https://wa.me/666611091" },
 	{ label: "Email", to: "mailto:hello@bavobakes.com" },
 ];

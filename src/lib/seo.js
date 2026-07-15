@@ -75,7 +75,6 @@ export function getBakeryJsonLd(origin = SITE_URL) {
 		},
 		sameAs: [
 			"https://instagram.com/bavobakes",
-			"https://tiktok.com/@bavobakes.bcn",
 			`https://wa.me/${SITE.phone.replace(/\D/g, "")}`,
 		],
 	};
