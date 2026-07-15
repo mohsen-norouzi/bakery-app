@@ -2,8 +2,7 @@ import CookiesCatalog from "../components/CookiesCatalog";
 import CookiesHero from "../components/CookiesHero";
 import CtaBanner from "../components/CtaBanner";
 import Footer from "../components/Footer";
-import Header from "../components/Header";
-import HeroBackground from "../components/HeroBackground";
+import PageHero from "../components/PageHero";
 import { useCart } from "../context/CartContext";
 import { buildWhatsAppOrderUrl } from "../lib/whatsapp";
 
@@ -12,11 +11,9 @@ function Cookies() {
 
 	return (
 		<>
-			<div className="relative isolate overflow-hidden bg-cream">
-				<HeroBackground src="/img/cookies-bg.png" align="right" />
-				<Header />
+			<PageHero src="/img/cookies-bg.png" align="right">
 				<CookiesHero />
-			</div>
+			</PageHero>
 
 			<CookiesCatalog />
 			<CtaBanner

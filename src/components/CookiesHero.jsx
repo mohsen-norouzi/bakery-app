@@ -1,9 +1,10 @@
+import HeroCurve from "./HeroCurve";
 import { ArrowRightIcon, HeartIcon } from "./icons";
 
 function CookiesHero() {
 	return (
-		<section>
-			<div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
+		<section className="relative flex min-h-0 flex-1 flex-col">
+			<div className="mx-auto w-full max-w-7xl min-h-0 flex-1 px-6 py-12 sm:py-16 lg:px-10 lg:py-24">
 				<div className="max-w-xl">
 					<div className="flex items-center gap-2 text-xs font-medium tracking-[0.2em] text-brown/70">
 						<span>OUR COOKIES</span>
@@ -30,6 +31,8 @@ function CookiesHero() {
 					</a>
 				</div>
 			</div>
+
+			<HeroCurve />
 		</section>
 	);
 }

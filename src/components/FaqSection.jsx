@@ -1,5 +1,4 @@
 import FaqItem from "./FaqItem";
-import ImagePlaceholder from "./ImagePlaceholder";
 import { HeartIcon } from "./icons";
 
 const FAQS = [
@@ -68,11 +67,12 @@ function FaqSection() {
 							delivery.
 						</p>
 
-						<ImagePlaceholder
-							width={400}
-							height={140}
-							label="400×140 (mascot + heart)"
-							className="mt-10 hidden w-full max-w-sm lg:block"
+						<img
+							src="/img/faq.png"
+							alt="Bavo Bakes cookie box with a Made with love note"
+							width={800}
+							height={400}
+							className="mt-10 hidden w-full max-w-sm object-contain lg:block"
 						/>
 					</div>
 

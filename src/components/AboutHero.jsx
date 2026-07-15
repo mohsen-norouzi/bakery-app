@@ -1,11 +1,11 @@
 import Button from "./Button";
-import ImagePlaceholder from "./ImagePlaceholder";
+import HeroCurve from "./HeroCurve";
 import { ArrowRightIcon, HeartIcon } from "./icons";
 
 function AboutHero() {
 	return (
-		<section className="relative isolate overflow-hidden">
-			<div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
+		<section className="relative flex min-h-0 flex-1 flex-col">
+			<div className="mx-auto w-full max-w-7xl min-h-0 flex-1 px-6 py-12 sm:py-16 lg:px-10 lg:py-24">
 				<div className="max-w-xl">
 					<div className="flex items-center gap-2 text-xs font-medium tracking-[0.2em] text-brown/70">
 						<span>OUR STORY</span>
@@ -41,24 +41,7 @@ function AboutHero() {
 				</div>
 			</div>
 
-			<svg
-				viewBox="0 0 1440 120"
-				preserveAspectRatio="none"
-				className="pointer-events-none absolute inset-x-0 bottom-0 h-16 w-full text-cream sm:h-24"
-				aria-hidden="true"
-			>
-				<path
-					d="M0 60 C 360 130 1080 -10 1440 60 L1440 120 L0 120 Z"
-					fill="currentColor"
-				/>
-			</svg>
-
-			<ImagePlaceholder
-				width={140}
-				height={140}
-				label="140×140"
-				className="absolute bottom-0 left-1/2 h-24 w-24 -translate-x-1/2 translate-y-1/2 rounded-full sm:h-28 sm:w-28"
-			/>
+			<HeroCurve />
 		</section>
 	);
 }
