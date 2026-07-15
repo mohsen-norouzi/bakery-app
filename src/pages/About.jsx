@@ -3,6 +3,7 @@ import AboutHero from "../components/AboutHero";
 import AboutPromise from "../components/AboutPromise";
 import Footer from "../components/Footer";
 import PageHero from "../components/PageHero";
+import Reveal from "../components/Reveal";
 
 function About() {
 	return (
@@ -13,7 +14,9 @@ function About() {
 
 			<AboutFeatures />
 			<AboutPromise />
-			<Footer />
+			<Reveal>
+				<Footer />
+			</Reveal>
 		</>
 	);
 }

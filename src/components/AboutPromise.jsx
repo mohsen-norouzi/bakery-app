@@ -1,3 +1,5 @@
+import Reveal from "./Reveal";
+import RevealStagger from "./RevealStagger";
 import { HeadsetIcon, HeartIcon, ShieldCheckIcon, SmileyIcon } from "./icons";
 
 const PROMISES = [
@@ -35,18 +37,24 @@ function AboutPromise() {
 
 			<div className="relative mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
 				<div className="max-w-md">
-					<div className="flex items-center gap-2 text-xs font-medium tracking-[0.2em] text-brown/70">
-						<span>OUR PROMISE TO YOU</span>
-						<HeartIcon className="h-3.5 w-3.5 text-brown" />
-					</div>
+					<Reveal>
+						<div className="flex items-center gap-2 text-xs font-medium tracking-[0.2em] text-brown/70">
+							<span>OUR PROMISE TO YOU</span>
+							<HeartIcon className="h-3.5 w-3.5 text-brown" />
+						</div>
 
-					<p className="mt-4 font-display text-2xl leading-snug text-brown">
-						We are committed to creating cookies that not only taste
-						delicious but also make you feel special. Thank you for
-						supporting our small business and being a part of our story.
-					</p>
+						<p className="mt-4 font-display text-2xl leading-snug text-brown">
+							We are committed to creating cookies that not only taste
+							delicious but also make you feel special. Thank you for
+							supporting our small business and being a part of our story.
+						</p>
+					</Reveal>
 
-					<div className="mt-8 divide-y divide-brown/10 border-t border-brown/10">
+					<RevealStagger
+						className="mt-8 divide-y divide-brown/10 border-t border-brown/10"
+						stagger={140}
+						delay={150}
+					>
 						{PROMISES.map((promise) => (
 							<div key={promise.title} className="flex items-start gap-4 py-5">
 								<promise.icon className="h-6 w-6 shrink-0 text-brown" />
@@ -60,7 +68,7 @@ function AboutPromise() {
 								</div>
 							</div>
 						))}
-					</div>
+					</RevealStagger>
 				</div>
 			</div>
 		</section>

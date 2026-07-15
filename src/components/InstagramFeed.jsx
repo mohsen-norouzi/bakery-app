@@ -1,3 +1,5 @@
+import Reveal from "./Reveal";
+import RevealStagger from "./RevealStagger";
 import { ArrowRightIcon, HeartIcon, InstagramIcon } from "./icons";
 
 const PHOTOS = [
@@ -13,38 +15,44 @@ function InstagramFeed() {
 		<section className="bg-sand">
 			<div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
 				<div className="grid gap-12 lg:grid-cols-[300px_1fr] lg:items-center lg:gap-10">
-					<div>
-						<div className="flex items-center gap-2 text-xs font-medium tracking-[0.2em] text-brown/70">
-							<span>FOLLOW OUR JOURNEY</span>
-							<HeartIcon className="h-3.5 w-3.5 text-brown" />
+					<Reveal>
+						<div>
+							<div className="flex items-center gap-2 text-xs font-medium tracking-[0.2em] text-brown/70">
+								<span>FOLLOW OUR JOURNEY</span>
+								<HeartIcon className="h-3.5 w-3.5 text-brown" />
+							</div>
+
+							<h2 className="mt-4 font-display text-4xl leading-tight text-brown">
+								From our kitchen
+								<br />
+								<span className="italic">to your home.</span>
+							</h2>
+
+							<p className="mt-4 text-brown/70">
+								A glimpse of our daily bakes, beautiful packaging, and the
+								moments you share with our cookies.
+							</p>
+
+							<a
+								href="https://instagram.com/bavobakes"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="mt-6 inline-flex items-center gap-2 text-brown"
+							>
+								<InstagramIcon className="h-5 w-5" />
+								<span className="text-sm font-medium tracking-[0.05em]">
+									BAVOBAKES
+								</span>
+							</a>
 						</div>
-
-						<h2 className="mt-4 font-display text-4xl leading-tight text-brown">
-							From our kitchen
-							<br />
-							<span className="italic">to your home.</span>
-						</h2>
-
-						<p className="mt-4 text-brown/70">
-							A glimpse of our daily bakes, beautiful packaging, and the
-							moments you share with our cookies.
-						</p>
-
-						<a
-							href="https://instagram.com/bavobakes"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="mt-6 inline-flex items-center gap-2 text-brown"
-						>
-							<InstagramIcon className="h-5 w-5" />
-							<span className="text-sm font-medium tracking-[0.05em]">
-								@BAVOBAKES
-							</span>
-						</a>
-					</div>
+					</Reveal>
 
 					<div>
-						<div className="grid grid-cols-3 gap-4 sm:grid-cols-5">
+						<RevealStagger
+							className="grid grid-cols-3 gap-4 sm:grid-cols-5"
+							stagger={120}
+							delay={100}
+						>
 							{PHOTOS.map((photo) => (
 								<img
 									key={photo.src}
@@ -53,12 +61,12 @@ function InstagramFeed() {
 									width={300}
 									height={380}
 									loading="lazy"
-									className="aspect-[30/38] w-full rounded-xl object-cover"
+									className="aspect-30/38 w-full rounded-xl object-cover"
 								/>
 							))}
-						</div>
+						</RevealStagger>
 
-						<div className="mt-8 text-center">
+						<Reveal delay={280} className="mt-8 text-center">
 							<a
 								href="https://instagram.com/bavobakes"
 								target="_blank"
@@ -68,7 +76,7 @@ function InstagramFeed() {
 								VIEW MORE ON INSTAGRAM
 								<ArrowRightIcon className="h-4 w-4" />
 							</a>
-						</div>
+						</Reveal>
 					</div>
 				</div>
 			</div>

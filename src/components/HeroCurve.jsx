@@ -1,3 +1,5 @@
+import Reveal from "./Reveal";
+
 function HeroCurve({ className = "text-cream" }) {
 	return (
 		<>
@@ -13,14 +15,18 @@ function HeroCurve({ className = "text-cream" }) {
 				/>
 			</svg>
 
-			<img
-				src="/img/hero-stamp.png"
-				alt=""
-				aria-hidden="true"
-				width={140}
-				height={140}
-				className="absolute bottom-8 left-1/2 z-20 h-24 w-24 -translate-x-1/2 translate-y-1/2 rounded-full object-cover shadow-[0_4px_14px_rgba(82,44,9,0.14)] sm:bottom-12 sm:h-28 sm:w-28"
-			/>
+			<div className="absolute bottom-8 left-1/2 z-20 -translate-x-1/2 translate-y-1/2 sm:bottom-12">
+				<Reveal variant="fade" delay={400}>
+					<img
+						src="/img/hero-stamp.png"
+						alt=""
+						aria-hidden="true"
+						width={140}
+						height={140}
+						className="h-24 w-24 rounded-full object-cover shadow-[0_4px_14px_rgba(82,44,9,0.14)] sm:h-28 sm:w-28"
+					/>
+				</Reveal>
+			</div>
 		</>
 	);
 }

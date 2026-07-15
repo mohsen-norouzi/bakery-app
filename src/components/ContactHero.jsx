@@ -1,4 +1,4 @@
-import HeroCurve from "./HeroCurve";
+import RevealStagger from "./RevealStagger";
 import {
 	ClockIcon,
 	HeartIcon,
@@ -37,28 +37,31 @@ function ContactHero() {
 		<section className="relative flex min-h-0 flex-1 flex-col">
 			<div className="mx-auto flex w-full max-w-7xl min-h-0 flex-1 flex-col justify-center px-6 pb-20 pt-6 sm:px-6 sm:pb-24 sm:pt-8 lg:px-10">
 				<div className="max-w-xl">
-					<div className="flex items-center gap-2 text-xs font-medium tracking-[0.2em] text-brown/70">
-						<span>CONTACT US</span>
-						<HeartIcon className="h-3.5 w-3.5 text-brown" />
-					</div>
+					<RevealStagger stagger={130} delay={220} className="flex flex-col">
+						<div className="flex items-center gap-2 text-xs font-medium tracking-[0.2em] text-brown/70">
+							<span>CONTACT US</span>
+							<HeartIcon className="h-3.5 w-3.5 text-brown" />
+						</div>
 
-					<h1 className="mt-5 flex items-start gap-3 font-display text-4xl leading-[1.15] text-brown sm:mt-6 sm:text-5xl lg:text-6xl">
-						<span>
+						<h1 className="mt-5 font-display text-4xl leading-[1.15] text-brown sm:mt-6 sm:text-5xl lg:text-6xl">
 							We&apos;d love to
 							<br />
 							<span className="italic">hear from you.</span>
-						</span>
-						<HeartIcon className="mt-2 hidden h-8 w-8 shrink-0 text-brown/30 sm:block" />
-					</h1>
+						</h1>
 
-					<div className="mt-5 h-px w-16 bg-brown/30 sm:mt-6" />
+						<div className="mt-5 h-px w-16 bg-brown/30 sm:mt-6" />
 
-					<p className="mt-5 max-w-md text-brown/70 sm:mt-6">
-						Have a question, special request, or just want to say hello?
-						We&apos;re here for you — reach out and we&apos;ll get back soon.
-					</p>
+						<p className="mt-5 max-w-md text-brown/70 sm:mt-6">
+							Have a question, special request, or just want to say hello?
+							We&apos;re here for you — reach out and we&apos;ll get back soon.
+						</p>
+					</RevealStagger>
 
-					<div className="mt-8 grid grid-cols-2 gap-x-6 gap-y-6 sm:mt-10 sm:gap-x-10 sm:gap-y-8">
+					<RevealStagger
+						className="mt-8 grid grid-cols-2 gap-x-6 gap-y-6 sm:mt-10 sm:gap-x-10 sm:gap-y-8"
+						stagger={120}
+						delay={700}
+					>
 						{CONTACT_DETAILS.map((detail) => {
 							const body = (
 								<>
@@ -88,11 +91,9 @@ function ContactHero() {
 								<div key={detail.label}>{body}</div>
 							);
 						})}
-					</div>
+					</RevealStagger>
 				</div>
 			</div>
-
-			<HeroCurve />
 		</section>
 	);
 }
