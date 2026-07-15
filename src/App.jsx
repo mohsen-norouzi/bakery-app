@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import FloatingOrderButton from "./components/FloatingOrderButton";
+import Header from "./components/Header";
 import PageEnter from "./components/PageEnter";
 import PageMeta from "./components/PageMeta";
 import { CartProvider } from "./context/CartContext";
@@ -18,6 +19,7 @@ function App() {
 			<PageMeta />
 			<CartProvider>
 				<div className="bg-cream font-sans">
+					<Header />
 					<PageEnter>
 						<Routes>
 							<Route path="/" element={<Home />} />

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import { buildWhatsAppOrderUrl } from "../lib/whatsapp";
@@ -28,11 +28,29 @@ function mobileNavLinkClass({ isActive }) {
 const MENU_ANIMATION_MS = 350;
 
 function Header() {
+	const headerRef = useRef(null);
 	const { items, itemCount } = useCart();
 	const [menuOpen, setMenuOpen] = useState(false);
 	const [menuClosing, setMenuClosing] = useState(false);
 	const menuVisible = menuOpen || menuClosing;
 	const menuActive = menuOpen && !menuClosing;
+
+	useLayoutEffect(() => {
+		const node = headerRef.current;
+		if (!node) return;
+
+		const syncHeight = () => {
+			document.documentElement.style.setProperty(
+				"--site-header-height",
+				`${node.offsetHeight}px`,
+			);
+		};
+
+		syncHeight();
+		const observer = new ResizeObserver(syncHeight);
+		observer.observe(node);
+		return () => observer.disconnect();
+	}, []);
 
 	const closeMenu = () => {
 		if (!menuOpen || menuClosing) return;
@@ -77,7 +95,7 @@ function Header() {
 	}, [menuVisible]);
 
 	return (
-		<header className="relative z-40">
+		<header ref={headerRef} className="relative z-40">
 			<div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 py-4 sm:px-6 sm:py-6 lg:grid-cols-[auto_1fr_auto] lg:gap-6 lg:px-10">
 				<Logo compact onNavigate={closeMenu} />
 

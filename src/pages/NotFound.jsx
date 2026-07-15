@@ -1,6 +1,5 @@
 import Button from "../components/Button";
 import Footer from "../components/Footer";
-import Header from "../components/Header";
 import HeroBackground from "../components/HeroBackground";
 import { ArrowRightIcon, HeartIcon } from "../components/icons";
 
@@ -25,10 +24,8 @@ function Spark({ className = "" }) {
 function NotFound() {
 	return (
 		<div className="flex min-h-screen flex-col bg-cream">
-			<div className="relative isolate flex min-h-screen flex-1 flex-col overflow-hidden">
+			<div className="hero-under-header relative isolate flex min-h-screen flex-1 flex-col overflow-hidden">
 				<HeroBackground src="/img/404.webp" align="right" />
-
-				<Header />
 
 				<section className="relative z-10 flex flex-1 flex-col justify-center px-6 py-16 sm:px-10 lg:w-1/2 lg:px-12 xl:px-16">
 					<div className="mx-auto w-full max-w-md text-center lg:mx-0 lg:max-w-sm lg:text-left">

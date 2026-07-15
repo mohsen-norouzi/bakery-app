@@ -1,11 +1,9 @@
 import Footer from "./Footer";
-import Header from "./Header";
 import Reveal from "./Reveal";
 
 function LegalPage({ title, updated, children }) {
 	return (
 		<div className="min-h-screen bg-cream">
-			<Header />
 			<main className="mx-auto max-w-3xl px-6 py-12 sm:py-16 lg:px-10 lg:py-20">
 				<Reveal>
 					<p className="text-xs font-medium tracking-[0.2em] text-brown/60">

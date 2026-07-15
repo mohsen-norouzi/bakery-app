@@ -145,11 +145,18 @@
 	   overflow-y compute to auto on each, which shows two scrollbars. */
 	html {
 		overflow-x: clip;
+		--site-header-height: 5rem;
 	}
 
 	body {
 		margin: 0;
 		min-height: 100%;
+	}
+
+	/* Pull hero art behind the persistent SPA header */
+	.hero-under-header {
+		margin-top: calc(var(--site-header-height) * -1);
+		padding-top: var(--site-header-height);
 	}
 
 	button:not(:disabled),
