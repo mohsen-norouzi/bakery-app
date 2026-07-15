@@ -13,7 +13,7 @@ function Footer() {
 	return (
 		<footer className="bg-cream">
 			<div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-20">
-				<div className="grid gap-12 lg:grid-cols-[minmax(0,220px)_1fr] lg:items-start lg:gap-16">
+				<div className="grid gap-12 lg:grid-cols-[auto_1fr] lg:items-start lg:gap-16">
 					<div className="flex justify-center lg:justify-start">
 						<Logo stacked large />
 					</div>

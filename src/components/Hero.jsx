@@ -1,5 +1,4 @@
 import Button from "./Button";
-import MadeWithLoveBadge from "./MadeWithLoveBadge";
 import Reveal from "./Reveal";
 import RevealStagger from "./RevealStagger";
 import { ArrowDownIcon, ArrowRightIcon } from "./icons";
@@ -11,9 +10,19 @@ function Hero() {
 				<Reveal
 					variant="fade"
 					delay={550}
-					className="absolute top-4 right-4 hidden w-20 text-brown sm:block sm:w-24 lg:top-10 lg:right-10 lg:w-28"
+					className="absolute top-4 right-4 hidden w-20 sm:block sm:w-24 lg:top-10 lg:right-10 lg:w-28"
 				>
-					<MadeWithLoveBadge className="animate-spin-slow w-full" />
+					<img
+						src="/img/made-with-love.png"
+						alt="Made with love in Barcelona"
+						className="animate-spin-slow w-full"
+					/>
+					<img
+						src="/img/heart.png"
+						alt=""
+						aria-hidden="true"
+						className="absolute inset-0 m-auto h-5 w-5"
+					/>
 				</Reveal>
 
 				<RevealStagger stagger={130} delay={220} className="flex max-w-xl flex-col">
