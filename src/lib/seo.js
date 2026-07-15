@@ -1,3 +1,5 @@
+import { getCookieImageSrc } from "./cookieImages";
+
 export const SITE_URL = "https://www.bavobakes.com";
 
 export const SITE = {
@@ -13,6 +15,57 @@ export const SITE = {
 	city: "Barcelona",
 	country: "ES",
 };
+
+const COOKIE_PRODUCTS = [
+	{
+		name: "Chocolate Chip",
+		description: "Classic, soft, and loaded with chocolate.",
+		price: 4.5,
+		available: true,
+	},
+	{
+		name: "Double Chocolate",
+		description: "Rich cocoa dough with double the chocolate.",
+		price: 4.5,
+		available: true,
+	},
+	{
+		name: "Chocolate Sea Salt",
+		description: "Rich chocolate with a touch of sea salt.",
+		price: 4.5,
+		available: true,
+	},
+	{
+		name: "Oatmeal & Raisin",
+		description: "Chewy oatmeal cookies with sweet raisins.",
+		price: 4.5,
+		available: false,
+	},
+	{
+		name: "White Chocolate Macadamia",
+		description: "Buttery cookies with white chocolate and macadamia.",
+		price: 4.5,
+		available: false,
+	},
+	{
+		name: "Hazelnut Chocolate",
+		description: "Roasted hazelnuts with rich chocolate chunks.",
+		price: 4.5,
+		available: false,
+	},
+	{
+		name: "Peanut Butter",
+		description: "Soft, nutty, and perfectly satisfying.",
+		price: 4.5,
+		available: false,
+	},
+	{
+		name: "Dark Chocolate Sea Salt",
+		description: "Deep dark chocolate with a touch of sea salt.",
+		price: 4.5,
+		available: false,
+	},
+];
 
 const PAGES = {
 	"/": {
@@ -95,5 +148,30 @@ export function getBakeryJsonLd(origin = SITE_URL) {
 			"https://instagram.com/bavobakes",
 			`https://wa.me/${SITE.phone.replace(/\D/g, "")}`,
 		],
+	};
+}
+
+export function getCookieProductsJsonLd(origin = SITE_URL) {
+	return {
+		"@context": "https://schema.org",
+		"@graph": COOKIE_PRODUCTS.map((cookie) => ({
+			"@type": "Product",
+			name: cookie.name,
+			description: cookie.description,
+			image: `${origin}${getCookieImageSrc(cookie.name)}`,
+			brand: {
+				"@type": "Brand",
+				name: SITE.name,
+			},
+			offers: {
+				"@type": "Offer",
+				priceCurrency: "EUR",
+				price: cookie.price.toFixed(2),
+				availability: cookie.available
+					? "https://schema.org/InStock"
+					: "https://schema.org/PreOrder",
+				url: `${origin}/cookies`,
+			},
+		})),
 	};
 }
