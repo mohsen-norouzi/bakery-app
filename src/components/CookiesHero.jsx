@@ -19,8 +19,8 @@ function CookiesHero() {
 					</h1>
 
 					<p className="mt-8 max-w-md text-brown/70">
-						Discover our handmade cookies, baked fresh to order using real
-						ingredients and lots of love.
+						Discover our handmade 100g cookies, baked fresh to order using real
+						ingredients and lots of love. Mix any flavors you like.
 					</p>
 
 					<Link

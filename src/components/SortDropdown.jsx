@@ -40,7 +40,7 @@ function SortDropdown({ options, value, onChange }) {
 			{isOpen && (
 				<ul
 					role="listbox"
-					className="absolute top-full right-0 z-10 mt-2 w-56 overflow-hidden rounded-2xl border border-brown/15 bg-cream py-1 shadow-lg"
+					className="absolute top-full right-0 z-30 mt-2 w-56 overflow-hidden rounded-2xl border border-brown/15 bg-cream py-1 shadow-lg"
 				>
 					{options.map((option) => {
 						const isSelected = option === value;

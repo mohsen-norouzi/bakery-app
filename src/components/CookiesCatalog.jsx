@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { COOKIES } from "../lib/cookies";
 import CookieCard from "./CookieCard";
+import CookiePrices from "./CookiePrices";
+import { GridIcon, ListIcon } from "./icons";
 import Reveal from "./Reveal";
 import RevealStagger from "./RevealStagger";
-import { GridIcon, ListIcon } from "./icons";
 import SortDropdown from "./SortDropdown";
 
 const SORT_OPTIONS = [
@@ -12,48 +14,6 @@ const SORT_OPTIONS = [
 	"Newest",
 ];
 
-const COOKIES = [
-	{
-		name: "Chocolate Chip",
-		description: "Classic, soft, and loaded with chocolate.",
-		badge: "Best Seller",
-	},
-	{
-		name: "Double Chocolate",
-		description: "Rich cocoa dough with double the chocolate.",
-		badge: "Popular",
-	},
-	{
-		name: "Chocolate Sea Salt",
-		description: "Rich chocolate with a touch of sea salt.",
-	},
-	{
-		name: "Oatmeal & Raisin",
-		description: "Chewy oatmeal cookies with sweet raisins.",
-		available: false,
-	},
-	{
-		name: "White Chocolate Macadamia",
-		description: "Buttery cookies with white chocolate and macadamia.",
-		available: false,
-	},
-	{
-		name: "Hazelnut Chocolate",
-		description: "Roasted hazelnuts with rich chocolate chunks.",
-		available: false,
-	},
-	{
-		name: "Peanut Butter",
-		description: "Soft, nutty, and perfectly satisfying.",
-		available: false,
-	},
-	{
-		name: "Dark Chocolate Sea Salt",
-		description: "Deep dark chocolate with a touch of sea salt.",
-		available: false,
-	},
-];
-
 function CookiesCatalog() {
 	const [sortBy, setSortBy] = useState(SORT_OPTIONS[0]);
 	const [view, setView] = useState("grid");
@@ -61,7 +21,7 @@ function CookiesCatalog() {
 	return (
 		<section className="bg-cream">
 			<div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
-				<Reveal>
+				<Reveal className="relative z-20">
 					<div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
 						<div>
 							<h2 className="font-display text-4xl leading-tight text-brown">
@@ -70,8 +30,8 @@ function CookiesCatalog() {
 								<span className="italic">baked to perfection.</span>
 							</h2>
 							<p className="mt-4 max-w-md text-brown/70">
-								Made with real ingredients, baked fresh in small batches, and
-								delivered with love.
+								Made with real ingredients, baked fresh in small batches. Mix
+								any flavors — boxes of two or more come with a little off.
 							</p>
 						</div>
 
@@ -115,17 +75,23 @@ function CookiesCatalog() {
 							</div>
 						</div>
 					</div>
-
-					<div className="mt-8 border-t border-brown/15 pt-6 text-xs font-medium tracking-widest text-brown/50">
-						{COOKIES.length} COOKIES
-					</div>
 				</Reveal>
+
+				<Reveal className="mt-10">
+					<CookiePrices />
+				</Reveal>
+
+				<div className="mt-10 border-t border-brown/15 pt-6 text-xs font-medium tracking-widest text-brown/50">
+					{COOKIES.filter((item) => item.kind !== "brownie").length} COOKIES
+					{" · "}
+					{COOKIES.filter((item) => item.kind === "brownie").length} BROWNIE
+				</div>
 
 				<RevealStagger
 					key={view}
 					className={
 						view === "grid"
-							? "mt-8 grid gap-6 sm:grid-cols-2 xl:grid-cols-4"
+							? "mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
 							: "mt-8 flex flex-col gap-4"
 					}
 					stagger={120}
