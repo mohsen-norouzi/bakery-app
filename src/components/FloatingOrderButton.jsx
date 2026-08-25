@@ -1,6 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { useCart } from "../context/CartContext";
-import { formatEuro, getNextPack, getPackSave } from "../lib/pricing";
+import {
+	formatCartContents,
+	formatEuro,
+	getNextPack,
+	getPackSave,
+} from "../lib/pricing";
 import { buildWhatsAppOrderUrl } from "../lib/whatsapp";
 import { WhatsappIcon } from "./icons";
 import QuotePrice from "./QuotePrice";
@@ -11,15 +16,19 @@ function FloatingOrderButton() {
 	const [attention, setAttention] = useState(false);
 	const [forceReveal, setForceReveal] = useState(false);
 	const prevCount = useRef(itemCount);
-	const nextPack = itemCount > 0 ? getNextPack(itemCount) : null;
+	const nextPack =
+		quote.cookieCount > 0 ? getNextPack(quote.cookieCount) : null;
 	const nextSave = nextPack ? getPackSave(nextPack) : 0;
-	const extra = nextPack ? nextPack.quantity - itemCount : 0;
+	const extra = nextPack ? nextPack.quantity - quote.cookieCount : 0;
 	const statusLine =
 		nextSave > 0
 			? `Add ${extra} more to save ${formatEuro(nextSave)}`
 			: quote.saved > 0
 				? `You save ${formatEuro(quote.saved)}`
-				: "Mix any flavors";
+				: quote.brownieCount > 0
+					? "€4.50 each"
+					: "Mix any flavors";
+	const contentsLabel = formatCartContents(quote);
 
 	useEffect(() => {
 		const onScroll = () => setVisible(window.scrollY > 120);
@@ -50,7 +59,6 @@ function FloatingOrderButton() {
 
 	const hasCart = itemCount > 0;
 	const isShown = hasCart || visible || forceReveal;
-	const cookieLabel = itemCount === 1 ? "cookie" : "cookies";
 
 	return (
 		<div
@@ -69,7 +77,7 @@ function FloatingOrderButton() {
 					href={buildWhatsAppOrderUrl(items)}
 					target="_blank"
 					rel="noopener noreferrer"
-					aria-label={`Order on WhatsApp, ${itemCount} ${cookieLabel}, ${formatEuro(quote.total)}`}
+					aria-label={`Order on WhatsApp, ${contentsLabel}, ${formatEuro(quote.total)}`}
 					className="flex items-center gap-3 rounded-2xl border border-brown/15 bg-cream py-3.5 pr-5 pl-4 shadow-lg transition-shadow hover:shadow-xl sm:w-[26rem]"
 				>
 					<div className="relative shrink-0">
@@ -99,9 +107,7 @@ function FloatingOrderButton() {
 						<p className="text-[10px] font-medium tracking-[0.2em] text-brown/60">
 							YOUR BOX
 						</p>
-						<p className="mt-0.5 text-sm text-brown">
-							<span className="tabular-nums">{itemCount}</span> {cookieLabel}
-						</p>
+						<p className="mt-0.5 text-sm text-brown">{contentsLabel}</p>
 						<p className="mt-0.5 min-h-4 text-xs leading-4 text-brown/60">
 							{statusLine}
 						</p>

@@ -34,7 +34,7 @@ const PAGES = {
 	"/cookies": {
 		title: "Cookies | Bavo Bakes",
 		description:
-			"Browse our handmade 100g cookies — mix any flavors. €5 each, with box prices from two cookies. Baked fresh to order in Barcelona.",
+			"Browse our handmade 100g cookies and fudgy brownies. Mix any cookie flavors — €5 each, with box prices from two cookies. Brownies are €4.50. Baked fresh to order in Barcelona.",
 	},
 	"/about": {
 		title: "About Us | Bavo Bakes",

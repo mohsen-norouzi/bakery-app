@@ -1,5 +1,5 @@
 import { useCart } from "../context/CartContext";
-import { formatEuro, PRICE_PACKS } from "../lib/pricing";
+import { formatCartContents, formatEuro, PRICE_PACKS } from "../lib/pricing";
 import { HeartIcon } from "./icons";
 import QuotePrice from "./QuotePrice";
 
@@ -74,14 +74,19 @@ function CookiePrices() {
 						})}
 					</ul>
 
-					<div className="mt-6 rounded-xl border border-dashed border-brown/25 px-4 py-3 text-sm text-brown/70">
-						Cardamom &amp; Pistachio is +€0.50 per cookie.
+					<div className="mt-6 space-y-3">
+						<div className="rounded-xl border border-dashed border-brown/25 px-4 py-3 text-sm text-brown/70">
+							Cardamom &amp; Pistachio is +€0.50 per cookie.
+						</div>
+						<div className="rounded-xl border border-dashed border-brown/25 px-4 py-3 text-sm text-brown/70">
+							Fudgy Brownie is €4.50 each.
+						</div>
 					</div>
 
 					{quote.count > 0 && (
 						<p className="mt-5 text-sm text-brown">
-							Your box: {quote.count} {quote.count === 1 ? "cookie" : "cookies"}{" "}
-							· <QuotePrice quote={quote} />
+							Your box: {formatCartContents(quote)} ·{" "}
+							<QuotePrice quote={quote} />
 							{quote.saved > 0 && (
 								<span className="text-brown/60">
 									{` · save ${formatEuro(quote.saved)}`}
