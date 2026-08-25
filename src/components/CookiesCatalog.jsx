@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { COOKIES } from "../lib/cookies";
 import CookieCard from "./CookieCard";
+import CookiePrices from "./CookiePrices";
+import { GridIcon, ListIcon } from "./icons";
 import Reveal from "./Reveal";
 import RevealStagger from "./RevealStagger";
-import { GridIcon, ListIcon } from "./icons";
 import SortDropdown from "./SortDropdown";
 
 const SORT_OPTIONS = [
@@ -10,48 +12,6 @@ const SORT_OPTIONS = [
 	"Price: Low to High",
 	"Price: High to Low",
 	"Newest",
-];
-
-const COOKIES = [
-	{
-		name: "Chocolate Chip",
-		description: "Classic, soft, and loaded with chocolate.",
-		badge: "Best Seller",
-	},
-	{
-		name: "Double Chocolate",
-		description: "Rich cocoa dough with double the chocolate.",
-		badge: "Popular",
-	},
-	{
-		name: "Chocolate Sea Salt",
-		description: "Rich chocolate with a touch of sea salt.",
-	},
-	{
-		name: "Oatmeal & Raisin",
-		description: "Chewy oatmeal cookies with sweet raisins.",
-		available: false,
-	},
-	{
-		name: "White Chocolate Macadamia",
-		description: "Buttery cookies with white chocolate and macadamia.",
-		available: false,
-	},
-	{
-		name: "Hazelnut Chocolate",
-		description: "Roasted hazelnuts with rich chocolate chunks.",
-		available: false,
-	},
-	{
-		name: "Peanut Butter",
-		description: "Soft, nutty, and perfectly satisfying.",
-		available: false,
-	},
-	{
-		name: "Dark Chocolate Sea Salt",
-		description: "Deep dark chocolate with a touch of sea salt.",
-		available: false,
-	},
 ];
 
 function CookiesCatalog() {
@@ -70,8 +30,8 @@ function CookiesCatalog() {
 								<span className="italic">baked to perfection.</span>
 							</h2>
 							<p className="mt-4 max-w-md text-brown/70">
-								Made with real ingredients, baked fresh in small batches, and
-								delivered with love.
+								Made with real ingredients, baked fresh in small batches. Mix
+								any flavors — boxes of two or more come with a little off.
 							</p>
 						</div>
 
@@ -115,17 +75,21 @@ function CookiesCatalog() {
 							</div>
 						</div>
 					</div>
-
-					<div className="mt-8 border-t border-brown/15 pt-6 text-xs font-medium tracking-widest text-brown/50">
-						{COOKIES.length} COOKIES
-					</div>
 				</Reveal>
+
+				<Reveal className="mt-10">
+					<CookiePrices />
+				</Reveal>
+
+				<div className="mt-10 border-t border-brown/15 pt-6 text-xs font-medium tracking-widest text-brown/50">
+					{COOKIES.length} COOKIES
+				</div>
 
 				<RevealStagger
 					key={view}
 					className={
 						view === "grid"
-							? "mt-8 grid gap-6 sm:grid-cols-2 xl:grid-cols-4"
+							? "mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5"
 							: "mt-8 flex flex-col gap-4"
 					}
 					stagger={120}

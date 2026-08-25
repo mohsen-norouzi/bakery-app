@@ -1,28 +1,9 @@
 import { Link } from "react-router-dom";
+import { COOKIES } from "../lib/cookies";
 import CookieCard from "./CookieCard";
+import { ArrowRightIcon, HeartIcon } from "./icons";
 import Reveal from "./Reveal";
 import RevealStagger from "./RevealStagger";
-import { ArrowRightIcon, HeartIcon } from "./icons";
-
-const COOKIES = [
-	{
-		name: "Chocolate Chip",
-		description: "Classic, soft, and loaded with chocolate.",
-	},
-	{
-		name: "Double Chocolate",
-		description: "Rich cocoa dough with double the chocolate.",
-	},
-	{
-		name: "Chocolate Sea Salt",
-		description: "Rich chocolate with a touch of sea salt.",
-	},
-	{
-		name: "White Chocolate Macadamia",
-		description: "Buttery cookies with white chocolate and macadamia.",
-		available: false,
-	},
-];
 
 function FeaturedCookies() {
 	return (
@@ -41,8 +22,8 @@ function FeaturedCookies() {
 							</h2>
 
 							<p className="mt-4 text-brown/70">
-								Baked fresh to order using the finest ingredients. One bite and
-								you&apos;ll taste the love.
+								Baked fresh to order using the finest ingredients. Mix any
+								flavors — two or more cookies come with a little off.
 							</p>
 
 							<Link
@@ -56,7 +37,7 @@ function FeaturedCookies() {
 					</Reveal>
 
 					<RevealStagger
-						className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4"
+						className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
 						stagger={160}
 						delay={120}
 					>

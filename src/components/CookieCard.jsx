@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useCart } from "../context/CartContext";
 import { getCookieImageSrc } from "../lib/cookieImages";
+import { formatEuro, getFlavorPrice } from "../lib/pricing";
 import ImagePlaceholder from "./ImagePlaceholder";
 import { MinusIcon, PlusIcon } from "./icons";
 
@@ -8,7 +9,8 @@ const IMAGE_WIDTH = 480;
 const IMAGE_HEIGHT = 480;
 
 function CookieImage({ name, layout }) {
-	const [failed, setFailed] = useState(false);
+	const src = getCookieImageSrc(name);
+	const [failed, setFailed] = useState(!src);
 	const className =
 		layout === "list"
 			? "h-36 w-36 rounded-xl object-contain"
@@ -27,7 +29,7 @@ function CookieImage({ name, layout }) {
 
 	return (
 		<img
-			src={getCookieImageSrc(name)}
+			src={src}
 			alt={name}
 			width={IMAGE_WIDTH}
 			height={IMAGE_HEIGHT}
@@ -117,7 +119,7 @@ function CookieCard({
 			<span
 				className={`text-xs font-medium tracking-[0.1em] ${available ? "text-brown/70" : "text-brown/40"}`}
 			>
-				{available ? "€4.50" : "Soon"}
+				{available ? formatEuro(getFlavorPrice(name)) : "Soon"}
 			</span>
 			{cartControls}
 		</div>

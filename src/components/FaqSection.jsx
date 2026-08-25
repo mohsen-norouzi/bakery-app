@@ -5,6 +5,11 @@ import { HeartIcon } from "./icons";
 
 const FAQS = [
 	{
+		question: "How does pricing work?",
+		answer:
+			"Every cookie is 100g and €5 on its own. Mix any flavors — boxes of 2, 4, 6, 8, or 10 are a little less than paying €5 each. Cardamom & Pistachio is +€0.50 per cookie. We'll confirm the total when you order.",
+	},
+	{
 		question: "How do I place an order?",
 		answer: (
 			<>

@@ -1,4 +1,5 @@
 import { createContext, useCallback, useContext, useMemo, useState } from "react";
+import { getQuote } from "../lib/pricing";
 
 const CartContext = createContext(null);
 
@@ -36,9 +37,11 @@ export function CartProvider({ children }) {
 		[items],
 	);
 
+	const quote = useMemo(() => getQuote(items), [items]);
+
 	const value = useMemo(
-		() => ({ items, addItem, removeItem, itemCount }),
-		[items, addItem, removeItem, itemCount],
+		() => ({ items, addItem, removeItem, itemCount, quote }),
+		[items, addItem, removeItem, itemCount, quote],
 	);
 
 	return <CartContext.Provider value={value}>{children}</CartContext.Provider>;

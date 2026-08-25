@@ -1,4 +1,6 @@
 import { getCookieImageSrc } from "./cookieImages";
+import { COOKIES } from "./cookies";
+import { getFlavorPrice } from "./pricing";
 
 export const SITE_URL = "https://www.bavobakes.com";
 
@@ -16,56 +18,12 @@ export const SITE = {
 	country: "ES",
 };
 
-const COOKIE_PRODUCTS = [
-	{
-		name: "Chocolate Chip",
-		description: "Classic, soft, and loaded with chocolate.",
-		price: 4.5,
-		available: true,
-	},
-	{
-		name: "Double Chocolate",
-		description: "Rich cocoa dough with double the chocolate.",
-		price: 4.5,
-		available: true,
-	},
-	{
-		name: "Chocolate Sea Salt",
-		description: "Rich chocolate with a touch of sea salt.",
-		price: 4.5,
-		available: true,
-	},
-	{
-		name: "Oatmeal & Raisin",
-		description: "Chewy oatmeal cookies with sweet raisins.",
-		price: 4.5,
-		available: false,
-	},
-	{
-		name: "White Chocolate Macadamia",
-		description: "Buttery cookies with white chocolate and macadamia.",
-		price: 4.5,
-		available: false,
-	},
-	{
-		name: "Hazelnut Chocolate",
-		description: "Roasted hazelnuts with rich chocolate chunks.",
-		price: 4.5,
-		available: false,
-	},
-	{
-		name: "Peanut Butter",
-		description: "Soft, nutty, and perfectly satisfying.",
-		price: 4.5,
-		available: false,
-	},
-	{
-		name: "Dark Chocolate Sea Salt",
-		description: "Deep dark chocolate with a touch of sea salt.",
-		price: 4.5,
-		available: false,
-	},
-];
+const COOKIE_PRODUCTS = COOKIES.map((cookie) => ({
+	name: cookie.name,
+	description: cookie.description,
+	price: getFlavorPrice(cookie.name),
+	available: cookie.available !== false,
+}));
 
 const PAGES = {
 	"/": {
@@ -76,7 +34,7 @@ const PAGES = {
 	"/cookies": {
 		title: "Cookies | Bavo Bakes",
 		description:
-			"Browse our handmade cookies — chocolate chip, double chocolate, oatmeal raisin, and more. Baked fresh to order in Barcelona.",
+			"Browse our handmade 100g cookies — mix any flavors. €5 each, with box prices from two cookies. Baked fresh to order in Barcelona.",
 	},
 	"/about": {
 		title: "About Us | Bavo Bakes",
@@ -154,24 +112,28 @@ export function getBakeryJsonLd(origin = SITE_URL) {
 export function getCookieProductsJsonLd(origin = SITE_URL) {
 	return {
 		"@context": "https://schema.org",
-		"@graph": COOKIE_PRODUCTS.map((cookie) => ({
-			"@type": "Product",
-			name: cookie.name,
-			description: cookie.description,
-			image: `${origin}${getCookieImageSrc(cookie.name)}`,
-			brand: {
-				"@type": "Brand",
-				name: SITE.name,
-			},
-			offers: {
-				"@type": "Offer",
-				priceCurrency: "EUR",
-				price: cookie.price.toFixed(2),
-				availability: cookie.available
-					? "https://schema.org/InStock"
-					: "https://schema.org/PreOrder",
-				url: `${origin}/cookies`,
-			},
-		})),
+		"@graph": COOKIE_PRODUCTS.map((cookie) => {
+			const imageSrc = getCookieImageSrc(cookie.name) ?? SITE.ogImage;
+
+			return {
+				"@type": "Product",
+				name: cookie.name,
+				description: cookie.description,
+				image: `${origin}${imageSrc}`,
+				brand: {
+					"@type": "Brand",
+					name: SITE.name,
+				},
+				offers: {
+					"@type": "Offer",
+					priceCurrency: "EUR",
+					price: cookie.price.toFixed(2),
+					availability: cookie.available
+						? "https://schema.org/InStock"
+						: "https://schema.org/PreOrder",
+					url: `${origin}/cookies`,
+				},
+			};
+		}),
 	};
 }

@@ -1,3 +1,5 @@
+import { formatEuro, getQuote } from "./pricing";
+
 const WHATSAPP_NUMBER = "34666611091";
 
 export function buildWhatsAppOrderUrl(items = []) {
@@ -7,7 +9,14 @@ export function buildWhatsAppOrderUrl(items = []) {
 		const summary = items
 			.map((item) => `${item.quantity}x ${item.name}`)
 			.join(", ");
-		message += ` for: ${summary}.`;
+		const quote = getQuote(items);
+		const cookieLabel = quote.count === 1 ? "cookie" : "cookies";
+
+		message += ` for: ${summary}.\n\n${quote.count} ${cookieLabel} — ${formatEuro(quote.total)}`;
+		if (quote.saved > 0) {
+			message += ` (was ${formatEuro(quote.was)})`;
+		}
+		message += ".";
 	} else {
 		message += ".";
 	}

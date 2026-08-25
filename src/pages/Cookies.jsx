@@ -3,12 +3,13 @@ import CookiesHero from "../components/CookiesHero";
 import CtaBanner from "../components/CtaBanner";
 import Footer from "../components/Footer";
 import PageHero from "../components/PageHero";
+import QuotePrice from "../components/QuotePrice";
 import Reveal from "../components/Reveal";
 import { useCart } from "../context/CartContext";
 import { buildWhatsAppOrderUrl } from "../lib/whatsapp";
 
 function Cookies() {
-	const { items, itemCount } = useCart();
+	const { items, itemCount, quote } = useCart();
 
 	return (
 		<>
@@ -24,7 +25,16 @@ function Cookies() {
 					subtext="Send us a message and we'll help you find your perfect box of cookies."
 					primaryLabel="CONTACT US"
 					primaryTo="/contact"
-					secondaryLabel={`ORDER NOW${itemCount > 0 ? ` (${itemCount})` : ""}`}
+					secondaryLabel={
+						itemCount > 0 ? (
+							<>
+								ORDER NOW
+								<QuotePrice quote={quote} />
+							</>
+						) : (
+							"ORDER NOW"
+						)
+					}
 					secondaryTo={buildWhatsAppOrderUrl(items)}
 					align="left"
 				/>

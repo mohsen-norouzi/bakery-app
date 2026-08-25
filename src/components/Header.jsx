@@ -1,10 +1,12 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useCart } from "../context/CartContext";
+import { formatEuro } from "../lib/pricing";
 import { buildWhatsAppOrderUrl } from "../lib/whatsapp";
 import Button from "./Button";
 import { ArrowRightIcon, BagIcon, CloseIcon, InstagramIcon, ListIcon } from "./icons";
 import Logo from "./Logo";
+import QuotePrice from "./QuotePrice";
 
 const NAV_LINKS = [
 	{ label: "Home", to: "/" },
@@ -29,7 +31,7 @@ const MENU_ANIMATION_MS = 350;
 
 function Header() {
 	const headerRef = useRef(null);
-	const { items, itemCount } = useCart();
+	const { items, itemCount, quote } = useCart();
 	const [menuOpen, setMenuOpen] = useState(false);
 	const [menuClosing, setMenuClosing] = useState(false);
 	const menuVisible = menuOpen || menuClosing;
@@ -116,13 +118,20 @@ function Header() {
 						<Button
 							variant="outline"
 							to={buildWhatsAppOrderUrl(items)}
-							aria-label={`Order now${itemCount > 0 ? `, ${itemCount} items in cart` : ""}`}
+							aria-label={
+								itemCount > 0
+									? `Order now, ${itemCount} items, ${formatEuro(quote.total)}`
+									: "Order now"
+							}
 							className="max-sm:!size-11 max-sm:!p-0 sm:px-7 sm:py-3.5"
 						>
 							<BagIcon className="size-6 shrink-0 sm:size-4" />
-							<span className="hidden sm:inline">
-								ORDER NOW{itemCount > 0 ? ` (${itemCount})` : ""}
-							</span>
+							<span className="hidden sm:inline">ORDER NOW</span>
+							{itemCount > 0 && (
+								<span className="hidden sm:inline-flex">
+									<QuotePrice quote={quote} />
+								</span>
+							)}
 						</Button>
 						{itemCount > 0 && (
 							<span className="pointer-events-none absolute -top-1 -right-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-brown px-1 text-[10px] font-semibold text-cream sm:hidden">
@@ -238,7 +247,8 @@ function Header() {
 							onClick={closeMenu}
 							tabIndex={menuActive ? 0 : -1}
 						>
-							ORDER NOW{itemCount > 0 ? ` (${itemCount})` : ""}
+							ORDER NOW
+							{itemCount > 0 && <QuotePrice quote={quote} tone="cream" />}
 							<ArrowRightIcon className="h-4 w-4" />
 						</Button>
 
