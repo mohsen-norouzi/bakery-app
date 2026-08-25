@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useCart } from "../context/CartContext";
 import { getCookieImageSrc } from "../lib/cookieImages";
 import { formatEuro, getFlavorPrice } from "../lib/pricing";
@@ -15,6 +15,10 @@ function CookieImage({ name, layout }) {
 		layout === "list"
 			? "h-36 w-36 rounded-xl object-contain"
 			: "aspect-square w-full object-contain";
+
+	useEffect(() => {
+		setFailed(!src);
+	}, [src]);
 
 	if (failed) {
 		return (
