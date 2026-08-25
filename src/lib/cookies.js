@@ -13,6 +13,14 @@ export const COOKIES = [
 		image: "cardamom-pistachio",
 	},
 	{
+		name: "Fudgy Brownie",
+		description: "Dense and fudgy, with a crackly top and chocolate chips.",
+		badge: "New",
+		image: "brownie",
+		kind: "brownie",
+		price: 4.5,
+	},
+	{
 		name: "Chocolate Chip",
 		description: "Classic, soft, and loaded with chocolate.",
 		image: "chocolate-chip",
@@ -26,12 +34,5 @@ export const COOKIES = [
 		name: "Raisin Cookie",
 		description: "Chewy cookies packed with sweet raisins.",
 		image: "raisin",
-	},
-	{
-		name: "Fudgy Brownie",
-		description: "Dense and fudgy, with a crackly top and chocolate chips.",
-		image: "brownie",
-		kind: "brownie",
-		price: 4.5,
 	},
 ];
