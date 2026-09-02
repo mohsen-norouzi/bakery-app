@@ -41,6 +41,11 @@ const PAGES = {
 		description:
 			"Learn about Bavo Bakes — a small Barcelona bakery making homemade cookies with real ingredients, baked fresh in small batches.",
 	},
+	"/feedback": {
+		title: "Customer Feedback | Bavo Bakes",
+		description:
+			"Read what cookie lovers across Europe say about Bavo Bakes — handmade cookies baked fresh to order in Barcelona.",
+	},
 	"/contact": {
 		title: "Contact & Order | Bavo Bakes",
 		description:

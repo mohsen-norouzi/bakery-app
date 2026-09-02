@@ -12,6 +12,7 @@ const NAV_LINKS = [
 	{ label: "Home", to: "/" },
 	{ label: "Cookies", to: "/cookies" },
 	{ label: "About", to: "/about" },
+	{ label: "Feedback", to: "/feedback" },
 	{ label: "Contact", to: "/contact" },
 ];
 

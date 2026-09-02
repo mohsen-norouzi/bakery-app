@@ -1,0 +1,107 @@
+/* Paper shapes for the feedback board.
+   Only things Tailwind can't express live here: clip-paths, masks, punched
+   holes, and paper grain. Colors, spacing and type stay in the components. */
+
+.wall-grain {
+	background-image:
+		radial-gradient(
+			circle at 18% 22%,
+			rgba(166, 124, 82, 0.09),
+			transparent 42%
+		),
+		radial-gradient(
+			circle at 82% 68%,
+			rgba(166, 124, 82, 0.08),
+			transparent 46%
+		);
+}
+
+.paper-shadow {
+	box-shadow: 0 18px 34px -22px rgba(82, 44, 9, 0.5);
+}
+
+/* clip-path removes box-shadow, so torn paper is shadowed by its wrapper */
+.paper-torn-shadow {
+	filter: drop-shadow(0 12px 14px rgba(82, 44, 9, 0.16));
+}
+
+.paper-torn {
+	clip-path: polygon(
+		0.6% 1.5%,
+		12% 0.4%,
+		24% 2%,
+		36% 0.6%,
+		48% 2.2%,
+		60% 0.5%,
+		72% 2.4%,
+		85% 0.8%,
+		99.2% 2.4%,
+		98.4% 14%,
+		99.6% 26%,
+		98.2% 38%,
+		99.5% 50%,
+		98.3% 62%,
+		99.6% 74%,
+		98.2% 86%,
+		99.4% 98%,
+		88% 99.2%,
+		76% 97.6%,
+		64% 99.4%,
+		52% 97.8%,
+		40% 99.4%,
+		28% 97.6%,
+		16% 99.3%,
+		1% 98%,
+		1.8% 86%,
+		0.4% 74%,
+		1.6% 62%,
+		0.5% 50%,
+		1.7% 38%,
+		0.4% 26%,
+		1.5% 14%
+	);
+}
+
+/* Holes and ruling are painted on the page itself: an absolutely positioned
+   overlay would be fragmented by the column layout. */
+.paper-notebook {
+	background-image:
+		radial-gradient(
+			circle at 26px 22px,
+			rgba(82, 44, 9, 0.18) 5px,
+			transparent 5.5px
+		),
+		repeating-linear-gradient(
+			to bottom,
+			transparent 0 27px,
+			rgba(82, 44, 9, 0.07) 27px 28px
+		);
+	background-size:
+		100% 44px,
+		100% 100%;
+	background-repeat: repeat-y, no-repeat;
+}
+
+.paper-tag {
+	clip-path: polygon(50% 0, 100% 7%, 100% 100%, 0 100%, 0 7%);
+}
+
+/* Bumps along every edge: a circle band per side, unioned with the inner rect */
+.paper-scallop {
+	--scallop: 11px;
+	mask:
+		radial-gradient(circle var(--scallop) at 50% 100%, #000 98%, #0000) top /
+		calc(2 * var(--scallop)) var(--scallop) repeat-x,
+		radial-gradient(circle var(--scallop) at 50% 0, #000 98%, #0000) bottom /
+		calc(2 * var(--scallop)) var(--scallop) repeat-x,
+		radial-gradient(circle var(--scallop) at 100% 50%, #000 98%, #0000) left /
+		var(--scallop) calc(2 * var(--scallop)) repeat-y,
+		radial-gradient(circle var(--scallop) at 0 50%, #000 98%, #0000) right /
+		var(--scallop) calc(2 * var(--scallop)) repeat-y,
+		linear-gradient(#000 0 0) center / calc(100% - 2 * var(--scallop))
+		calc(100% - 2 * var(--scallop)) no-repeat;
+}
+
+.paper-blob {
+	border-radius: 46% 54% 51% 49% / 39% 42% 58% 61%;
+}
