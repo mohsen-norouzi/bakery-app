@@ -21,7 +21,7 @@ function Monogram({ name, src }) {
 				width={36}
 				height={36}
 				loading="lazy"
-				className="size-9 shrink-0 rounded-full object-cover"
+				className="size-8 shrink-0 rounded-full object-cover"
 			/>
 		);
 	}
@@ -29,7 +29,7 @@ function Monogram({ name, src }) {
 	return (
 		<span
 			aria-hidden="true"
-			className="flex size-9 shrink-0 items-center justify-center rounded-full border border-brown/25 text-[11px] font-semibold tracking-[0.08em] text-brown/60"
+			className="flex size-8 shrink-0 items-center justify-center rounded-full border border-brown/25 text-[10px] font-semibold tracking-[0.08em] text-brown/60"
 		>
 			{getInitials(name)}
 		</span>

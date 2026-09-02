@@ -4,8 +4,8 @@
  */
 function Wall({ children }) {
 	return (
-		<div className="mx-auto max-w-7xl px-5 sm:px-8">
-			<div className="columns-1 gap-8 sm:columns-2 xl:columns-3">
+		<div className="mx-auto max-w-6xl px-5 sm:px-8">
+			<div className="columns-1 gap-6 sm:columns-2 xl:columns-3">
 				{children}
 			</div>
 		</div>

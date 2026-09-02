@@ -2,8 +2,9 @@ import { NOTES } from "../../lib/notes";
 
 /**
  * Writes a quote onto one of the photographed notes. The note keeps its own
- * aspect ratio, and the text sits inside the note's writable area so it never
- * runs over the tape, holes, clip, string or printed flower.
+ * aspect ratio, the text sits inside the note's writable area so it never runs
+ * over the tape, holes, clip, eyelet or printed flower, and it is turned to
+ * match however the paper lies in the photo.
  */
 function NotePaper({ note, children }) {
 	const paper = NOTES[note];
@@ -25,7 +26,10 @@ function NotePaper({ note, children }) {
 
 			<div
 				className="relative"
-				style={{ padding: `${top}% ${right}% ${bottom}% ${left}%` }}
+				style={{
+					padding: `${top}% ${right}% ${bottom}% ${left}%`,
+					rotate: paper.tilt ? `${paper.tilt}deg` : undefined,
+				}}
 			>
 				{children}
 			</div>

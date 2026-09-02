@@ -6,7 +6,7 @@ function Stars({ rating = 5 }) {
 		<div
 			role="img"
 			aria-label={`${rating} out of 5 stars`}
-			className="flex items-center gap-1 text-brown"
+			className="flex items-center gap-0.5 text-brown"
 		>
 			{Array.from({ length: rating }, (_, index) => (
 				<svg
@@ -14,7 +14,7 @@ function Stars({ rating = 5 }) {
 					key={index}
 					viewBox="0 0 16 16"
 					aria-hidden="true"
-					className="size-3.5 fill-current"
+					className="size-3 fill-current"
 				>
 					<path d={STAR_PATH} />
 				</svg>

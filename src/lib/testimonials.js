@@ -1,77 +1,24 @@
+import FEEDBACKS from "../data/feedbacks.json";
+
 /**
- * Feedback wall content — one quote per note in lib/notes.
+ * Customer feedback lives in data/feedbacks.json — edit the quotes there, no
+ * code changes needed. Each entry takes:
  *
- * TODO: the quotes, names, and stats below come from the design mockup —
- * replace them with real customer feedback before launch.
+ *   id      unique key, any short string
+ *   note    which note it's written on: "note-1" … "note-6" (see lib/notes)
+ *   name    who said it
+ *   city    where they are
+ *   rating  stars shown, 1–5
+ *   quote   the feedback itself — keep it to roughly two lines; a much longer
+ *           one stretches the note to make room
+ *   rotate  degrees of tilt, for the pinned-by-hand look (try -2 to 2)
  *
- *   note    which photographed note it's written on
- *   rotate  degrees of tilt, for the pinned-by-hand look
+ * Optional: "avatar" with a photo path, e.g. "/img/reviews/anna.webp",
+ * replaces the initials shown by default.
  *
- * Keep quotes roughly this length: they are set inside the writable area of
- * the note, and a much longer one will stretch the paper to fit.
+ * TODO: these are still the mockup's quotes — replace with real feedback.
  */
-export const TESTIMONIALS = [
-	{
-		id: "anna",
-		note: "note-1",
-		name: "Anna P.",
-		city: "Barcelona, Spain",
-		rating: 5,
-		quote:
-			"The best cookies I've ever had! You can taste the love in every bite.",
-		rotate: -1.2,
-	},
-	{
-		id: "claudia",
-		note: "note-3",
-		name: "Claudia M.",
-		city: "Madrid, Spain",
-		rating: 5,
-		quote:
-			"We order every month and each time it's perfect. Beautiful packaging, fast delivery!",
-		rotate: 1,
-	},
-	{
-		id: "sophie",
-		note: "note-5",
-		name: "Sophie T.",
-		city: "Paris, France",
-		rating: 5,
-		quote:
-			"I sent a box to my sister and she loved it. They arrived fresh and beautifully packed.",
-		rotate: 1.4,
-	},
-	{
-		id: "james",
-		note: "note-2",
-		name: "James L.",
-		city: "London, UK",
-		rating: 5,
-		quote:
-			"Finally found a bakery that uses real ingredients and makes cookies the old-fashioned way.",
-		rotate: -1,
-	},
-	{
-		id: "nina",
-		note: "note-4",
-		name: "Nina W.",
-		city: "Prague, Czechia",
-		rating: 5,
-		quote:
-			"Beautifully baked, thoughtfully packaged, and absolutely delicious.",
-		rotate: -1.5,
-	},
-	{
-		id: "daniel",
-		note: "note-6",
-		name: "Daniel R.",
-		city: "Berlin, Germany",
-		rating: 5,
-		quote:
-			"From the classic chocolate chip to the pistachio one — every flavor is a masterpiece.",
-		rotate: 0.8,
-	},
-];
+export const TESTIMONIALS = FEEDBACKS;
 
 /** TODO: confirm these figures before launch. */
 export const WALL_STATS = [
