@@ -1,36 +1,18 @@
-import PaperClip from "./decor/PaperClip";
-import WashiTape from "./decor/WashiTape";
-import { PAPERS } from "./papers";
+import NotePaper from "./NotePaper";
 import TestimonialBody from "./TestimonialBody";
 
-/** Puts one testimonial on the paper its data asks for, and pins it up. */
-function TestimonialCard({
-	style = "plain",
-	tape,
-	clip = false,
-	name,
-	city,
-	rating,
-	quote,
-	avatar,
-}) {
-	const Paper = PAPERS[style] ?? PAPERS.plain;
-
+/** One quote, written on the note its data asks for. */
+function TestimonialCard({ note, name, city, rating, quote, avatar }) {
 	return (
-		<div className="relative">
-			{tape && <WashiTape placement={tape} />}
-			{clip && <PaperClip />}
-
-			<Paper>
-				<TestimonialBody
-					name={name}
-					city={city}
-					rating={rating}
-					quote={quote}
-					avatar={avatar}
-				/>
-			</Paper>
-		</div>
+		<NotePaper note={note}>
+			<TestimonialBody
+				name={name}
+				city={city}
+				rating={rating}
+				quote={quote}
+				avatar={avatar}
+			/>
+		</NotePaper>
 	);
 }
 

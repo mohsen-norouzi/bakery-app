@@ -8,7 +8,7 @@ const ICONS = {
 
 function StatsBar({ stats }) {
 	return (
-		<div className="paper-shadow flex flex-wrap items-center justify-center gap-y-6 rounded-3xl bg-[#f7e9d4] px-8 py-6">
+		<div className="flex flex-wrap items-center justify-center gap-y-6 rounded-3xl bg-[#f3e2cb] px-8 py-6 shadow-[0_18px_34px_-22px_rgba(82,44,9,0.5)]">
 			{stats.map((stat, index) => {
 				const Icon = ICONS[stat.icon] ?? HeartIcon;
 
