@@ -1,4 +1,5 @@
 import { TESTIMONIALS, WALL_STATS } from "../lib/testimonials";
+import NotePaper from "./wall/NotePaper";
 import StatsBar from "./wall/StatsBar";
 import TestimonialCard from "./wall/TestimonialCard";
 import Wall from "./wall/Wall";
@@ -6,8 +7,9 @@ import WallIntro from "./wall/WallIntro";
 import WallItem from "./wall/WallItem";
 
 /**
- * The whole feedback wall: the intro, one note per quote, and the tally.
- * What each quote looks like comes from lib/testimonials and lib/notes.
+ * The whole feedback wall: the intro, the notes, and the tally. What goes on
+ * the wall and in what order comes from data/feedbacks.json; how each note
+ * looks comes from lib/notes.
  */
 function FeedbackWall() {
 	return (
@@ -17,9 +19,13 @@ function FeedbackWall() {
 			</div>
 
 			<Wall>
-				{TESTIMONIALS.map((testimonial) => (
-					<WallItem key={testimonial.id} rotate={testimonial.rotate}>
-						<TestimonialCard {...testimonial} />
+				{TESTIMONIALS.map((item) => (
+					<WallItem key={item.id} rotate={item.rotate}>
+						{item.kind === "image" ? (
+							<NotePaper note={item.note} />
+						) : (
+							<TestimonialCard {...item} />
+						)}
 					</WallItem>
 				))}
 			</Wall>

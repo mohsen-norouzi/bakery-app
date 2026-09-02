@@ -15,6 +15,14 @@
  * its paper edges, then inset by roughly 6% for margin.
  */
 export const NOTES = {
+	// A finished scrap: its message is part of the photo, so nothing is
+	// written over it and `alt` carries the words instead.
+	main: {
+		src: "/img/feedbacks/main.png",
+		ratio: 1335 / 1178,
+		tilt: 0,
+		alt: "Thank you for making our little bakery a part of your sweet moments!",
+	},
 	"note-1": {
 		src: "/img/feedbacks/note-1.png",
 		ratio: 1276 / 1233,

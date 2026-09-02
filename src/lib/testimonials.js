@@ -16,6 +16,10 @@ import FEEDBACKS from "../data/feedbacks.json";
  * Optional: "avatar" with a photo path, e.g. "/img/reviews/anna.webp",
  * replaces the initials shown by default.
  *
+ * An entry with "kind": "image" is a picture pinned to the wall rather than a
+ * quote — it needs only "id", "note" and "rotate", and its words (if any) live
+ * in the photo itself. Move it up or down the array to move it on the wall.
+ *
  * TODO: these are still the mockup's quotes — replace with real feedback.
  */
 export const TESTIMONIALS = FEEDBACKS;

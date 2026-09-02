@@ -18,13 +18,10 @@
 		"rotate": 1
 	},
 	{
-		"id": "sophie",
-		"note": "note-5",
-		"name": "Sophie T.",
-		"city": "Paris, France",
-		"rating": 5,
-		"quote": "I sent a box to my sister and she loved it. They arrived fresh and beautifully packed.",
-		"rotate": 1.4
+		"id": "thank-you",
+		"kind": "image",
+		"note": "main",
+		"rotate": 0.6
 	},
 	{
 		"id": "james",
