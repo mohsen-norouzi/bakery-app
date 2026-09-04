@@ -1,9 +1,9 @@
 import { useRef } from "react";
 import DeliveryCard from "./DeliveryCard";
+import { BicycleIcon, HeartIcon, StorefrontIcon } from "./icons";
 import ParallaxMap from "./ParallaxMap";
 import Reveal from "./Reveal";
 import RevealStagger from "./RevealStagger";
-import { BicycleIcon, HeartIcon, StorefrontIcon } from "./icons";
 
 const CARDS = [
 	{
@@ -58,9 +58,7 @@ function DeliveryPickup() {
 							<DeliveryCard
 								key={card.title}
 								{...card}
-								className={
-									index === 1 ? "sm:border-l sm:border-brown/15" : ""
-								}
+								className={index === 1 ? "sm:border-l sm:border-brown/15" : ""}
 							/>
 						))}
 					</RevealStagger>

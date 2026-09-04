@@ -8,8 +8,9 @@ function Terms() {
 			<section>
 				<h2>About these terms</h2>
 				<p className="mt-3">
-					These terms apply when you browse {SITE.name} or order homemade cookies
-					from us in {SITE.city}, Spain. By placing an order you agree to them.
+					These terms apply when you browse {SITE.name} or order homemade
+					cookies from us in {SITE.city}, Spain. By placing an order you agree
+					to them.
 				</p>
 			</section>
 
@@ -17,12 +18,13 @@ function Terms() {
 				<h2>Orders</h2>
 				<p className="mt-3">
 					Orders are placed through WhatsApp, email, phone, or Instagram — not
-					through an online checkout. Adding items to the on-site cart only helps
-					build a WhatsApp message; it is not a confirmed order.
+					through an online checkout. Adding items to the on-site cart only
+					helps build a WhatsApp message; it is not a confirmed order.
 				</p>
 				<p className="mt-3">
-					An order is confirmed when we accept it and agree availability, timing,
-					and total with you. We may decline an order if we cannot fulfil it.
+					An order is confirmed when we accept it and agree availability,
+					timing, and total with you. We may decline an order if we cannot
+					fulfil it.
 				</p>
 			</section>
 
@@ -58,9 +60,9 @@ function Terms() {
 			<section>
 				<h2>Cancellations &amp; changes</h2>
 				<p className="mt-3">
-					Because cookies are baked to order, cancellations or changes may not be
-					possible once baking has started. Contact us as soon as you can and we
-					will help where possible.
+					Because cookies are baked to order, cancellations or changes may not
+					be possible once baking has started. Contact us as soon as you can and
+					we will help where possible.
 				</p>
 			</section>
 
@@ -77,17 +79,18 @@ function Terms() {
 			<section>
 				<h2>Liability</h2>
 				<p className="mt-3">
-					Please share allergy information before ordering. To the extent allowed
-					by law, we are not responsible for issues arising from allergies we
-					were not told about, or from improper storage after delivery or pickup.
+					Please share allergy information before ordering. To the extent
+					allowed by law, we are not responsible for issues arising from
+					allergies we were not told about, or from improper storage after
+					delivery or pickup.
 				</p>
 			</section>
 
 			<section>
 				<h2>Website</h2>
 				<p className="mt-3">
-					Site content is for information. Products, prices, and availability may
-					change without notice.
+					Site content is for information. Products, prices, and availability
+					may change without notice.
 				</p>
 			</section>
 
@@ -95,16 +98,15 @@ function Terms() {
 				<h2>Governing law</h2>
 				<p className="mt-3">
 					These terms are governed by Spanish law. Courts in {SITE.city} have
-					jurisdiction, without affecting mandatory consumer rights that apply to
-					you.
+					jurisdiction, without affecting mandatory consumer rights that apply
+					to you.
 				</p>
 			</section>
 
 			<section>
 				<h2>Contact</h2>
 				<p className="mt-3">
-					Questions?{" "}
-					<a href={`mailto:${SITE.email}`}>{SITE.email}</a> or{" "}
+					Questions? <a href={`mailto:${SITE.email}`}>{SITE.email}</a> or{" "}
 					<Link to="/contact">Contact</Link>.
 				</p>
 			</section>

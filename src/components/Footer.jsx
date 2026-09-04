@@ -61,10 +61,7 @@ function Footer() {
 						</a>
 					</p>
 					<div className="flex gap-6">
-						<Link
-							to="/privacy"
-							className="transition-colors hover:text-brown"
-						>
+						<Link to="/privacy" className="transition-colors hover:text-brown">
 							Privacy Policy
 						</Link>
 						<Link to="/terms" className="transition-colors hover:text-brown">

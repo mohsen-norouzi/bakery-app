@@ -13,7 +13,9 @@ function LegalPage({ title, updated, children }) {
 						{title}
 					</h1>
 					{updated && (
-						<p className="mt-3 text-sm text-brown/50">Last updated: {updated}</p>
+						<p className="mt-3 text-sm text-brown/50">
+							Last updated: {updated}
+						</p>
 					)}
 					<div className="mt-10 space-y-8 text-brown/75 [&_a]:text-brown [&_a]:underline [&_a]:underline-offset-2 [&_h2]:font-display [&_h2]:text-xl [&_h2]:text-brown [&_li]:mt-2 [&_p]:leading-relaxed [&_ul]:list-disc [&_ul]:pl-5">
 						{children}

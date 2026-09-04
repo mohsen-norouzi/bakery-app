@@ -1,5 +1,4 @@
 import { buildWhatsAppOrderUrl } from "../lib/whatsapp";
-import RevealStagger from "./RevealStagger";
 import {
 	ClockIcon,
 	HeartIcon,
@@ -7,6 +6,7 @@ import {
 	MapPinIcon,
 	WhatsappIcon,
 } from "./icons";
+import RevealStagger from "./RevealStagger";
 
 const CONTACT_DETAILS = [
 	{
