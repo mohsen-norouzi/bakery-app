@@ -1,0 +1,68 @@
+[
+	{
+		"name": "Rosa",
+		"city": "Barcelona, Spain",
+		"rating": 5,
+		"quote": "Some of the best cookies I've ever had — such a nice texture and flavour."
+	},
+	{
+		"name": "Stephen",
+		"city": "London, UK",
+		"rating": 5,
+		"quote": "The chocolate and hazelnut one is incredible — how do you get so many layers?"
+	},
+	{
+		"name": "Maco",
+		"city": "Barcelona, Spain",
+		"rating": 5,
+		"quote": "The cookies were amazing — my friends loved them too, and they're already gone. Really cute packaging!"
+	},
+	{
+		"name": "Marco",
+		"city": "Barcelona, Spain",
+		"rating": 5,
+		"quote": "Verdict: I want more brownies. They're seriously addictive."
+	},
+	{
+		"name": "Luis",
+		"city": "Barcelona, Spain",
+		"rating": 5,
+		"quote": "The cookie was amazing — I loved it! You have a new customer."
+	},
+	{
+		"name": "Stephen",
+		"city": "London, UK",
+		"rating": 5,
+		"quote": "The raisin cookie is the best I've had in years — the soft middle especially."
+	},
+	{
+		"name": "Shukra",
+		"city": "Bamberg, Germany",
+		"rating": 5,
+		"quote": "They were so good — the sea salt on top! Chef's kiss."
+	},
+	{
+		"name": "Marco",
+		"city": "Barcelona, Spain",
+		"rating": 5,
+		"quote": "The saffron was unexpected, but it actually worked really well. A couple to try was not enough."
+	},
+	{
+		"name": "Dorsa",
+		"city": "Barcelona, Spain",
+		"rating": 5,
+		"quote": "The taste is incredible. If you can't travel to Iran, one bite and you'll feel like you're there."
+	},
+	{
+		"name": "Stephen",
+		"city": "London, UK",
+		"rating": 5,
+		"quote": "I had the last one this morning. The Persian one was my favourite of all."
+	},
+	{
+		"name": "Marzieh",
+		"city": "Barcelona, Spain",
+		"rating": 5,
+		"quote": "Thank you for the delicious masterpiece — everything was perfect."
+	}
+]

@@ -16,8 +16,7 @@ function SortDropdown({ options, value, onChange }) {
 		}
 
 		document.addEventListener("mousedown", handleClickOutside);
-		return () =>
-			document.removeEventListener("mousedown", handleClickOutside);
+		return () => document.removeEventListener("mousedown", handleClickOutside);
 	}, []);
 
 	return (
@@ -56,9 +55,7 @@ function SortDropdown({ options, value, onChange }) {
 										setIsOpen(false);
 									}}
 									className={`flex w-full items-center gap-2 px-4 py-2.5 text-left text-sm transition-colors hover:bg-brown/5 ${
-										isSelected
-											? "font-medium text-brown"
-											: "text-brown/70"
+										isSelected ? "font-medium text-brown" : "text-brown/70"
 									}`}
 								>
 									<CheckIcon

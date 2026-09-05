@@ -4,7 +4,13 @@ import { useCart } from "../context/CartContext";
 import { formatEuro } from "../lib/pricing";
 import { buildWhatsAppOrderUrl } from "../lib/whatsapp";
 import Button from "./Button";
-import { ArrowRightIcon, BagIcon, CloseIcon, InstagramIcon, ListIcon } from "./icons";
+import {
+	ArrowRightIcon,
+	BagIcon,
+	CloseIcon,
+	InstagramIcon,
+	ListIcon,
+} from "./icons";
 import Logo from "./Logo";
 import QuotePrice from "./QuotePrice";
 
@@ -12,6 +18,7 @@ const NAV_LINKS = [
 	{ label: "Home", to: "/" },
 	{ label: "Cookies", to: "/cookies" },
 	{ label: "About", to: "/about" },
+	{ label: "Feedback", to: "/feedback" },
 	{ label: "Contact", to: "/contact" },
 ];
 
@@ -160,9 +167,7 @@ function Header() {
 				onClick={closeMenu}
 				tabIndex={menuVisible ? 0 : -1}
 				className={`fixed inset-0 z-50 bg-brown/20 transition-opacity duration-300 lg:hidden ${
-					menuActive
-						? "opacity-100"
-						: "pointer-events-none opacity-0"
+					menuActive ? "opacity-100" : "pointer-events-none opacity-0"
 				}`}
 			/>
 

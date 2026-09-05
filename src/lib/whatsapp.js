@@ -7,7 +7,10 @@ export function buildWhatsAppOrderUrl(items = []) {
 
 	if (items.length > 0) {
 		const summary = items
-			.map((item) => `${item.quantity}x ${item.name}`)
+			.map(
+				(item) =>
+					`${item.quantity}x ${item.name}${item.vegan ? " (vegan)" : ""}`,
+			)
 			.join(", ");
 		const quote = getQuote(items);
 		const contents = formatCartContents(quote);

@@ -8,6 +8,7 @@ import { CartProvider } from "./context/CartContext";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Cookies from "./pages/Cookies";
+import Feedback from "./pages/Feedback";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Privacy from "./pages/Privacy";
@@ -25,6 +26,7 @@ function App() {
 							<Route path="/" element={<Home />} />
 							<Route path="/cookies" element={<Cookies />} />
 							<Route path="/about" element={<About />} />
+							<Route path="/feedback" element={<Feedback />} />
 							<Route path="/contact" element={<Contact />} />
 							<Route path="/privacy" element={<Privacy />} />
 							<Route path="/terms" element={<Terms />} />

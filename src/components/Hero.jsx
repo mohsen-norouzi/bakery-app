@@ -1,7 +1,7 @@
 import Button from "./Button";
+import { ArrowDownIcon, ArrowRightIcon } from "./icons";
 import Reveal from "./Reveal";
 import RevealStagger from "./RevealStagger";
-import { ArrowDownIcon, ArrowRightIcon } from "./icons";
 
 function Hero() {
 	return (
@@ -25,7 +25,11 @@ function Hero() {
 					/>
 				</Reveal>
 
-				<RevealStagger stagger={130} delay={220} className="flex max-w-xl flex-col">
+				<RevealStagger
+					stagger={130}
+					delay={220}
+					className="flex max-w-xl flex-col"
+				>
 					<div className="flex items-center gap-2 text-sm font-light tracking-[0.2em] text-brown/70">
 						<span>FRESHLY BAKED</span>
 						<img

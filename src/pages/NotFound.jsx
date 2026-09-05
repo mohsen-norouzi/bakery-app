@@ -42,8 +42,7 @@ function NotFound() {
 						</div>
 
 						<p className="mt-6 font-display text-2xl leading-snug text-brown sm:text-[1.75rem]">
-							Oops! This page{" "}
-							<span className="italic">crumbled away.</span>
+							Oops! This page <span className="italic">crumbled away.</span>
 						</p>
 
 						<div className="mx-auto mt-6 flex max-w-xs items-center gap-3 lg:mx-0">

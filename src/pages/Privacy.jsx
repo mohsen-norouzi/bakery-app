@@ -71,8 +71,8 @@ function Privacy() {
 			<section>
 				<h2>How long we keep data</h2>
 				<p className="mt-3">
-					We keep order and message details only as long as needed for the order,
-					support, and legal requirements, then delete or anonymise them.
+					We keep order and message details only as long as needed for the
+					order, support, and legal requirements, then delete or anonymise them.
 				</p>
 			</section>
 
@@ -81,8 +81,8 @@ function Privacy() {
 				<p className="mt-3">
 					If you are in the EU/EEA, you can ask to access, correct, delete, or
 					restrict your personal data, or object to certain processing. Email{" "}
-					<a href={`mailto:${SITE.email}`}>{SITE.email}</a>. You can also complain
-					to the Spanish Data Protection Agency (AEPD).
+					<a href={`mailto:${SITE.email}`}>{SITE.email}</a>. You can also
+					complain to the Spanish Data Protection Agency (AEPD).
 				</p>
 			</section>
 
@@ -97,9 +97,8 @@ function Privacy() {
 			<section>
 				<h2>Contact</h2>
 				<p className="mt-3">
-					Privacy questions:{" "}
-					<a href={`mailto:${SITE.email}`}>{SITE.email}</a> or our{" "}
-					<Link to="/contact">Contact</Link> page.
+					Privacy questions: <a href={`mailto:${SITE.email}`}>{SITE.email}</a>{" "}
+					or our <Link to="/contact">Contact</Link> page.
 				</p>
 			</section>
 		</LegalPage>

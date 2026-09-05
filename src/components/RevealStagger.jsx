@@ -41,7 +41,7 @@ function RevealStagger({
 			{Children.map(children, (child, index) => (
 				<div
 					key={child?.key ?? index}
-					className={`${itemClassName} ${
+					className={`h-full ${itemClassName} ${
 						visible
 							? "motion-safe:animate-reveal-up"
 							: "translate-y-12 opacity-0"

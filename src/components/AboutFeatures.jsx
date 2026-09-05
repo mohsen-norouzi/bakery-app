@@ -1,6 +1,6 @@
+import { CookingPotIcon, GiftIcon, HeartIcon, LeafIcon } from "./icons";
 import Reveal from "./Reveal";
 import RevealStagger from "./RevealStagger";
-import { CookingPotIcon, GiftIcon, HeartIcon, LeafIcon } from "./icons";
 
 const FEATURES = [
 	{

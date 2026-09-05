@@ -1,11 +1,12 @@
+import { HeadsetIcon, HeartIcon, ShieldCheckIcon, SmileyIcon } from "./icons";
 import Reveal from "./Reveal";
 import RevealStagger from "./RevealStagger";
-import { HeadsetIcon, HeartIcon, ShieldCheckIcon, SmileyIcon } from "./icons";
 
 const PROMISES = [
 	{
 		title: "Quality You Can Trust",
-		description: "We use premium ingredients and bake with the highest standards.",
+		description:
+			"We use premium ingredients and bake with the highest standards.",
 		icon: ShieldCheckIcon,
 	},
 	{
@@ -44,9 +45,9 @@ function AboutPromise() {
 						</div>
 
 						<p className="mt-4 font-display text-2xl leading-snug text-brown">
-							We are committed to creating cookies that not only taste
-							delicious but also make you feel special. Thank you for
-							supporting our small business and being a part of our story.
+							We are committed to creating cookies that not only taste delicious
+							but also make you feel special. Thank you for supporting our small
+							business and being a part of our story.
 						</p>
 					</Reveal>
 
