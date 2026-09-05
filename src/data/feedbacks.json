@@ -1,32 +1,68 @@
 [
 	{
-		"name": "Anna P.",
+		"name": "Rosa",
 		"city": "Barcelona, Spain",
 		"rating": 5,
-		"quote": "The best cookies I've ever had! You can taste the love in every bite."
+		"quote": "Some of the best cookies I've ever had — such a nice texture and flavour."
 	},
 	{
-		"name": "Claudia M.",
-		"city": "Madrid, Spain",
-		"rating": 5,
-		"quote": "We order every month and each time it's perfect. Beautiful packaging, fast delivery!"
-	},
-	{
-		"name": "James L.",
+		"name": "Stephen",
 		"city": "London, UK",
 		"rating": 5,
-		"quote": "Finally found a bakery that uses real ingredients and makes cookies the old-fashioned way."
+		"quote": "The chocolate and hazelnut one is incredible — how do you get so many layers?"
 	},
 	{
-		"name": "Nina W.",
-		"city": "Prague, Czechia",
+		"name": "Maco",
+		"city": "Barcelona, Spain",
 		"rating": 5,
-		"quote": "Beautifully baked, thoughtfully packaged, and absolutely delicious."
+		"quote": "The cookies were amazing — my friends loved them too, and they're already gone. Really cute packaging!"
 	},
 	{
-		"name": "Daniel R.",
-		"city": "Berlin, Germany",
+		"name": "Marco",
+		"city": "Barcelona, Spain",
 		"rating": 5,
-		"quote": "From the classic chocolate chip to the pistachio one — every flavor is a masterpiece."
+		"quote": "Verdict: I want more brownies. They're seriously addictive."
+	},
+	{
+		"name": "Luis",
+		"city": "Barcelona, Spain",
+		"rating": 5,
+		"quote": "The cookie was amazing — I loved it! You have a new customer."
+	},
+	{
+		"name": "Stephen",
+		"city": "London, UK",
+		"rating": 5,
+		"quote": "The raisin cookie is the best I've had in years — the soft middle especially."
+	},
+	{
+		"name": "Shukra",
+		"city": "Bamberg, Germany",
+		"rating": 5,
+		"quote": "They were so good — the sea salt on top! Chef's kiss."
+	},
+	{
+		"name": "Marco",
+		"city": "Barcelona, Spain",
+		"rating": 5,
+		"quote": "The saffron was unexpected, but it actually worked really well. A couple to try was not enough."
+	},
+	{
+		"name": "Dorsa",
+		"city": "Barcelona, Spain",
+		"rating": 5,
+		"quote": "The taste is incredible. If you can't travel to Iran, one bite and you'll feel like you're there."
+	},
+	{
+		"name": "Stephen",
+		"city": "London, UK",
+		"rating": 5,
+		"quote": "I had the last one this morning. The Persian one was my favourite of all."
+	},
+	{
+		"name": "Marzieh",
+		"city": "Barcelona, Spain",
+		"rating": 5,
+		"quote": "Thank you for the delicious masterpiece — everything was perfect."
 	}
 ]

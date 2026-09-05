@@ -4,7 +4,7 @@ import { NOTES } from "../../lib/notes";
  * Writes a quote onto one of the photographed notes, or shows the note on its
  * own when there is no quote to write. The note keeps its own
  * aspect ratio, the text sits inside the note's writable area so it never runs
- * over the tape, holes, clip, eyelet or printed flower, and it is turned to
+ * over the tape, holes, clip, or printed flower, and it is turned to
  * match however the paper lies in the photo.
  */
 function NotePaper({ note, children }) {

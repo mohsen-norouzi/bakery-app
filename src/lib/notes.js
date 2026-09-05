@@ -7,7 +7,7 @@
  *           the text is turned by the same amount so it reads square to the
  *           paper rather than to the image frame
  *   pad     the area of the note that is safe to write on, keeping text clear
- *           of the tape, punch holes, paperclip, eyelet and printed flower
+ *           of the tape, punch holes, paperclip, and printed flower
  *
  * `pad` values are percentages of the note's WIDTH — CSS resolves percentage
  * padding against width on every side, so the vertical numbers are converted
@@ -53,13 +53,6 @@ export const NOTES = {
 	},
 	"note-5": {
 		src: "/img/feedbacks/note-5.png",
-		ratio: 1024 / 1536,
-		tilt: 0,
-		// top clears the eyelet and string
-		pad: { top: 46, right: 21, bottom: 10, left: 21 },
-	},
-	"note-6": {
-		src: "/img/feedbacks/note-6.png",
 		ratio: 1199 / 983,
 		tilt: 0,
 		// left margin clears the printed daisy
