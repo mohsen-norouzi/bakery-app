@@ -31,6 +31,7 @@ function Feedback() {
 						)
 					}
 					secondaryTo={buildWhatsAppOrderUrl(items)}
+					align="left"
 				/>
 			</Reveal>
 
