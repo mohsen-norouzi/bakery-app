@@ -5,7 +5,7 @@ import { hasVeganOption } from "../lib/cookies";
 import { formatEuro, getFlavorPrice } from "../lib/pricing";
 import DashedRule from "./DashedRule";
 import ImagePlaceholder from "./ImagePlaceholder";
-import { MinusIcon, PlusIcon } from "./icons";
+import { CookieIcon, LeafIcon, MinusIcon, PlusIcon } from "./icons";
 
 const IMAGE_WIDTH = 480;
 const IMAGE_HEIGHT = 480;
@@ -67,46 +67,53 @@ function QuantityControls({
 		);
 	}
 
-	if (quantity > 0) {
-		return (
-			<div className="flex h-9 w-[5.25rem] items-center justify-center rounded-full bg-brown text-cream">
-				<button
-					type="button"
-					onClick={onRemove}
-					aria-label={`Remove one ${label} from cart`}
-					className="flex h-9 w-8 items-center justify-center rounded-full transition-colors hover:bg-white/10"
-				>
-					<MinusIcon className="h-3.5 w-3.5" />
-				</button>
-				<span className="min-w-4 text-center text-sm font-medium tabular-nums">
-					{quantity}
-				</span>
-				<button
-					type="button"
-					onClick={onAdd}
-					aria-label={`Add another ${label} to cart`}
-					className="flex h-9 w-8 items-center justify-center rounded-full transition-colors hover:bg-white/10"
-				>
-					<PlusIcon className="h-3.5 w-3.5" />
-				</button>
-			</div>
-		);
-	}
+	const open = quantity > 0;
 
 	return (
-		<button
-			type="button"
-			onClick={onAdd}
-			aria-label={`Add ${label} to cart`}
-			className="flex h-9 w-9 items-center justify-center rounded-full bg-brown text-cream transition-colors hover:bg-brown/90"
+		<div
+			className={`flex h-9 items-center justify-end overflow-hidden rounded-full bg-brown text-cream ${
+				open ? "w-[5.25rem]" : "w-9"
+			} transition-[width] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:duration-200`}
 		>
-			<PlusIcon className="h-3.5 w-3.5" />
-		</button>
+			<button
+				type="button"
+				onClick={onRemove}
+				tabIndex={open ? 0 : -1}
+				aria-hidden={!open}
+				aria-label={`Remove one ${label} from cart`}
+				className={`flex h-9 w-8 shrink-0 items-center justify-center rounded-full transition-[opacity,background-color] duration-300 ease-out motion-reduce:transition-none ${
+					open
+						? "opacity-100 hover:bg-white/10"
+						: "pointer-events-none opacity-0"
+				}`}
+			>
+				<MinusIcon className="h-3.5 w-3.5" />
+			</button>
+			<span
+				aria-hidden={!open}
+				className={`min-w-4 text-center text-sm font-medium tabular-nums transition-opacity duration-300 ease-out motion-reduce:transition-none ${
+					open ? "opacity-100 delay-75" : "opacity-0"
+				}`}
+			>
+				{open ? quantity : ""}
+			</span>
+			<button
+				type="button"
+				onClick={onAdd}
+				aria-label={
+					open ? `Add another ${label} to cart` : `Add ${label} to cart`
+				}
+				className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition-colors hover:bg-white/10"
+			>
+				<PlusIcon className="h-3.5 w-3.5" />
+			</button>
+		</div>
 	);
 }
 
 function VersionRow({
 	label,
+	icon: Icon,
 	available,
 	quantity,
 	itemLabel,
@@ -116,7 +123,8 @@ function VersionRow({
 }) {
 	return (
 		<div className="flex h-9 min-w-0 items-center gap-2">
-			<span className="shrink-0 text-[10px] font-medium tracking-widest text-brown/70">
+			<span className="flex shrink-0 items-center gap-1.5 text-[10px] font-medium tracking-widest text-brown/70">
+				<Icon className="h-3 w-3" />
 				{label}
 			</span>
 			<div className="min-w-4 flex-1">
@@ -198,6 +206,7 @@ function CookieCard({
 				<div className="flex flex-col gap-1.5">
 					<VersionRow
 						label="CLASSIC"
+						icon={CookieIcon}
 						available={available}
 						quantity={classicQty}
 						itemLabel={name}
@@ -207,6 +216,7 @@ function CookieCard({
 					/>
 					<VersionRow
 						label="VEGAN"
+						icon={LeafIcon}
 						available={available}
 						quantity={veganQty}
 						itemLabel={`vegan ${name}`}

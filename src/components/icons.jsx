@@ -6,6 +6,7 @@ import {
 	CaretDown,
 	Check,
 	Clock,
+	Cookie,
 	CookingPot,
 	EnvelopeSimple,
 	Gift,
@@ -101,6 +102,10 @@ export function WhatsappIcon({ className = "h-4 w-4" }) {
 
 export function LeafIcon({ className = "h-4 w-4" }) {
 	return <Leaf className={className} weight="regular" aria-hidden="true" />;
+}
+
+export function CookieIcon({ className = "h-4 w-4" }) {
+	return <Cookie className={className} weight="regular" aria-hidden="true" />;
 }
 
 export function CookingPotIcon({ className = "h-4 w-4" }) {
