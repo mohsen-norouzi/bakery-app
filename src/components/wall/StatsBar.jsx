@@ -7,7 +7,7 @@ const ICONS = {
 };
 
 /**
- * The tally, written on the taped card in /img/feedbacks/stats.png.
+ * The tally, written on the taped card in /img/feedbacks/stats.webp.
  *
  * The card art is a background rather than an <img> so one element can carry
  * both layouts: from `sm` up the three figures sit side by side on the card,
@@ -17,7 +17,7 @@ const ICONS = {
  */
 function StatsBar({ stats }) {
 	return (
-		<div className="rounded-2xl bg-sand px-6 py-8 sm:flex sm:aspect-[1832/859] sm:flex-col sm:justify-center sm:rounded-none sm:bg-[url('/img/feedbacks/stats.png')] sm:bg-[length:100%_100%] sm:bg-transparent sm:bg-no-repeat sm:px-[12%] sm:pt-[14%] sm:pb-[9%]">
+		<div className="rounded-2xl bg-sand px-6 py-8 sm:flex sm:aspect-[1832/859] sm:flex-col sm:justify-center sm:rounded-none sm:bg-[url('/img/feedbacks/stats.webp')] sm:bg-[length:100%_100%] sm:bg-transparent sm:bg-no-repeat sm:px-[12%] sm:pt-[14%] sm:pb-[9%]">
 			<div className="grid gap-8 sm:grid-cols-3 sm:gap-0 sm:divide-x sm:divide-brown/15">
 				{stats.map((stat) => {
 					const Icon = ICONS[stat.icon] ?? HeartIcon;

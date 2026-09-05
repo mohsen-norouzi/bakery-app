@@ -21,7 +21,7 @@ export const COOKIES = [
 		description:
 			"Toasted hazelnuts with chunks of dark chocolate and sea salt.",
 		badge: "New",
-		image: "hazelnut-chocolate.png",
+		image: "hazelnut-chocolate",
 	},
 	{
 		name: "Fudgy Brownie",
