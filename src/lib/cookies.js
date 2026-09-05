@@ -17,11 +17,11 @@ export const COOKIES = [
 		image: "cardamom-pistachio",
 	},
 	{
-		name: "Hazelnut & Raisin",
+		name: "Hazelnut + Chocolate",
 		description:
-			"Toasted hazelnuts and sweet raisins, with chunks of dark chocolate and sea salt.",
+			"Toasted hazelnuts with chunks of dark chocolate and sea salt.",
 		badge: "New",
-		image: "hazelnut-raisin.png",
+		image: "hazelnut-chocolate.png",
 	},
 	{
 		name: "Fudgy Brownie",
