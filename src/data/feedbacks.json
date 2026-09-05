@@ -1,58 +1,32 @@
 [
 	{
-		"id": "anna",
-		"note": "note-1",
 		"name": "Anna P.",
 		"city": "Barcelona, Spain",
 		"rating": 5,
-		"boxes": 4,
-		"quote": "The best cookies I've ever had! You can taste the love in every bite.",
-		"rotate": -1.2
+		"quote": "The best cookies I've ever had! You can taste the love in every bite."
 	},
 	{
-		"id": "claudia",
-		"note": "note-3",
 		"name": "Claudia M.",
 		"city": "Madrid, Spain",
 		"rating": 5,
-		"boxes": 18,
-		"quote": "We order every month and each time it's perfect. Beautiful packaging, fast delivery!",
-		"rotate": 1
+		"quote": "We order every month and each time it's perfect. Beautiful packaging, fast delivery!"
 	},
 	{
-		"id": "thank-you",
-		"kind": "image",
-		"note": "main",
-		"rotate": 0.6
-	},
-	{
-		"id": "james",
-		"note": "note-2",
 		"name": "James L.",
 		"city": "London, UK",
 		"rating": 5,
-		"boxes": 3,
-		"quote": "Finally found a bakery that uses real ingredients and makes cookies the old-fashioned way.",
-		"rotate": -1
+		"quote": "Finally found a bakery that uses real ingredients and makes cookies the old-fashioned way."
 	},
 	{
-		"id": "nina",
-		"note": "note-4",
 		"name": "Nina W.",
 		"city": "Prague, Czechia",
 		"rating": 5,
-		"boxes": 6,
-		"quote": "Beautifully baked, thoughtfully packaged, and absolutely delicious.",
-		"rotate": -1.5
+		"quote": "Beautifully baked, thoughtfully packaged, and absolutely delicious."
 	},
 	{
-		"id": "daniel",
-		"note": "note-6",
 		"name": "Daniel R.",
 		"city": "Berlin, Germany",
 		"rating": 5,
-		"boxes": 9,
-		"quote": "From the classic chocolate chip to the pistachio one — every flavor is a masterpiece.",
-		"rotate": 0.8
+		"quote": "From the classic chocolate chip to the pistachio one — every flavor is a masterpiece."
 	}
 ]

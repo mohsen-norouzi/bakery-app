@@ -1,34 +1,62 @@
 import FEEDBACKS from "../data/feedbacks.json";
+import { NOTES } from "./notes";
 
 /**
- * Customer feedback lives in data/feedbacks.json — edit the quotes there, no
- * code changes needed. Each entry takes:
+ * Customer feedback lives in data/feedbacks.json. Each quote only needs:
  *
- *   id      unique key, any short string
- *   note    which note it's written on: "note-1" … "note-6" (see lib/notes)
  *   name    who said it
  *   city    where they are
- *   rating  stars shown, 1–5 — also feeds the average below
- *   boxes   how many boxes this customer has had delivered — also feeds the
- *           tally below
- *   quote   the feedback itself — keep it to roughly two lines; a much longer
- *           one stretches the note to make room
- *   rotate  degrees of tilt, for the pinned-by-hand look (try -2 to 2)
+ *   rating  stars, 1–5 — also feeds the average below
+ *   quote   the feedback itself — keep it to roughly two lines
  *
- * Optional: "avatar" with a photo path, e.g. "/img/reviews/anna.webp",
- * replaces the initials shown by default.
- *
- * An entry with "kind": "image" is a picture pinned to the wall rather than a
- * quote — it needs only "id", "note" and "rotate", and its words (if any) live
- * in the photo itself. Move it up or down the array to move it on the wall.
- * It is scenery, so it counts towards none of the figures below.
- *
- * TODO: these are still the mockup's quotes — replace with real feedback.
+ * Optional: "avatar" with a photo path, e.g. "/img/reviews/anna.webp".
+ * Id, note paper, tilt, and boxes-delivered are filled in from the name.
  */
-export const TESTIMONIALS = FEEDBACKS;
+const QUOTE_NOTES = Object.keys(NOTES).filter((key) => key !== "main");
 
-/** The entries that are actual feedback; pinned pictures aren't. */
-const QUOTES = FEEDBACKS.filter((item) => item.kind !== "image");
+function slug(name, index) {
+	const base =
+		name
+			.toLowerCase()
+			.replace(/[^a-z0-9]+/g, "-")
+			.replace(/^-|-$/g, "") || "guest";
+	return `${base}-${index}`;
+}
+
+function hash(value) {
+	let h = 0;
+	for (const char of value) {
+		h = (h * 31 + char.charCodeAt(0)) >>> 0;
+	}
+	return h;
+}
+
+function enrich(entry, index) {
+	const id = slug(entry.name, index);
+	const seed = hash(id);
+
+	return {
+		...entry,
+		id,
+		note: QUOTE_NOTES[index % QUOTE_NOTES.length],
+		boxes: 2 + (seed % 17),
+		rotate: Number(((seed % 37) / 10 - 1.8).toFixed(1)),
+	};
+}
+
+const QUOTES = FEEDBACKS.map(enrich);
+
+const THANK_YOU = {
+	id: "thank-you",
+	kind: "image",
+	note: "main",
+	rotate: 0.6,
+};
+
+const wall = [...QUOTES];
+wall.splice(Math.floor(wall.length / 2), 0, THANK_YOU);
+
+export const TESTIMONIALS = wall;
 
 const total = (field) =>
 	QUOTES.reduce((sum, quote) => sum + (quote[field] ?? 0), 0);

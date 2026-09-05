@@ -9,9 +9,9 @@ import WallIntro from "./wall/WallIntro";
 import WallItem from "./wall/WallItem";
 
 /**
- * The whole feedback wall: the intro, the notes, and the tally. What goes on
- * the wall and in what order comes from data/feedbacks.json; how each note
- * looks comes from lib/notes.
+ * The whole feedback wall: the intro, the notes, and the tally. Quotes come
+ * from data/feedbacks.json; paper, tilt, and the thank-you scrap are filled
+ * in automatically. How each note looks comes from lib/notes.
  */
 function FeedbackWall() {
 	return (
