@@ -3,7 +3,6 @@ import { useCart } from "../context/CartContext";
 import { getCookieImageSrc } from "../lib/cookieImages";
 import { hasVeganOption } from "../lib/cookies";
 import { formatEuro, getFlavorPrice } from "../lib/pricing";
-import DashedRule from "./DashedRule";
 import ImagePlaceholder from "./ImagePlaceholder";
 import { MinusIcon, PlusIcon } from "./icons";
 
@@ -15,7 +14,7 @@ function CookieImage({ name, layout }) {
 	const [failed, setFailed] = useState(!src);
 	const className =
 		layout === "list"
-			? "h-36 w-36 rounded-xl object-contain"
+			? "h-28 w-28 rounded-xl object-contain min-[480px]:h-36 min-[480px]:w-36"
 			: "aspect-square w-full object-contain";
 
 	useEffect(() => {
@@ -48,7 +47,7 @@ function CookieImage({ name, layout }) {
 
 function VersionPicker({ name, vegan, onChange }) {
 	return (
-		<fieldset className="relative m-0 grid h-10 w-36 min-w-0 shrink-0 grid-cols-2 items-center overflow-hidden rounded-full border border-brown/20 p-0.5 text-[10px] font-medium tracking-widest">
+		<fieldset className="relative m-0 grid h-9 min-w-[7.25rem] max-w-36 flex-1 grid-cols-2 items-center overflow-hidden rounded-full border border-brown/20 p-0.5 text-[10px] font-medium tracking-widest">
 			<legend className="sr-only">{name} version</legend>
 			<span
 				aria-hidden="true"
@@ -66,7 +65,7 @@ function VersionPicker({ name, vegan, onChange }) {
 					type="button"
 					aria-pressed={vegan === option.value}
 					onClick={() => onChange(option.value)}
-					className={`relative z-10 h-full rounded-full transition-colors duration-200 ${
+					className={`relative z-10 h-full rounded-full px-1 transition-colors duration-200 ${
 						vegan === option.value
 							? "text-cream"
 							: "text-brown/55 hover:text-brown"
@@ -93,7 +92,7 @@ function QuantityControls({
 				type="button"
 				disabled
 				aria-label={`${name} is not available yet`}
-				className="flex h-10 w-10 cursor-not-allowed items-center justify-center rounded-full border border-brown/20 text-brown/30"
+				className="flex h-9 w-9 shrink-0 cursor-not-allowed items-center justify-center rounded-full border border-brown/20 text-brown/30"
 			>
 				<PlusIcon className="h-3.5 w-3.5" />
 			</button>
@@ -102,23 +101,23 @@ function QuantityControls({
 
 	if (quantity > 0) {
 		return (
-			<div className="flex h-10 shrink-0 items-center rounded-full bg-brown text-cream">
+			<div className="flex h-9 shrink-0 items-center rounded-full bg-brown text-cream">
 				<button
 					type="button"
 					onClick={onRemove}
 					aria-label={`Remove one ${label} from cart`}
-					className="flex h-10 w-10 items-center justify-center rounded-full transition-colors hover:bg-white/10"
+					className="flex h-9 w-8 items-center justify-center rounded-full transition-colors hover:bg-white/10"
 				>
 					<MinusIcon className="h-3.5 w-3.5" />
 				</button>
-				<span className="min-w-5 text-center text-sm font-medium tabular-nums">
+				<span className="min-w-4 text-center text-sm font-medium tabular-nums">
 					{quantity}
 				</span>
 				<button
 					type="button"
 					onClick={onAdd}
 					aria-label={`Add another ${label} to cart`}
-					className="flex h-10 w-10 items-center justify-center rounded-full transition-colors hover:bg-white/10"
+					className="flex h-9 w-8 items-center justify-center rounded-full transition-colors hover:bg-white/10"
 				>
 					<PlusIcon className="h-3.5 w-3.5" />
 				</button>
@@ -131,7 +130,7 @@ function QuantityControls({
 			type="button"
 			onClick={onAdd}
 			aria-label={`Add ${label} to cart`}
-			className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brown text-cream transition-colors hover:bg-brown/90"
+			className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brown text-cream transition-colors hover:bg-brown/90"
 		>
 			<PlusIcon className="h-3.5 w-3.5" />
 		</button>
@@ -169,33 +168,48 @@ function CookieCard({
 	);
 
 	const imageEl = (
-		<div className="relative shrink-0">
+		<div
+			className={
+				isList ? "relative shrink-0" : "relative overflow-hidden rounded-t-2xl"
+			}
+		>
 			<CookieImage name={name} layout={layout} />
 			{badgeEl}
 		</div>
 	);
 
 	const heading = (
-		<div className="flex items-baseline justify-between gap-3">
-			<h3 className="font-display text-lg text-brown">{name}</h3>
-			<span
-				className={`shrink-0 text-base font-medium tabular-nums ${
-					available ? "text-brown" : "text-brown/40"
-				}`}
-			>
-				{available ? formatEuro(getFlavorPrice(name)) : "Soon"}
-			</span>
-		</div>
+		<>
+			<div className="flex items-start justify-between gap-3">
+				<h3 className="min-w-0 font-display text-lg leading-snug text-brown">
+					{name}
+				</h3>
+				<span
+					className={`shrink-0 pt-0.5 text-base font-medium tabular-nums ${
+						available ? "text-brown" : "text-brown/40"
+					}`}
+				>
+					{available ? formatEuro(getFlavorPrice(name)) : "Soon"}
+				</span>
+			</div>
+			<p className="mt-1.5 text-sm leading-relaxed text-brown/60">
+				{description}
+			</p>
+		</>
 	);
 
-	const purchase = (
+	const actions = (
 		<div className={isList ? "mt-4" : "mt-auto pt-4"}>
-			<DashedRule />
-			<div className="flex items-center gap-2 pt-3">
+			{otherQuantity > 0 && (
+				<p className="mb-2 text-[10px] leading-4 tracking-[0.04em] text-brown/45">
+					{otherQuantity} {vegan ? "classic" : "vegan"} already in your box
+				</p>
+			)}
+			<div className="flex items-center gap-2">
 				{canBeVegan && available && (
 					<VersionPicker name={name} vegan={vegan} onChange={setVegan} />
 				)}
-				<div className="ml-auto">
+				<div className="ml-auto shrink-0">
 					<QuantityControls
 						available={available}
 						quantity={quantity}
@@ -206,24 +220,20 @@ function CookieCard({
 					/>
 				</div>
 			</div>
-			{otherQuantity > 0 && (
-				<p className="mt-2 text-[10px] tracking-[0.04em] text-brown/45">
-					{otherQuantity} {vegan ? "classic" : "vegan"} already in your box
-				</p>
-			)}
 		</div>
 	);
 
-	const cardClass = `overflow-hidden rounded-2xl bg-sand${available ? "" : " opacity-90"}`;
+	const cardClass = `rounded-2xl bg-sand${available ? "" : " opacity-90"}`;
 
 	if (isList) {
 		return (
-			<div className={`flex gap-5 p-5 ${cardClass}`}>
+			<div
+				className={`flex flex-col gap-4 p-4 min-[480px]:flex-row min-[480px]:gap-5 min-[480px]:p-5 ${cardClass}`}
+			>
 				{imageEl}
 				<div className="flex min-w-0 flex-1 flex-col justify-center">
 					{heading}
-					<p className="mt-2 text-sm text-brown/60">{description}</p>
-					{purchase}
+					{actions}
 				</div>
 			</div>
 		);
@@ -231,11 +241,10 @@ function CookieCard({
 
 	return (
 		<div className={`flex h-full flex-col ${cardClass}`}>
-			<div className="relative">{imageEl}</div>
-			<div className="flex flex-1 flex-col px-5 pt-4 pb-5">
+			{imageEl}
+			<div className="flex flex-1 flex-col px-4 pt-3 pb-5 sm:px-5">
 				{heading}
-				<p className="mt-2 text-sm text-brown/60">{description}</p>
-				{purchase}
+				{actions}
 			</div>
 		</div>
 	);
