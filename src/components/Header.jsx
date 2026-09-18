@@ -1,9 +1,10 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import { formatEuro } from "../lib/pricing";
 import { buildWhatsAppOrderUrl } from "../lib/whatsapp";
 import Button from "./Button";
+import { Bat } from "./HalloweenDecor";
 import {
 	ArrowRightIcon,
 	BagIcon,
@@ -16,6 +17,7 @@ import QuotePrice from "./QuotePrice";
 
 const NAV_LINKS = [
 	{ label: "Home", to: "/" },
+	{ label: "Halloween", to: "/#halloween" },
 	{ label: "Cookies", to: "/cookies" },
 	{ label: "About", to: "/about" },
 	{ label: "Feedback", to: "/feedback" },
@@ -23,7 +25,7 @@ const NAV_LINKS = [
 ];
 
 function navLinkClass({ isActive }) {
-	return `text-xs font-medium tracking-[0.15em] transition-colors hover:text-brown ${
+	return `text-[10px] font-medium tracking-[0.15em] transition-colors hover:text-brown ${
 		isActive ? "border-b border-brown text-brown" : "text-brown/80"
 	}`;
 }
@@ -38,6 +40,12 @@ const MENU_ANIMATION_MS = 350;
 
 function Header() {
 	const headerRef = useRef(null);
+	const menuButtonRef = useRef(null);
+	const { pathname, hash } = useLocation();
+	const isLinkActive = (link, active) =>
+		link.to.includes("#")
+			? pathname === "/" && hash === "#halloween"
+			: active && !(link.to === "/" && hash);
 	const { items, itemCount, quote } = useCart();
 	const [menuOpen, setMenuOpen] = useState(false);
 	const [menuClosing, setMenuClosing] = useState(false);
@@ -103,174 +111,233 @@ function Header() {
 		};
 	}, [menuVisible]);
 
+	useEffect(() => {
+		if (!menuOpen) return;
+		const nav = document.getElementById("mobile-nav");
+		const getFocusable = () =>
+			Array.from(
+				nav.querySelectorAll("a[href], button:not([disabled])"),
+			).filter((element) => element.tabIndex >= 0);
+		getFocusable()[0]?.focus({ preventScroll: true });
+		const handleKeyDown = (event) => {
+			if (event.key === "Escape") {
+				setMenuOpen(false);
+				setMenuClosing(false);
+				menuButtonRef.current?.focus({ preventScroll: true });
+			}
+			if (event.key === "Tab") {
+				const elements = getFocusable();
+				const first = elements[0];
+				const last = elements.at(-1);
+				if (event.shiftKey && document.activeElement === first) {
+					event.preventDefault();
+					last?.focus();
+				} else if (!event.shiftKey && document.activeElement === last) {
+					event.preventDefault();
+					first?.focus();
+				}
+			}
+		};
+		document.addEventListener("keydown", handleKeyDown);
+		return () => document.removeEventListener("keydown", handleKeyDown);
+	}, [menuOpen]);
+
 	return (
-		<header ref={headerRef} className="relative z-40">
-			<div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 py-4 sm:px-6 sm:py-6 lg:grid-cols-[auto_1fr_auto] lg:gap-6 lg:px-10">
-				<Logo compact onNavigate={closeMenu} />
+		<>
+			<div className="season-announcement">
+				<Bat />
+				<span>
+					Something wickedly sweet is baking. Meet our Halloween collection.
+				</span>
+				<Link to="/#halloween">
+					Explore the treats <span aria-hidden="true">↗</span>
+				</Link>
+			</div>
+			<header ref={headerRef} className="site-header relative z-40">
+				<div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 py-4 sm:px-6 sm:py-6 lg:grid-cols-[auto_1fr_auto] lg:gap-6 lg:px-10">
+					<Logo compact onNavigate={closeMenu} />
 
-				<nav className="hidden justify-self-center lg:block" aria-label="Main">
-					<ul className="flex items-center gap-9">
-						{NAV_LINKS.map((link) => (
-							<li key={link.label}>
-								<NavLink to={link.to} end className={navLinkClass}>
-									{link.label.toUpperCase()}
-								</NavLink>
-							</li>
-						))}
-					</ul>
-				</nav>
+					<nav
+						className="hidden justify-self-center lg:block"
+						aria-label="Main"
+					>
+						<ul className="flex items-center gap-6 xl:gap-8">
+							{NAV_LINKS.map((link) => (
+								<li key={link.label}>
+									<NavLink
+										to={link.to}
+										end
+										className={(state) =>
+											`${navLinkClass({ isActive: isLinkActive(link, state.isActive) })} ${link.label === "Halloween" ? "header-halloween-link" : ""}`
+										}
+									>
+										{link.label.toUpperCase()}
+									</NavLink>
+								</li>
+							))}
+						</ul>
+					</nav>
 
-				<div className="flex items-center gap-2 justify-self-end">
-					<div className="relative shrink-0">
-						<Button
-							variant="outline"
-							to={buildWhatsAppOrderUrl(items)}
-							aria-label={
-								itemCount > 0
-									? `Order now, ${itemCount} items, ${formatEuro(quote.total)}`
-									: "Order now"
-							}
-							className="max-sm:!size-11 max-sm:!p-0 sm:px-7 sm:py-3.5"
-						>
-							<BagIcon className="size-6 shrink-0 sm:size-4" />
-							<span className="hidden sm:inline">ORDER NOW</span>
+					<div className="flex items-center gap-2 justify-self-end">
+						<div className="relative shrink-0">
+							<Button
+								variant="outline"
+								to={buildWhatsAppOrderUrl(items)}
+								aria-label={
+									itemCount > 0
+										? `Order now, ${itemCount} items, ${formatEuro(quote.total)}`
+										: "Order now"
+								}
+								className="header-order max-sm:!size-11 max-sm:!p-0 sm:px-5 sm:py-3.5"
+							>
+								<BagIcon className="size-6 shrink-0 sm:size-4" />
+								<span className="hidden sm:inline">ORDER NOW</span>
+								{itemCount > 0 && (
+									<span className="hidden sm:inline-flex">
+										<QuotePrice quote={quote} />
+									</span>
+								)}
+							</Button>
 							{itemCount > 0 && (
-								<span className="hidden sm:inline-flex">
-									<QuotePrice quote={quote} />
+								<span className="pointer-events-none absolute -top-1 -right-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-brown px-1 text-[10px] font-semibold text-cream sm:hidden">
+									{itemCount}
 								</span>
 							)}
-						</Button>
-						{itemCount > 0 && (
-							<span className="pointer-events-none absolute -top-1 -right-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-brown px-1 text-[10px] font-semibold text-cream sm:hidden">
-								{itemCount}
-							</span>
-						)}
-					</div>
+						</div>
 
-					<button
-						type="button"
-						onClick={openMenu}
-						aria-expanded={menuOpen}
-						aria-controls="mobile-nav"
-						aria-label="Open menu"
-						className="flex size-11 items-center justify-center rounded-xl border border-brown/40 text-brown transition-colors hover:bg-brown/5 lg:hidden"
-					>
-						<ListIcon className="size-5" />
-					</button>
-				</div>
-			</div>
-
-			{/* Always mounted on small screens so open animation isn't remounted/replayed */}
-			<button
-				type="button"
-				aria-label="Close menu"
-				onClick={closeMenu}
-				tabIndex={menuVisible ? 0 : -1}
-				className={`fixed inset-0 z-50 bg-brown/20 transition-opacity duration-300 lg:hidden ${
-					menuActive ? "opacity-100" : "pointer-events-none opacity-0"
-				}`}
-			/>
-
-			<div
-				className={`fixed inset-0 z-[60] overflow-hidden lg:hidden ${
-					menuVisible ? "" : "pointer-events-none invisible"
-				}`}
-				aria-hidden={!menuActive}
-			>
-				<nav
-					id="mobile-nav"
-					className={`flex h-full w-full flex-col overflow-y-auto overscroll-none bg-cream px-6 pb-10 transition-transform duration-[350ms] ease-[cubic-bezier(0.32,0.72,0,1)] ${
-						menuActive ? "translate-x-0" : "translate-x-full"
-					}`}
-					aria-label="Main"
-				>
-					<div className="flex items-center justify-between py-4">
-						<Logo compact onNavigate={closeMenu} />
 						<button
 							type="button"
-							onClick={closeMenu}
-							aria-label="Close menu"
-							className="flex size-11 items-center justify-center rounded-xl border border-brown/40 text-brown transition-colors hover:bg-brown/5"
+							ref={menuButtonRef}
+							onClick={openMenu}
+							aria-expanded={menuOpen}
+							aria-controls="mobile-nav"
+							aria-label="Open menu"
+							className="flex size-11 items-center justify-center rounded-xl border border-brown/40 text-brown transition-colors hover:bg-brown/5 lg:hidden"
 						>
-							<CloseIcon className="size-5" />
+							<ListIcon className="size-5" />
 						</button>
 					</div>
+				</div>
 
-					<p
-						className={`max-w-xs font-display text-2xl leading-snug text-brown transition-[opacity,transform] duration-500 ease-out ${
-							menuActive
-								? "translate-x-0 opacity-100 delay-[60ms]"
-								: "translate-x-4 opacity-0"
+				{/* Always mounted on small screens so open animation isn't remounted/replayed */}
+				<button
+					type="button"
+					aria-label="Close menu"
+					aria-hidden={!menuVisible}
+					onClick={closeMenu}
+					tabIndex={menuVisible ? 0 : -1}
+					className={`fixed inset-0 z-50 bg-brown/20 transition-opacity duration-300 lg:hidden ${
+						menuActive ? "opacity-100" : "pointer-events-none opacity-0"
+					}`}
+				/>
+
+				<div
+					className={`fixed inset-0 z-[60] overflow-hidden lg:hidden ${
+						menuVisible ? "" : "pointer-events-none invisible"
+					}`}
+					aria-hidden={!menuActive}
+				>
+					<nav
+						id="mobile-nav"
+						className={`flex h-full w-full flex-col overflow-y-auto overscroll-none bg-cream px-6 pb-10 transition-transform duration-[350ms] ease-[cubic-bezier(0.32,0.72,0,1)] ${
+							menuActive ? "translate-x-0" : "translate-x-full"
 						}`}
+						aria-label="Main"
 					>
-						Homemade cookies,
-						<span className="text-tan italic"> made with love.</span>
-					</p>
-
-					<ul className="mt-8 divide-y divide-brown/10 border-y border-brown/10">
-						{NAV_LINKS.map((link, index) => (
-							<li
-								key={link.label}
-								className={`transition-[opacity,transform] duration-500 ease-out ${
-									menuActive
-										? "translate-x-0 opacity-100"
-										: "translate-x-4 opacity-0"
-								}`}
-								style={{
-									transitionDelay: menuActive ? `${120 + index * 70}ms` : "0ms",
-								}}
+						<div className="flex items-center justify-between py-4">
+							<Logo compact onNavigate={closeMenu} />
+							<button
+								type="button"
+								onClick={closeMenu}
+								aria-label="Close menu"
+								className="flex size-11 items-center justify-center rounded-xl border border-brown/40 text-brown transition-colors hover:bg-brown/5"
 							>
-								<NavLink
-									to={link.to}
-									end
-									className={mobileNavLinkClass}
-									onClick={closeMenu}
-									tabIndex={menuActive ? 0 : -1}
+								<CloseIcon className="size-5" />
+							</button>
+						</div>
+
+						<p
+							className={`max-w-xs font-display text-2xl leading-snug text-brown transition-[opacity,transform] duration-500 ease-out ${
+								menuActive
+									? "translate-x-0 opacity-100 delay-[60ms]"
+									: "translate-x-4 opacity-0"
+							}`}
+						>
+							A little spooky,
+							<span className="text-tan italic"> a lot of sweet.</span>
+						</p>
+
+						<ul className="mt-8 divide-y divide-brown/10 border-y border-brown/10">
+							{NAV_LINKS.map((link, index) => (
+								<li
+									key={link.label}
+									className={`transition-[opacity,transform] duration-500 ease-out ${
+										menuActive
+											? "translate-x-0 opacity-100"
+											: "translate-x-4 opacity-0"
+									}`}
+									style={{
+										transitionDelay: menuActive
+											? `${120 + index * 70}ms`
+											: "0ms",
+									}}
 								>
-									{link.label}
-								</NavLink>
-							</li>
-						))}
-					</ul>
+									<NavLink
+										to={link.to}
+										end
+										className={(state) =>
+											mobileNavLinkClass({
+												isActive: isLinkActive(link, state.isActive),
+											})
+										}
+										onClick={closeMenu}
+										tabIndex={menuActive ? 0 : -1}
+									>
+										{link.label}
+									</NavLink>
+								</li>
+							))}
+						</ul>
 
-					<div
-						className={`mt-10 transition-[opacity,transform] duration-500 ease-out ${
-							menuActive
-								? "translate-x-0 opacity-100"
-								: "translate-x-4 opacity-0"
-						}`}
-						style={{
-							transitionDelay: menuActive
-								? `${120 + NAV_LINKS.length * 70}ms`
-								: "0ms",
-						}}
-					>
-						<Button
-							variant="solid"
-							to={buildWhatsAppOrderUrl(items)}
-							className="w-full"
-							onClick={closeMenu}
-							tabIndex={menuActive ? 0 : -1}
+						<div
+							className={`mt-10 transition-[opacity,transform] duration-500 ease-out ${
+								menuActive
+									? "translate-x-0 opacity-100"
+									: "translate-x-4 opacity-0"
+							}`}
+							style={{
+								transitionDelay: menuActive
+									? `${120 + NAV_LINKS.length * 70}ms`
+									: "0ms",
+							}}
 						>
-							ORDER NOW
-							{itemCount > 0 && <QuotePrice quote={quote} tone="cream" />}
-							<ArrowRightIcon className="h-4 w-4" />
-						</Button>
+							<Button
+								variant="solid"
+								to={buildWhatsAppOrderUrl(items)}
+								className="w-full"
+								onClick={closeMenu}
+								tabIndex={menuActive ? 0 : -1}
+							>
+								ORDER NOW
+								{itemCount > 0 && <QuotePrice quote={quote} tone="cream" />}
+								<ArrowRightIcon className="h-4 w-4" />
+							</Button>
 
-						<a
-							href="https://instagram.com/bavobakes"
-							target="_blank"
-							rel="noopener noreferrer"
-							tabIndex={menuActive ? 0 : -1}
-							className="mt-6 inline-flex items-center gap-2 text-xs font-medium tracking-[0.15em] text-brown/70 transition-colors hover:text-brown"
-						>
-							<InstagramIcon className="h-4 w-4" />
-							BAVOBAKES
-						</a>
-					</div>
-				</nav>
-			</div>
-		</header>
+							<a
+								href="https://instagram.com/bavobakes"
+								target="_blank"
+								rel="noopener noreferrer"
+								tabIndex={menuActive ? 0 : -1}
+								className="mt-6 inline-flex items-center gap-2 text-xs font-medium tracking-[0.15em] text-brown/70 transition-colors hover:text-brown"
+							>
+								<InstagramIcon className="h-4 w-4" />
+								BAVOBAKES
+							</a>
+						</div>
+					</nav>
+				</div>
+			</header>
+		</>
 	);
 }
 

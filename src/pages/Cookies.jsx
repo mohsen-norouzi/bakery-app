@@ -1,8 +1,9 @@
 import CookiesCatalog from "../components/CookiesCatalog";
-import CookiesHero from "../components/CookiesHero";
 import CtaBanner from "../components/CtaBanner";
 import Footer from "../components/Footer";
-import PageHero from "../components/PageHero";
+import HalloweenCollection from "../components/HalloweenCollection";
+import { Sparkle } from "../components/HalloweenDecor";
+
 import QuotePrice from "../components/QuotePrice";
 import Reveal from "../components/Reveal";
 import { useCart } from "../context/CartContext";
@@ -13,9 +14,31 @@ function Cookies() {
 
 	return (
 		<>
-			<PageHero src="/img/cookies-bg.webp" align="right">
-				<CookiesHero />
-			</PageHero>
+			<section className="season-shop-intro">
+				<img
+					src="/img/halloween/autumn-kitchen.webp"
+					alt=""
+					aria-hidden="true"
+				/>
+				<div className="season-container">
+					<p className="season-eyebrow">
+						<Sparkle /> FRESH FROM THE OVEN
+					</p>
+					<h1>
+						Pick your treats.
+						<br />
+						<em>Find your favourites.</em>
+					</h1>
+					<p>
+						A little Halloween magic, plus the classics you love. Handmade in
+						Barcelona and baked to order.
+					</p>
+					<a className="season-text-link" href="#classics">
+						Browse the classic cookies ↓
+					</a>
+				</div>
+			</section>
+			<HalloweenCollection />
 
 			<CookiesCatalog />
 			<Reveal>

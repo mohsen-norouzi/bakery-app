@@ -1,0 +1,1125 @@
+:root {
+	--season-orange: #ab451e;
+	--season-ink: #322219;
+	--season-muted: #766357;
+	--season-line: #d9c7b7;
+}
+html {
+	scroll-behavior: smooth;
+	scroll-padding-top: 24px;
+}
+body {
+	color: var(--season-ink);
+	background: var(--color-cream);
+}
+::selection {
+	background: #e5b48d;
+	color: #322219;
+}
+:focus-visible {
+	outline: 2px solid var(--season-orange);
+	outline-offset: 5px;
+}
+.season-container {
+	width: min(1280px, calc(100% - 112px));
+	margin-inline: auto;
+}
+.season-section {
+	padding-block: 100px;
+}
+.season-eyebrow {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	color: var(--season-orange);
+	font-size: 10px;
+	font-weight: 500;
+	letter-spacing: 0.2em;
+	line-height: 1.6;
+}
+.season-eyebrow svg {
+	width: 18px;
+	height: 18px;
+	flex: 0 0 auto;
+}
+.season-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 22px;
+	min-height: 54px;
+	padding: 16px 24px;
+	background: var(--season-orange);
+	border: 1px solid var(--season-orange);
+	color: #fff8ee;
+	border-radius: 5px;
+	font-size: 12px;
+	font-weight: 500;
+	transition:
+		background 0.2s,
+		transform 0.2s;
+}
+.season-button:hover {
+	background: #873715;
+	transform: translateY(-2px);
+}
+.season-button svg,
+.season-text-link svg,
+.treat-link svg {
+	width: 18px;
+	height: 18px;
+	flex: 0 0 auto;
+	transition: transform 0.2s;
+}
+.season-text-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 15px;
+	padding-block: 8px;
+	border-bottom: 1px solid #9d8170;
+	font-size: 12px;
+	font-weight: 500;
+	color: var(--season-ink);
+}
+.season-text-link:hover svg,
+.treat-link:hover svg {
+	transform: translateX(4px);
+}
+.season-section h2,
+.box-content h2,
+.story-content h2 {
+	font-family: var(--font-display);
+	font-weight: 400;
+	font-size: clamp(36px, 3.5vw, 52px);
+	line-height: 1.22;
+	letter-spacing: -0.035em;
+}
+.season-section h2 em,
+.story-content h2 em {
+	color: var(--season-orange);
+	font-weight: 400;
+}
+.season-announcement {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 18px;
+	min-height: 35px;
+	padding: 8px 20px;
+	background: var(--season-ink);
+	color: #faebda;
+	font-size: 10px;
+	letter-spacing: 0.09em;
+}
+.season-announcement svg {
+	width: 24px;
+	height: 13px;
+	color: #e9ac76;
+}
+.season-announcement a {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	color: #f2c4a3;
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+.site-header {
+	background: #faf3e9;
+	border-bottom: 1px solid #32221912;
+}
+.site-header > div:first-child {
+	max-width: 1392px;
+	padding-block: 22px;
+}
+.site-header nav[aria-label="Main"] li a {
+	letter-spacing: 0.08em;
+}
+.header-halloween-link {
+	color: var(--season-orange);
+}
+.header-order {
+	background: var(--season-ink);
+	color: #fcf4e9;
+	border-radius: 5px;
+	border-color: var(--season-ink);
+}
+.header-order:hover {
+	background: var(--season-orange);
+	color: white;
+}
+.halloween-hero {
+	position: relative;
+	isolation: isolate;
+	min-height: min(700px, 75vw);
+	overflow: hidden;
+	background: #f8ede3;
+}
+.halloween-hero-photo {
+	position: absolute;
+	inset: 0;
+	z-index: -3;
+}
+.halloween-hero-photo img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center 61%;
+}
+.halloween-hero-shade {
+	position: absolute;
+	inset: 0;
+	z-index: -2;
+	background: linear-gradient(
+		90deg,
+		#f8eee4f2 0%,
+		#f8eee4b0 28%,
+		#f8eee426 49%,
+		transparent 65%
+	);
+}
+.hero-content {
+	min-height: inherit;
+	display: flex;
+	align-items: center;
+	padding-block: 75px 105px;
+}
+.hero-copy {
+	width: 58%;
+	position: relative;
+}
+.hero-copy h1 {
+	font-family: var(--font-display);
+	font-size: clamp(58px, 6.2vw, 90px);
+	line-height: 1.1;
+	letter-spacing: -0.057em;
+	font-weight: 400;
+	margin-top: 26px;
+}
+.hero-copy h1 em {
+	color: var(--season-orange);
+	font-weight: 400;
+}
+.hero-description {
+	max-width: 367px;
+	color: #6a5548;
+	font-size: 13px;
+	line-height: 1.95;
+	margin-top: 27px;
+}
+.hero-actions {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 25px;
+	margin-top: 31px;
+}
+.hero-footnote {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-top: 25px;
+	font-size: 10px;
+	color: #756355;
+}
+.hero-footnote span {
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background: #a2522e;
+}
+.hero-season-stamp {
+	position: absolute;
+	right: 6%;
+	top: 36px;
+	width: 112px;
+	height: 112px;
+	border: 1px solid #8e62478c;
+	border-radius: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 6px;
+	color: #794b30;
+	transform: rotate(12deg);
+}
+.hero-season-stamp span {
+	font-size: 8px;
+	letter-spacing: 0.16em;
+}
+.hero-season-stamp svg {
+	width: 44px;
+	height: 44px;
+}
+.hero-bat {
+	position: absolute;
+	width: 54px;
+	top: 74px;
+	left: 51%;
+	transform: rotate(-16deg);
+	color: #36251f;
+}
+.hero-scroll {
+	position: absolute;
+	bottom: 30px;
+	left: 56px;
+	width: 38px;
+	height: 38px;
+	border: 1px solid #af9480;
+	border-radius: 50%;
+	display: grid;
+	place-items: center;
+	color: #7a5b43;
+}
+.hero-scroll svg {
+	width: 15px;
+	height: 15px;
+}
+.hero-photo-note {
+	position: absolute;
+	right: 7%;
+	bottom: 30px;
+	font-family: var(--font-display);
+	font-size: 15px;
+	font-style: italic;
+	color: #513628;
+	background: #fbf1e6e6;
+	padding: 10px 19px;
+	border-radius: 3px;
+	transform: rotate(-3deg);
+}
+.season-ribbon {
+	min-height: 67px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: clamp(20px, 3.5vw, 58px);
+	padding: 20px 28px;
+	background: var(--season-ink);
+	color: #f0d7bc;
+	overflow: hidden;
+}
+.season-ribbon span {
+	font-size: 9px;
+	letter-spacing: 0.19em;
+	white-space: nowrap;
+}
+.season-ribbon svg {
+	width: 20px;
+	height: 20px;
+	flex: 0 0 auto;
+	color: #c68550;
+}
+.season-section-heading {
+	text-align: center;
+	max-width: 920px;
+	margin: 0 auto 44px;
+}
+.season-section-heading .season-eyebrow {
+	justify-content: center;
+}
+.season-section-heading h2 {
+	margin-top: 17px;
+}
+.season-section-heading > p:last-child,
+.classic-heading > div > p:last-child {
+	color: var(--season-muted);
+	font-size: 13px;
+	line-height: 1.8;
+	margin-top: 17px;
+}
+.halloween-treat-grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 28px;
+}
+.halloween-treat {
+	height: 100%;
+}
+.treat-art {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 370px;
+	overflow: hidden;
+	border-radius: 140px 140px 5px 5px;
+	background: #eddec9;
+}
+.mummy-treat .treat-art {
+	background: #e9d8c3;
+}
+.spiderweb-treat .treat-art {
+	background: #e5d6cb;
+}
+.treat-art::after {
+	content: "";
+	position: absolute;
+	inset: 13px;
+	border: 1px solid #7f5b3820;
+	border-radius: inherit;
+	pointer-events: none;
+}
+.treat-art img {
+	width: 87%;
+	height: 86%;
+	object-fit: contain;
+	position: relative;
+	z-index: 1;
+	margin-top: 21px;
+	transition: transform 0.5s cubic-bezier(0.2, 0.65, 0.3, 1);
+}
+.treat-art:hover img {
+	transform: translateY(-7px) rotate(-3deg);
+}
+.pumpkin-treat .treat-art img {
+	width: 92%;
+	height: 88%;
+	margin-top: 25px;
+}
+.treat-number {
+	z-index: 2;
+	position: absolute;
+	top: 25px;
+	left: 50%;
+	transform: translateX(-50%);
+	font-family: var(--font-display);
+	font-size: 14px;
+	color: #694e37;
+}
+.treat-season-label {
+	position: absolute;
+	left: 22px;
+	bottom: 22px;
+	z-index: 2;
+	writing-mode: vertical-rl;
+	transform: rotate(180deg);
+	font-size: 8px;
+	letter-spacing: 0.16em;
+	color: #6f5139;
+}
+.treat-info {
+	padding: 25px 2px 0;
+}
+.treat-tag {
+	font-size: 8px;
+	font-weight: 500;
+	letter-spacing: 0.15em;
+	color: var(--season-orange);
+}
+.treat-info h3 {
+	margin-top: 8px;
+	font-family: var(--font-display);
+	font-size: 28px;
+	font-weight: 400;
+	letter-spacing: -0.02em;
+}
+.treat-description {
+	margin-top: 10px;
+	font-size: 12px;
+	line-height: 1.85;
+	color: var(--season-muted);
+	min-height: 67px;
+	max-width: 335px;
+}
+.treat-link {
+	margin-top: 17px;
+	padding-block: 12px;
+	border-top: 1px solid var(--season-line);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 11px;
+	font-weight: 500;
+}
+.collection-note {
+	text-align: center;
+	margin-top: 35px;
+	font-size: 10px;
+	line-height: 1.8;
+	color: var(--season-muted);
+}
+.halloween-box {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	background: var(--season-ink);
+	color: #f6e8d8;
+}
+.box-photo {
+	position: relative;
+	min-height: 620px;
+	overflow: hidden;
+}
+.box-photo img {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	object-fit: cover;
+	object-position: 50% 53%;
+}
+.box-photo-label {
+	position: absolute;
+	left: 32px;
+	bottom: 30px;
+	font-size: 9px;
+	letter-spacing: 0.14em;
+	background: #f8eedeeb;
+	color: #584232;
+	padding: 13px 18px;
+}
+.box-content {
+	position: relative;
+	display: flex;
+	align-items: center;
+	padding: 70px clamp(35px, 6vw, 100px);
+}
+.box-content .season-eyebrow {
+	color: #e3aa7d;
+}
+.box-content h2 {
+	font-size: clamp(44px, 4.6vw, 68px);
+	margin-top: 24px;
+}
+.box-content h2 em {
+	color: #e9a879;
+}
+.box-content h2 + p {
+	max-width: 385px;
+	font-size: 13px;
+	line-height: 1.95;
+	margin-top: 25px;
+	color: #d6bfad;
+}
+.box-details {
+	display: flex;
+	gap: 24px;
+	flex-wrap: wrap;
+	margin-block: 26px 32px;
+}
+.box-details span {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	font-size: 10px;
+	color: #ead5c2;
+}
+.box-details svg {
+	width: 17px;
+	height: 17px;
+	color: #dc9f71;
+}
+.box-content .season-button {
+	background: #e9b086;
+	border-color: #e9b086;
+	color: #322219;
+}
+.box-content .season-button:hover {
+	background: #f4c8a6;
+}
+.box-content .box-small-print {
+	margin-top: 15px;
+	font-size: 9px;
+	color: #c6ab96;
+}
+.box-bat {
+	position: absolute;
+	top: 40px;
+	right: 48px;
+	width: 70px;
+	transform: rotate(14deg);
+	color: #a66e4899;
+}
+.classic-heading,
+.social-heading {
+	display: flex;
+	justify-content: space-between;
+	align-items: end;
+	gap: 30px;
+	margin-bottom: 42px;
+}
+.classic-heading h2,
+.social-heading h2 {
+	margin-top: 16px;
+}
+.classic-heading .season-text-link,
+.social-heading .season-text-link {
+	flex-shrink: 0;
+	margin-bottom: 5px;
+}
+.classic-cookie-grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 28px;
+}
+.classic-cookie-grid > div {
+	border-radius: 5px;
+	background: #eee1cf;
+	border: 1px solid #d7bda633;
+}
+.classic-cookie-grid img {
+	max-height: 290px;
+	padding: 16px;
+}
+.season-story {
+	display: grid;
+	grid-template-columns: 1.15fr 1fr;
+	background: #eee0ce;
+}
+.story-photo {
+	min-height: 540px;
+	position: relative;
+}
+.story-photo img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: 68% center;
+}
+.story-content {
+	padding: 75px clamp(35px, 5vw, 80px);
+}
+.story-content h2 {
+	margin-top: 21px;
+}
+.story-content > p:not(.season-eyebrow) {
+	font-size: 12px;
+	line-height: 1.95;
+	color: #736050;
+	margin-top: 24px;
+	max-width: 420px;
+}
+.story-content .season-text-link {
+	margin-top: 24px;
+}
+.season-social {
+	background: #f0e4d5;
+}
+.season-social-grid {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 18px;
+}
+.season-social-grid a {
+	position: relative;
+	overflow: hidden;
+	border-radius: 3px;
+}
+.season-social-grid img {
+	width: 100%;
+	aspect-ratio: 1 / 1.12;
+	object-fit: cover;
+	object-position: 65% center;
+	transition: transform 0.5s;
+}
+.season-social-grid a:hover img {
+	transform: scale(1.04);
+}
+.season-social-grid a > svg {
+	position: absolute;
+	right: 13px;
+	bottom: 13px;
+	width: 21px;
+	height: 21px;
+	color: #fff8eb;
+	filter: drop-shadow(0 1px 3px #322219);
+}
+.season-footer {
+	border-top: 1px solid #d9c7b7;
+}
+.season-footer-note {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 13px;
+	padding: 20px;
+	border-bottom: 1px solid #d9c7b7;
+	color: var(--season-orange);
+	font-family: var(--font-display);
+	font-style: italic;
+	font-size: 19px;
+}
+.season-footer-note svg {
+	width: 28px;
+	height: 28px;
+}
+.season-shop-intro {
+	position: relative;
+	overflow: hidden;
+	min-height: 410px;
+	padding-block: 80px;
+	background: #f0e0d0;
+}
+.season-shop-intro > img {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center 54%;
+}
+.season-shop-intro::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(90deg, #f7eee5 15%, #f7eee5e8 37%, #f7eee530 75%);
+}
+.season-shop-intro .season-container {
+	position: relative;
+	z-index: 1;
+}
+.season-shop-intro h1 {
+	margin-top: 20px;
+	font-family: var(--font-display);
+	font-size: clamp(46px, 5vw, 68px);
+	line-height: 1.15;
+	letter-spacing: -0.035em;
+}
+.season-shop-intro h1 em {
+	color: var(--season-orange);
+}
+.season-shop-intro p:not(.season-eyebrow) {
+	font-size: 13px;
+	line-height: 1.8;
+	margin-top: 22px;
+	max-width: 385px;
+	color: var(--season-muted);
+}
+.season-shop-intro .season-text-link {
+	margin-top: 20px;
+}
+#classics {
+	border-top: 1px solid var(--season-line);
+}
+@media (min-width: 1600px) {
+	.halloween-hero {
+		min-height: 780px;
+	}
+	.hero-copy h1 {
+		font-size: 98px;
+	}
+	.hero-scroll {
+		left: calc((100% - 1280px) / 2);
+	}
+	.treat-art {
+		height: 410px;
+	}
+}
+@media (max-width: 1100px) {
+	.season-container {
+		width: calc(100% - 64px);
+	}
+	.hero-copy {
+		width: 63%;
+	}
+	.hero-copy h1 {
+		font-size: clamp(52px, 7vw, 75px);
+	}
+	.hero-content {
+		padding-block: 70px 100px;
+	}
+	.hero-description {
+		max-width: 335px;
+	}
+	.hero-actions {
+		gap: 15px;
+	}
+	.hero-actions .season-text-link {
+		font-size: 11px;
+	}
+	.hero-season-stamp {
+		right: 4%;
+		width: 94px;
+		height: 94px;
+	}
+	.hero-scroll {
+		left: 32px;
+	}
+	.season-ribbon {
+		gap: 24px;
+	}
+	.season-ribbon span {
+		font-size: 8px;
+		letter-spacing: 0.12em;
+	}
+	.season-ribbon span:last-child,
+	.season-ribbon svg:last-of-type {
+		display: none;
+	}
+	.season-section {
+		padding-block: 75px;
+	}
+	.halloween-treat-grid,
+	.classic-cookie-grid {
+		gap: 20px;
+	}
+	.treat-art {
+		height: 310px;
+		border-radius: 110px 110px 5px 5px;
+	}
+	.treat-info h3 {
+		font-size: 25px;
+	}
+	.treat-description {
+		min-height: 88px;
+	}
+	.box-photo {
+		min-height: 580px;
+	}
+	.box-content {
+		padding-inline: 36px;
+	}
+	.box-content h2 {
+		font-size: 52px;
+	}
+	.box-bat {
+		width: 54px;
+		right: 25px;
+		top: 30px;
+	}
+	.story-photo {
+		min-height: 510px;
+	}
+	.story-content {
+		padding: 60px 35px;
+	}
+	.story-content .season-eyebrow {
+		font-size: 8px;
+	}
+}
+@media (max-width: 767px) {
+	.season-container {
+		width: calc(100% - 40px);
+	}
+	.season-section {
+		padding-block: 60px;
+	}
+	.season-announcement {
+		font-size: 8px;
+		gap: 10px;
+		letter-spacing: 0.035em;
+	}
+	.season-announcement svg {
+		width: 20px;
+	}
+	.season-announcement a {
+		display: none;
+	}
+	.site-header > div:first-child {
+		padding-block: 16px;
+	}
+	.halloween-hero {
+		min-height: 790px;
+	}
+	.halloween-hero-photo {
+		top: 318px;
+	}
+	.halloween-hero-photo img {
+		object-position: right center;
+	}
+	.halloween-hero-shade {
+		background: linear-gradient(
+			180deg,
+			#f8eee4 0%,
+			#f8eee4 37%,
+			#f8eee470 54%,
+			transparent 67%
+		);
+	}
+	.hero-content {
+		min-height: 0;
+		padding-block: 45px 0;
+	}
+	.hero-copy {
+		width: 100%;
+	}
+	.hero-copy .season-eyebrow {
+		font-size: 8px;
+		letter-spacing: 0.14em;
+	}
+	.hero-copy h1 {
+		font-size: clamp(45px, 8.5vw, 63px);
+		margin-top: 17px;
+	}
+	.hero-description {
+		margin-top: 20px;
+		font-size: 12px;
+		max-width: 340px;
+	}
+	.hero-actions {
+		margin-top: 23px;
+		gap: 17px;
+	}
+	.hero-actions .season-button {
+		font-size: 11px;
+		min-height: 49px;
+		padding: 14px 18px;
+		gap: 13px;
+	}
+	.hero-actions .season-text-link {
+		font-size: 10px;
+		gap: 8px;
+	}
+	.hero-footnote {
+		margin-top: 19px;
+		font-size: 9px;
+	}
+	.hero-bat {
+		top: 67px;
+		left: auto;
+		right: 6%;
+		width: 40px;
+	}
+	.hero-season-stamp {
+		top: auto;
+		bottom: 290px;
+		right: 5%;
+		width: 82px;
+		height: 82px;
+		background: #f7ede48c;
+	}
+	.hero-season-stamp span {
+		font-size: 6px;
+	}
+	.hero-season-stamp svg {
+		width: 32px;
+		height: 32px;
+	}
+	.hero-scroll {
+		display: none;
+	}
+	.hero-photo-note {
+		bottom: 22px;
+		font-size: 13px;
+		padding: 8px 13px;
+		right: 8%;
+	}
+	.season-ribbon {
+		min-height: 55px;
+		padding: 16px 10px;
+		gap: 17px;
+	}
+	.season-ribbon span {
+		font-size: 7px;
+		letter-spacing: 0.1em;
+	}
+	.season-ribbon svg {
+		width: 16px;
+		height: 16px;
+	}
+	.season-ribbon span:nth-of-type(3),
+	.season-ribbon svg:nth-of-type(2) {
+		display: none;
+	}
+	.season-section-heading {
+		margin-bottom: 30px;
+	}
+	.season-section-heading h2 {
+		max-width: 490px;
+		margin-inline: auto;
+	}
+	.season-section h2,
+	.story-content h2 {
+		font-size: 37px;
+	}
+	.season-section-heading > p:last-child {
+		font-size: 12px;
+		max-width: 330px;
+		margin-inline: auto;
+	}
+	.season-eyebrow {
+		font-size: 8px;
+		letter-spacing: 0.14em;
+		gap: 9px;
+	}
+	.season-eyebrow svg {
+		width: 15px;
+		height: 15px;
+	}
+	.halloween-treat-grid {
+		grid-template-columns: 1fr;
+		gap: 40px;
+		max-width: 410px;
+		margin-inline: auto;
+	}
+	.treat-art {
+		height: 355px;
+		border-radius: 145px 145px 5px 5px;
+	}
+	.treat-info {
+		padding-top: 22px;
+	}
+	.treat-info h3 {
+		font-size: 29px;
+	}
+	.treat-description {
+		min-height: 0;
+		max-width: none;
+	}
+	.treat-link {
+		margin-top: 21px;
+		padding-block: 15px;
+	}
+	.collection-note {
+		max-width: 300px;
+		margin-inline: auto;
+		margin-top: 26px;
+	}
+	.halloween-box {
+		grid-template-columns: 1fr;
+	}
+	.box-photo {
+		min-height: 470px;
+	}
+	.box-photo img {
+		object-position: center 55%;
+	}
+	.box-photo-label {
+		left: 20px;
+		bottom: 20px;
+		font-size: 8px;
+	}
+	.box-content {
+		padding: 59px 26px;
+	}
+	.box-content h2 {
+		font-size: 52px;
+		margin-top: 20px;
+	}
+	.box-content h2 + p {
+		font-size: 12px;
+	}
+	.box-details {
+		gap: 22px;
+	}
+	.box-content .season-button {
+		font-size: 11px;
+		padding-inline: 18px;
+		gap: 18px;
+	}
+	.box-content .box-small-print {
+		font-size: 9px;
+	}
+	.classic-heading,
+	.social-heading {
+		align-items: start;
+		flex-direction: column;
+		gap: 22px;
+		margin-bottom: 28px;
+	}
+	.classic-cookie-grid {
+		grid-template-columns: 1fr;
+		max-width: 410px;
+		margin-inline: auto;
+		gap: 24px;
+	}
+	.classic-cookie-grid img {
+		max-height: 310px;
+	}
+	.season-story {
+		grid-template-columns: 1fr;
+	}
+	.story-photo {
+		min-height: 340px;
+	}
+	.story-content {
+		padding: 45px 26px 55px;
+	}
+	.story-content > p:not(.season-eyebrow) {
+		max-width: none;
+	}
+	.season-social-grid {
+		grid-template-columns: 1fr 1fr;
+		gap: 12px;
+	}
+	.season-footer-note {
+		font-size: 17px;
+	}
+	.season-shop-intro {
+		min-height: 430px;
+		padding-block: 55px;
+	}
+	.season-shop-intro::after {
+		background: linear-gradient(90deg, #f7eee5f5, #f7eee5c4 60%, #f7eee580);
+	}
+	.season-shop-intro h1 {
+		font-size: 49px;
+	}
+}
+@media (max-width: 380px) {
+	.site-header > div:first-child > a > img {
+		height: 24px;
+	}
+	.site-header > div:first-child > a .font-logo {
+		font-size: 16px;
+		letter-spacing: 0.035em;
+	}
+
+	.hero-actions {
+		align-items: flex-start;
+		flex-direction: column;
+		gap: 10px;
+	}
+	.halloween-hero {
+		min-height: 850px;
+	}
+	.halloween-hero-photo {
+		top: 402px;
+	}
+	.halloween-hero-shade {
+		background: linear-gradient(
+			180deg,
+			#f8eee4 0%,
+			#f8eee4 44%,
+			#f8eee470 57%,
+			transparent 68%
+		);
+	}
+	.hero-bat {
+		top: 71px;
+		right: 5%;
+		width: 32px;
+	}
+	.season-ribbon span {
+		font-size: 6px;
+	}
+	.treat-art {
+		height: 325px;
+	}
+	.season-footer-note {
+		font-size: 14px;
+	}
+}
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+	*,
+	*::before,
+	*::after {
+		/* biome-ignore lint/complexity/noImportantStyles: Respect reduced motion over component and inline animations. */
+		animation-duration: 0.01ms !important;
+		/* biome-ignore lint/complexity/noImportantStyles: Remove inline reveal delays for reduced motion. */
+		animation-delay: 0ms !important;
+		/* biome-ignore lint/complexity/noImportantStyles: Respect reduced motion over utility transitions. */
+		transition-duration: 0.01ms !important;
+	}
+	.treat-art:hover img,
+	.season-button:hover,
+	.season-social-grid a:hover img {
+		transform: none;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1000px) {
+	.halloween-hero-shade {
+		background: linear-gradient(
+			90deg,
+			#f8eee4f5 0%,
+			#f8eee4d9 32%,
+			#f8eee470 46%,
+			transparent 65%
+		);
+	}
+}

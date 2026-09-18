@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import FooterColumn from "./FooterColumn";
+import { Pumpkin } from "./HalloweenDecor";
 import { HeartIcon } from "./icons";
 import Logo from "./Logo";
 
@@ -11,7 +12,10 @@ const CONNECT_LINKS = [
 
 function Footer() {
 	return (
-		<footer className="bg-cream">
+		<footer className="season-footer bg-cream">
+			<div className="season-footer-note">
+				<Pumpkin /> No tricks. Just cookies, made with love.
+			</div>
 			<div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-20">
 				<div className="grid gap-12 lg:grid-cols-[auto_1fr] lg:items-start lg:gap-16">
 					<div className="flex justify-center lg:justify-start">
@@ -21,7 +25,10 @@ function Footer() {
 					<div className="grid grid-cols-2 gap-x-10 gap-y-10 sm:grid-cols-4">
 						<FooterColumn
 							title="SHOP"
-							links={[{ label: "All Cookies", to: "/cookies" }]}
+							links={[
+								{ label: "Halloween Collection", to: "/#halloween" },
+								{ label: "All Cookies", to: "/cookies#classics" },
+							]}
 						/>
 						<FooterColumn
 							title="INFO"

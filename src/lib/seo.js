@@ -10,7 +10,7 @@ export const SITE = {
 	description:
 		"Handmade cookies baked fresh to order in Barcelona. Small batches, real ingredients, beautifully wrapped. Delivery and pickup available.",
 	locale: "en",
-	themeColor: "#522c09",
+	themeColor: "#322219",
 	ogImage: "/img/og-image.png",
 	email: "hello@bavobakes.com",
 	phone: "+34666611091",
@@ -27,14 +27,14 @@ const COOKIE_PRODUCTS = COOKIES.map((cookie) => ({
 
 const PAGES = {
 	"/": {
-		title: "Bavo Bakes | Homemade Cookies in Barcelona",
+		title: "Halloween Cookies in Barcelona | Bavo Bakes",
 		description:
-			"Freshly baked homemade cookies in Barcelona. Crafted in small batches with quality ingredients, beautifully wrapped and baked to order.",
+			"A little spooky, a lot of sweet. Discover Bavo Bakes’ Halloween cookie collection and homemade favourites, baked to order in Barcelona.",
 	},
 	"/cookies": {
 		title: "Cookies | Bavo Bakes",
 		description:
-			"Browse our handmade 100g cookies and fudgy brownies. Mix any cookie flavors — €5 each, with box prices from two cookies. Brownies are €4.50. Baked fresh to order in Barcelona.",
+			"Explore our Halloween collection, handmade cookies and fudgy brownies. Baked fresh to order in Barcelona, with delivery and pickup available.",
 	},
 	"/about": {
 		title: "About Us | Bavo Bakes",

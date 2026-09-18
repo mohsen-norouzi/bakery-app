@@ -5,10 +5,10 @@
 	--font-logo: "Pacifico", cursive;
 	--font-sans: "Poppins", sans-serif;
 
-	--color-cream: #f6ede1;
-	--color-sand: #f3e2cb;
-	--color-brown: #522c09;
-	--color-tan: #a67c52;
+	--color-cream: #faf3e9;
+	--color-sand: #eee0ce;
+	--color-brown: #39261d;
+	--color-tan: #a14b27;
 
 	--animate-spin-slow: spin-slow 8s linear infinite;
 	--animate-cart-pop: cart-pop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -16,12 +16,15 @@
 	--animate-badge-pop: badge-pop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
 	--animate-fade-in: fade-in 0.3s ease-out forwards;
 	--animate-fade-out: fade-out 0.3s ease-out forwards;
-	--animate-slide-in-right: slide-in-right 0.35s cubic-bezier(0.32, 0.72, 0, 1) forwards;
-	--animate-slide-out-right: slide-out-right 0.35s cubic-bezier(0.32, 0.72, 0, 1) forwards;
-	--animate-page-enter: page-enter 1.05s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+	--animate-slide-in-right: slide-in-right 0.35s cubic-bezier(0.32, 0.72, 0, 1)
+		forwards;
+	--animate-slide-out-right: slide-out-right 0.35s
+		cubic-bezier(0.32, 0.72, 0, 1) forwards;
+	--animate-page-enter: page-enter 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 	--animate-reveal-up: reveal-up 1.15s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 	--animate-fade-in-soft: fade-in-soft 0.7s ease-out forwards;
-	--animate-menu-item-in: menu-item-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+	--animate-menu-item-in: menu-item-in 0.55s cubic-bezier(0.22, 1, 0.36, 1)
+		forwards;
 }
 
 @keyframes slide-in-right {

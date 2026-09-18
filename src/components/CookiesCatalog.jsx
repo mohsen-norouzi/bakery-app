@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { COOKIES } from "../lib/cookies";
+import { getFlavorPrice } from "../lib/pricing";
 import CookieCard from "./CookieCard";
 import CookiePrices from "./CookiePrices";
 import { GridIcon, ListIcon } from "./icons";
@@ -17,9 +18,18 @@ const SORT_OPTIONS = [
 function CookiesCatalog() {
 	const [sortBy, setSortBy] = useState(SORT_OPTIONS[0]);
 	const [view, setView] = useState("grid");
+	const sortedCookies = [...COOKIES].sort((a, b) => {
+		if (sortBy === "Price: Low to High")
+			return getFlavorPrice(a.name) - getFlavorPrice(b.name);
+		if (sortBy === "Price: High to Low")
+			return getFlavorPrice(b.name) - getFlavorPrice(a.name);
+		if (sortBy === "Newest")
+			return Number(b.badge === "New") - Number(a.badge === "New");
+		return 0;
+	});
 
 	return (
-		<section className="bg-cream">
+		<section id="classics" className="bg-cream">
 			<div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
 				<Reveal className="relative z-20">
 					<div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
@@ -97,7 +107,7 @@ function CookiesCatalog() {
 					stagger={120}
 					delay={100}
 				>
-					{COOKIES.map((cookie) => (
+					{sortedCookies.map((cookie) => (
 						<CookieCard key={cookie.name} {...cookie} layout={view} />
 					))}
 				</RevealStagger>

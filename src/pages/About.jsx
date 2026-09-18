@@ -8,7 +8,7 @@ import Reveal from "../components/Reveal";
 function About() {
 	return (
 		<>
-			<PageHero src="/img/about-bg.webp">
+			<PageHero src="/img/halloween/autumn-kitchen.webp">
 				<AboutHero />
 			</PageHero>
 

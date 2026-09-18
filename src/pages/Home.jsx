@@ -1,31 +1,36 @@
 import DeliveryPickup from "../components/DeliveryPickup";
 import FeaturedCookies from "../components/FeaturedCookies";
 import Footer from "../components/Footer";
+import HalloweenBox from "../components/HalloweenBox";
+import HalloweenCollection from "../components/HalloweenCollection";
+import { Sparkle } from "../components/HalloweenDecor";
 import Hero from "../components/Hero";
-import HeroBackground from "../components/HeroBackground";
 import InstagramFeed from "../components/InstagramFeed";
 import OurStory from "../components/OurStory";
-import Reveal from "../components/Reveal";
 
 function Home() {
 	return (
 		<>
-			<div className="hero-under-header relative isolate min-h-screen overflow-hidden bg-cream">
-				<HeroBackground src="/img/hero-1.webp" />
+			<main id="main-content">
 				<Hero />
-			</div>
-
-			<FeaturedCookies />
-			<Reveal>
+				<div className="season-ribbon">
+					<span>HOMEMADE IN BARCELONA</span>
+					<Sparkle />
+					<span>A LITTLE SPOOKY, A LOT OF SWEET</span>
+					<Sparkle />
+					<span>BAKED TO ORDER</span>
+					<Sparkle />
+					<span>MADE FOR SHARING</span>
+				</div>
+				<HalloweenCollection />
+				<HalloweenBox />
+				<FeaturedCookies />
 				<OurStory />
-			</Reveal>
-			<DeliveryPickup />
-			<InstagramFeed />
-			<Reveal>
-				<Footer />
-			</Reveal>
+				<DeliveryPickup />
+				<InstagramFeed />
+			</main>
+			<Footer />
 		</>
 	);
 }
-
 export default Home;

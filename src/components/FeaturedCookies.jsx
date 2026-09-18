@@ -1,56 +1,35 @@
 import { Link } from "react-router-dom";
 import { COOKIES } from "../lib/cookies";
 import CookieCard from "./CookieCard";
-import { ArrowRightIcon, HeartIcon } from "./icons";
+import { Sparkle } from "./HalloweenDecor";
+import { ArrowRightIcon } from "./icons";
 import Reveal from "./Reveal";
-import RevealStagger from "./RevealStagger";
 
 function FeaturedCookies() {
 	return (
-		<section className="bg-cream">
-			<div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
-				<div className="grid gap-12 lg:grid-cols-[280px_1fr] lg:items-start lg:gap-10">
-					<div className="lg:sticky lg:top-10 lg:z-10">
-						<Reveal>
-							<div>
-								<div className="flex items-center gap-2 text-xs font-medium tracking-[0.2em] text-brown/70">
-									<span>FEATURED COOKIES</span>
-									<HeartIcon className="h-3.5 w-3.5 text-brown" />
-								</div>
-
-								<h2 className="mt-4 font-display text-4xl leading-tight text-brown">
-									Our Most Loved Cookies
-								</h2>
-
-								<p className="mt-4 text-brown/70">
-									Baked fresh to order using the finest ingredients. Mix any
-									flavors — two or more cookies come with a little off.
-								</p>
-
-								<Link
-									to="/cookies"
-									className="mt-8 inline-flex items-center gap-2 border-b border-brown/40 pb-1 text-xs font-medium tracking-[0.15em] text-brown"
-								>
-									VIEW ALL COOKIES
-									<ArrowRightIcon className="h-4 w-4" />
-								</Link>
-							</div>
-						</Reveal>
+		<section className="classic-section season-section">
+			<div className="season-container">
+				<Reveal className="classic-heading">
+					<div>
+						<p className="season-eyebrow">
+							<Sparkle /> ALWAYS A GOOD IDEA
+						</p>
+						<h2>
+							Still your <em>favourites.</em>
+						</h2>
+						<p>Familiar favourites for every season. Handmade, just for you.</p>
 					</div>
-
-					<RevealStagger
-						className="grid gap-6 sm:grid-cols-2 2xl:grid-cols-3"
-						stagger={160}
-						delay={120}
-					>
-						{COOKIES.map((cookie) => (
-							<CookieCard key={cookie.name} {...cookie} />
-						))}
-					</RevealStagger>
+					<Link className="season-text-link" to="/cookies#classics">
+						Explore all cookies <ArrowRightIcon />
+					</Link>
+				</Reveal>
+				<div className="classic-cookie-grid">
+					{COOKIES.slice(0, 3).map((cookie) => (
+						<CookieCard key={cookie.name} {...cookie} />
+					))}
 				</div>
 			</div>
 		</section>
 	);
 }
-
 export default FeaturedCookies;
