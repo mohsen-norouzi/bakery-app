@@ -87,6 +87,7 @@ function FaqSection() {
 
 					<RevealStagger
 						className="rounded-2xl bg-sand px-8 py-2"
+						itemClassName="h-auto"
 						stagger={100}
 						delay={120}
 					>

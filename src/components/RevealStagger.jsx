@@ -3,7 +3,7 @@ import { Children, useEffect, useRef, useState } from "react";
 function RevealStagger({
 	children,
 	className = "",
-	itemClassName = "",
+	itemClassName = "h-full",
 	stagger = 140,
 	delay = 0,
 }) {
@@ -41,7 +41,7 @@ function RevealStagger({
 			{Children.map(children, (child, index) => (
 				<div
 					key={child?.key ?? index}
-					className={`h-full ${itemClassName} ${
+					className={`${itemClassName} ${
 						visible
 							? "motion-safe:animate-reveal-up"
 							: "translate-y-12 opacity-0"
