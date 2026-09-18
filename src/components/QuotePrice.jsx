@@ -2,17 +2,16 @@ import { formatEuro } from "../lib/pricing";
 
 function QuotePrice({
 	quote,
-	tone = "brown",
+	tone = "inherit",
 	totalClassName = "",
 	stable = false,
 }) {
 	if (quote.count <= 0) return null;
 
-	const wasClass = tone === "cream" ? "text-cream/40" : "text-brown/35";
-	const totalClass =
-		tone === "cream"
-			? "font-medium tabular-nums text-cream"
-			: "font-medium tabular-nums text-brown";
+	const colorClass =
+		{ cream: "text-cream", brown: "text-brown" }[tone] ?? "text-inherit";
+	const wasClass = `${colorClass} opacity-80`;
+	const totalClass = `font-medium tabular-nums ${colorClass}`;
 
 	if (stable) {
 		return (

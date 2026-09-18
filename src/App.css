@@ -695,8 +695,8 @@ body {
 .season-shop-intro .season-text-link {
 	margin-top: 20px;
 }
-#classics {
-	border-top: 1px solid var(--season-line);
+.halloween-collection:has(+ .classic-catalog) {
+	padding-bottom: clamp(44px, 5vw, 72px);
 }
 @media (min-width: 1600px) {
 	.hero-copy h1 {

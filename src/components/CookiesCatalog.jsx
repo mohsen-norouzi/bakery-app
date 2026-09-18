@@ -3,6 +3,7 @@ import { COOKIES } from "../lib/cookies";
 import { getFlavorPrice } from "../lib/pricing";
 import CookieCard from "./CookieCard";
 import CookiePrices from "./CookiePrices";
+import { Sparkle } from "./HalloweenDecor";
 import { GridIcon, ListIcon } from "./icons";
 import Reveal from "./Reveal";
 import RevealStagger from "./RevealStagger";
@@ -29,12 +30,15 @@ function CookiesCatalog() {
 	});
 
 	return (
-		<section id="classics" className="bg-cream">
-			<div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
+		<section id="classics" className="classic-catalog bg-cream">
+			<div className="season-container pb-16 lg:pb-24">
 				<Reveal className="relative z-20">
 					<div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
 						<div>
-							<h2 className="font-display text-4xl leading-tight text-brown">
+							<p className="season-eyebrow">
+								<Sparkle /> THE EVERYDAY FAVOURITES
+							</p>
+							<h2 className="mt-4 font-display text-4xl leading-tight text-brown">
 								Handmade cookies,
 								<br />
 								<span className="italic">baked to perfection.</span>
