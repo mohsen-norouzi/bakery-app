@@ -29,7 +29,7 @@ export const COOKIES = [
 		badge: "New",
 		image: "brownie",
 		kind: "brownie",
-		price: 4.5,
+		price: 3.5,
 		vegan: false,
 	},
 	{
