@@ -1,4 +1,4 @@
-import { COOKIES } from "./cookies";
+import { ALL_PRODUCTS } from "./cookies";
 
 export const UNIT_PRICE = 4;
 
@@ -32,13 +32,13 @@ export function formatEuro(amount) {
 }
 
 export function getFlavorPrice(name) {
-	const product = COOKIES.find((cookie) => cookie.name === name);
+	const product = ALL_PRODUCTS.find((cookie) => cookie.name === name);
 	if (product?.price != null) return product.price;
 	return UNIT_PRICE + (FLAVOR_SURCHARGES[name] ?? 0);
 }
 
 export function isCookieItem(name) {
-	const product = COOKIES.find((cookie) => cookie.name === name);
+	const product = ALL_PRODUCTS.find((cookie) => cookie.name === name);
 	return product?.kind !== "brownie";
 }
 
@@ -90,7 +90,7 @@ export function getQuote(items = []) {
 	for (const item of items) {
 		if (isCookieItem(item.name)) {
 			cookieCount += item.quantity;
-			surcharge += (FLAVOR_SURCHARGES[item.name] ?? 0) * item.quantity;
+			surcharge += (getFlavorPrice(item.name) - UNIT_PRICE) * item.quantity;
 		} else {
 			brownieCount += item.quantity;
 			brownieTotal += getFlavorPrice(item.name) * item.quantity;

@@ -49,7 +49,45 @@ export const COOKIES = [
 	},
 ];
 
+export const HALLOWEEN_COOKIES = [
+	{
+		name: "The Little Pumpkin",
+		image: "/img/halloween/pumpkin.webp",
+		imageHeight: 1080,
+		price: 4,
+		vegan: false,
+		tag: "A CHEEKY LITTLE TREAT",
+		description:
+			"A pumpkin grin, a chocolate smile. The cutest little troublemaker in the box.",
+		className: "pumpkin-treat",
+	},
+	{
+		name: "The Mummy",
+		image: "/img/halloween/mummy.webp",
+		imageHeight: 720,
+		price: 4,
+		vegan: false,
+		tag: "ALL WRAPPED UP",
+		description:
+			"Dressed in a tangle of sweet drizzle, with curious little eyes in every direction.",
+		className: "mummy-treat",
+	},
+	{
+		name: "The Spiderweb",
+		image: "/img/halloween/spiderweb.webp",
+		imageHeight: 820,
+		price: 4,
+		vegan: false,
+		tag: "LOVE AT FIRST FRIGHT",
+		description:
+			"A beautifully tangled web on a dark, dramatic cookie. Almost too good to share.",
+		className: "spiderweb-treat",
+	},
+];
+
+export const ALL_PRODUCTS = [...COOKIES, ...HALLOWEEN_COOKIES];
+
 /** Whether this product can be ordered vegan. */
 export function hasVeganOption(name) {
-	return COOKIES.find((cookie) => cookie.name === name)?.vegan !== false;
+	return ALL_PRODUCTS.find((cookie) => cookie.name === name)?.vegan !== false;
 }

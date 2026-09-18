@@ -40,6 +40,7 @@ const MENU_ANIMATION_MS = 350;
 
 function Header() {
 	const headerRef = useRef(null);
+	const announcementRef = useRef(null);
 	const menuButtonRef = useRef(null);
 	const { pathname, hash } = useLocation();
 	const isLinkActive = (link, active) =>
@@ -61,11 +62,16 @@ function Header() {
 				"--site-header-height",
 				`${node.offsetHeight}px`,
 			);
+			document.documentElement.style.setProperty(
+				"--site-top-height",
+				`${node.offsetHeight + (announcementRef.current?.offsetHeight ?? 0)}px`,
+			);
 		};
 
 		syncHeight();
 		const observer = new ResizeObserver(syncHeight);
 		observer.observe(node);
+		if (announcementRef.current) observer.observe(announcementRef.current);
 		return () => observer.disconnect();
 	}, []);
 
@@ -144,7 +150,7 @@ function Header() {
 
 	return (
 		<>
-			<div className="season-announcement">
+			<div ref={announcementRef} className="season-announcement">
 				<Bat />
 				<span>
 					Something wickedly sweet is baking. Meet our Halloween collection.

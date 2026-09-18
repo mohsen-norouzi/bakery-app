@@ -1,5 +1,5 @@
 import { getCookieImageSrc } from "./cookieImages";
-import { COOKIES } from "./cookies";
+import { ALL_PRODUCTS } from "./cookies";
 import { getFlavorPrice } from "./pricing";
 
 export const SITE_URL = "https://www.bavobakes.com";
@@ -18,7 +18,7 @@ export const SITE = {
 	country: "ES",
 };
 
-const COOKIE_PRODUCTS = COOKIES.map((cookie) => ({
+const COOKIE_PRODUCTS = ALL_PRODUCTS.map((cookie) => ({
 	name: cookie.name,
 	description: cookie.description,
 	price: getFlavorPrice(cookie.name),

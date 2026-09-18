@@ -1,7 +1,7 @@
-import { COOKIES } from "./cookies";
+import { ALL_PRODUCTS } from "./cookies";
 
 const COOKIE_IMAGES = Object.fromEntries(
-	COOKIES.filter((cookie) => cookie.image).map((cookie) => [
+	ALL_PRODUCTS.filter((cookie) => cookie.image).map((cookie) => [
 		cookie.name,
 		cookie.image,
 	]),
@@ -15,6 +15,7 @@ const COOKIE_IMAGES = Object.fromEntries(
 export function getCookieImageSrc(name) {
 	const filename = COOKIE_IMAGES[name];
 	if (!filename) return null;
+	if (filename.startsWith("/")) return filename;
 
 	const file = filename.includes(".") ? filename : `${filename}.webp`;
 	return `/img/cookies/${file}`;

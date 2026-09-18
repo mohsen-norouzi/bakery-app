@@ -1,36 +1,12 @@
-import { buildWhatsAppEnquiryUrl } from "../lib/whatsapp";
+import { useCart } from "../context/CartContext";
+import { HALLOWEEN_COOKIES } from "../lib/cookies";
+import { formatEuro, getFlavorPrice } from "../lib/pricing";
 import { Sparkle } from "./HalloweenDecor";
-import { ArrowRightIcon } from "./icons";
+import QuantityControls from "./QuantityControls";
 import Reveal from "./Reveal";
 
-const TREATS = [
-	{
-		name: "The Little Pumpkin",
-		image: "pumpkin",
-		tag: "A CHEEKY LITTLE TREAT",
-		description:
-			"A pumpkin grin, a chocolate smile. The cutest little troublemaker in the box.",
-		className: "pumpkin-treat",
-	},
-	{
-		name: "The Mummy",
-		image: "mummy",
-		tag: "ALL WRAPPED UP",
-		description:
-			"Dressed in a tangle of sweet drizzle, with curious little eyes in every direction.",
-		className: "mummy-treat",
-	},
-	{
-		name: "The Spiderweb",
-		image: "spiderweb",
-		tag: "LOVE AT FIRST FRIGHT",
-		description:
-			"A beautifully tangled web on a dark, dramatic cookie. Almost too good to share.",
-		className: "spiderweb-treat",
-	},
-];
-
 export default function HalloweenCollection() {
+	const { addItem, removeItem, getQuantity } = useCart();
 	return (
 		<section
 			className="halloween-collection season-section"
@@ -51,52 +27,47 @@ export default function HalloweenCollection() {
 					</p>
 				</Reveal>
 				<div className="halloween-treat-grid">
-					{TREATS.map((treat, index) => (
+					{HALLOWEEN_COOKIES.map((treat, index) => (
 						<Reveal key={treat.name} delay={index * 90}>
 							<article className={`halloween-treat ${treat.className}`}>
-								<a
-									className="treat-art"
-									href={buildWhatsAppEnquiryUrl(treat.name)}
-									target="_blank"
-									rel="noopener noreferrer"
-									aria-label={`Ask about ${treat.name} on WhatsApp`}
-								>
+								<div className="treat-art">
 									<span className="treat-number">0{index + 1}</span>
 									<span className="treat-season-label">HALLOWEEN EDITION</span>
 									<img
-										src={`/img/halloween/${treat.image}.webp`}
+										src={treat.image}
 										alt={treat.name}
 										width="720"
-										height={
-											treat.image === "mummy"
-												? 720
-												: treat.image === "pumpkin"
-													? 1080
-													: 820
-										}
+										height={treat.imageHeight}
 										loading="lazy"
 									/>
-								</a>
+								</div>
 								<div className="treat-info">
 									<p className="treat-tag">{treat.tag}</p>
-									<h3>{treat.name}</h3>
+									<div className="treat-heading">
+										<h3>{treat.name}</h3>
+										<span className="treat-price">
+											{formatEuro(getFlavorPrice(treat.name))}
+										</span>
+									</div>
 									<p className="treat-description">{treat.description}</p>
-									<a
-										className="treat-link"
-										href={buildWhatsAppEnquiryUrl(treat.name)}
-										target="_blank"
-										rel="noopener noreferrer"
-									>
-										Enquire about this treat <ArrowRightIcon />
-									</a>
+									<div className="treat-actions">
+										<span>ADD TO YOUR BOX</span>
+										<QuantityControls
+											name={treat.name}
+											label={treat.name}
+											quantity={getQuantity(treat.name)}
+											onAdd={() => addItem(treat.name)}
+											onRemove={() => removeItem(treat.name)}
+										/>
+									</div>
 								</div>
 							</article>
 						</Reveal>
 					))}
 				</div>
 				<p className="collection-note">
-					For flavours, ingredients, prices and availability, just ask us on
-					WhatsApp.
+					Mix your Halloween treats with any of our classics. Choose your
+					cookies, then order your box on WhatsApp.
 				</p>
 			</div>
 		</section>
