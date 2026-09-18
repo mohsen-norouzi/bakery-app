@@ -1,9 +1,9 @@
-import { GiftIcon, HeartIcon, SmileyIcon } from "../icons";
+import { CookieIcon, HeartIcon, MailIcon } from "../icons";
 
 const ICONS = {
 	heart: HeartIcon,
-	smiley: SmileyIcon,
-	gift: GiftIcon,
+	mail: MailIcon,
+	cookie: CookieIcon,
 };
 
 /**
