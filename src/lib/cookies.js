@@ -21,7 +21,7 @@ export const COOKIES = [
 		description:
 			"Toasted hazelnuts with chunks of dark chocolate and sea salt.",
 		badge: "New",
-		image: "hazelnut-chocolate.png",
+		image: "hazelnut-chocolate",
 	},
 	{
 		name: "Fudgy Brownie",
@@ -29,7 +29,7 @@ export const COOKIES = [
 		badge: "New",
 		image: "brownie",
 		kind: "brownie",
-		price: 4.5,
+		price: 3.5,
 		vegan: false,
 	},
 	{

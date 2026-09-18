@@ -14,7 +14,7 @@ function CookiePrices() {
 			<div className="grid gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-start lg:gap-16">
 				<div>
 					<div className="flex items-center gap-2 text-xs font-medium tracking-[0.2em] text-brown/70">
-						<span>100G COOKIE PRICES</span>
+						<span>COOKIE PRICES</span>
 						<HeartIcon className="h-3.5 w-3.5 text-brown" />
 					</div>
 
@@ -25,7 +25,7 @@ function CookiePrices() {
 					</h3>
 
 					<p className="mt-4 max-w-md text-sm text-brown/70">
-						All cookies are 100g and baked fresh for your order. Mix any flavors
+						Baked fresh for your order. Mix any flavors
 						— the price is for the whole box, not each flavor on its own.
 					</p>
 				</div>
@@ -79,7 +79,7 @@ function CookiePrices() {
 							Cardamom &amp; Pistachio is +€0.50 per cookie.
 						</div>
 						<div className="rounded-xl border border-dashed border-brown/25 px-4 py-3 text-sm text-brown/70">
-							Fudgy Brownie is €4.50 each.
+							Fudgy Brownie is €3.50 each.
 						</div>
 					</div>
 

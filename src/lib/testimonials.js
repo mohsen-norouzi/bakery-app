@@ -10,7 +10,7 @@ import { NOTES } from "./notes";
  *   quote   the feedback itself — keep it to roughly two lines
  *
  * Optional: "avatar" with a photo path, e.g. "/img/reviews/anna.webp".
- * Id, note paper, tilt, and boxes-delivered are filled in from the name.
+ * Id, note paper, tilt, and cookies-delivered are filled in from the name.
  */
 const QUOTE_NOTES = Object.keys(NOTES).filter((key) => key !== "main");
 
@@ -39,7 +39,7 @@ function enrich(entry, index) {
 		...entry,
 		id,
 		note: QUOTE_NOTES[index % QUOTE_NOTES.length],
-		boxes: 2 + (seed % 17),
+		cookies: 2 + (seed % 17),
 		rotate: Number(((seed % 37) / 10 - 1.8).toFixed(1)),
 	};
 }
@@ -76,15 +76,15 @@ export const WALL_STATS = [
 		label: "Average Rating",
 	},
 	{
-		id: "customers",
-		icon: "smiley",
+		id: "notes",
+		icon: "mail",
 		value: count.format(QUOTES.length),
-		label: "Happy Customers",
+		label: "Love Notes",
 	},
 	{
-		id: "boxes",
-		icon: "gift",
-		value: count.format(total("boxes")),
-		label: "Boxes Delivered",
+		id: "cookies",
+		icon: "cookie",
+		value: count.format(total("cookies")),
+		label: "Cookies Delivered",
 	},
 ];

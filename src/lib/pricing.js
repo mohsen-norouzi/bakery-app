@@ -1,14 +1,14 @@
 import { COOKIES } from "./cookies";
 
-export const UNIT_PRICE = 5;
+export const UNIT_PRICE = 4;
 
 export const PRICE_PACKS = [
-	{ quantity: 1, price: 5 },
-	{ quantity: 2, price: 9.5, was: 10 },
-	{ quantity: 4, price: 18.5, was: 20 },
-	{ quantity: 6, price: 26.5, was: 30 },
-	{ quantity: 8, price: 35.5, was: 40 },
-	{ quantity: 10, price: 45, was: 50 },
+	{ quantity: 1, price: 4 },
+	{ quantity: 2, price: 8.5, was: 9 },
+	{ quantity: 4, price: 17.5, was: 19 },
+	{ quantity: 6, price: 25.5, was: 29 },
+	{ quantity: 8, price: 34.5, was: 39 },
+	{ quantity: 10, price: 44, was: 49 },
 ];
 
 export const FLAVOR_SURCHARGES = {
