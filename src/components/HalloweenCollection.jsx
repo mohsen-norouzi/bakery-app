@@ -1,9 +1,10 @@
 import { useCart } from "../context/CartContext";
-import { HALLOWEEN_COOKIES } from "../lib/cookies";
+import { HALLOWEEN_COOKIES, hasVeganOption } from "../lib/cookies";
 import { formatEuro, getFlavorPrice } from "../lib/pricing";
 import { Sparkle } from "./HalloweenDecor";
-import QuantityControls from "./QuantityControls";
+import { CookieIcon, LeafIcon } from "./icons";
 import Reveal from "./Reveal";
+import VersionRow from "./VersionRow";
 
 export default function HalloweenCollection() {
 	const { addItem, removeItem, getQuantity } = useCart();
@@ -51,14 +52,26 @@ export default function HalloweenCollection() {
 									</div>
 									<p className="treat-description">{treat.description}</p>
 									<div className="treat-actions">
-										<span>ADD TO YOUR BOX</span>
-										<QuantityControls
+										<VersionRow
+											label="CLASSIC"
+											icon={CookieIcon}
 											name={treat.name}
-											label={treat.name}
-											quantity={getQuantity(treat.name)}
-											onAdd={() => addItem(treat.name)}
-											onRemove={() => removeItem(treat.name)}
+											itemLabel={treat.name}
+											quantity={getQuantity(treat.name, false)}
+											onAdd={() => addItem(treat.name, false)}
+											onRemove={() => removeItem(treat.name, false)}
 										/>
+										{hasVeganOption(treat.name) && (
+											<VersionRow
+												label="VEGAN"
+												icon={LeafIcon}
+												name={treat.name}
+												itemLabel={`vegan ${treat.name}`}
+												quantity={getQuantity(treat.name, true)}
+												onAdd={() => addItem(treat.name, true)}
+												onRemove={() => removeItem(treat.name, true)}
+											/>
+										)}
 									</div>
 								</div>
 							</article>

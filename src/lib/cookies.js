@@ -8,6 +8,7 @@ export const COOKIES = [
 		description: "Classic chocolate chip, finished with sea salt.",
 		badge: "Best Seller",
 		image: "sea-salt-chocolate-chip",
+		price: 3.8,
 	},
 	{
 		name: "Cardamom & Pistachio",
@@ -15,6 +16,7 @@ export const COOKIES = [
 			"Fragrant cardamom with pistachio, saffron, and white chocolate.",
 		badge: "Popular",
 		image: "cardamom-pistachio",
+		price: 4.5,
 	},
 	{
 		name: "Hazelnut + Chocolate",
@@ -22,6 +24,7 @@ export const COOKIES = [
 			"Toasted hazelnuts with chunks of dark chocolate and sea salt.",
 		badge: "New",
 		image: "hazelnut-chocolate",
+		price: 4,
 	},
 	{
 		name: "Fudgy Brownie",
@@ -36,16 +39,19 @@ export const COOKIES = [
 		name: "Chocolate Chip",
 		description: "Classic, soft, and loaded with chocolate.",
 		image: "chocolate-chip",
+		price: 3.8,
 	},
 	{
 		name: "Triple Chocolate",
 		description: "Rich cocoa dough with triple the chocolate.",
 		image: "triple-chocolate",
+		price: 3.8,
 	},
 	{
 		name: "Raisin Cookie",
 		description: "Chewy cookies packed with sweet raisins.",
 		image: "raisin",
+		price: 4,
 	},
 ];
 
@@ -54,8 +60,8 @@ export const HALLOWEEN_COOKIES = [
 		name: "The Little Pumpkin",
 		image: "/img/halloween/pumpkin.webp",
 		imageHeight: 1080,
-		price: 4,
-		vegan: false,
+		price: 3.8,
+		vegan: true,
 		tag: "A CHEEKY LITTLE TREAT",
 		description:
 			"A pumpkin grin, a chocolate smile. The cutest little troublemaker in the box.",
@@ -65,8 +71,8 @@ export const HALLOWEEN_COOKIES = [
 		name: "The Mummy",
 		image: "/img/halloween/mummy.webp",
 		imageHeight: 720,
-		price: 4,
-		vegan: false,
+		price: 3.8,
+		vegan: true,
 		tag: "ALL WRAPPED UP",
 		description:
 			"Dressed in a tangle of sweet drizzle, with curious little eyes in every direction.",
@@ -76,8 +82,8 @@ export const HALLOWEEN_COOKIES = [
 		name: "The Spiderweb",
 		image: "/img/halloween/spiderweb.webp",
 		imageHeight: 820,
-		price: 4,
-		vegan: false,
+		price: 3.8,
+		vegan: true,
 		tag: "LOVE AT FIRST FRIGHT",
 		description:
 			"A beautifully tangled web on a dark, dramatic cookie. Almost too good to share.",
@@ -87,7 +93,7 @@ export const HALLOWEEN_COOKIES = [
 		name: "The Midnight Mummy",
 		image: "/img/halloween/midnight-mummy-cutout.webp",
 		imageHeight: 720,
-		price: 4,
+		price: 3.8,
 		vegan: false,
 		tag: "A SWEET MIDNIGHT MISCHIEF",
 		description:
@@ -98,8 +104,8 @@ export const HALLOWEEN_COOKIES = [
 		name: "The Little Ghosts",
 		image: "/img/halloween/little-ghosts-cutout.webp",
 		imageHeight: 720,
-		price: 4,
-		vegan: false,
+		price: 3.8,
+		vegan: true,
 		tag: "THE FRIENDLIEST LITTLE FRIGHTS",
 		description:
 			"A gathering of sweet little ghosts on a golden cookie. Bringing a little boo to every bite.",
@@ -109,8 +115,8 @@ export const HALLOWEEN_COOKIES = [
 		name: "The Patchwork Monster",
 		image: "/img/halloween/patchwork-monster-cutout.webp",
 		imageHeight: 720,
-		price: 4,
-		vegan: false,
+		price: 3.8,
+		vegan: true,
 		tag: "STITCHED TOGETHER WITH SWEETNESS",
 		description:
 			"Three colourful patches, tiny sweet stitches and eyes everywhere. Our lovable little monster.",

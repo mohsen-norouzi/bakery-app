@@ -1,6 +1,6 @@
 import { ALL_PRODUCTS } from "./cookies.js";
 
-export const UNIT_PRICE = 4;
+export const UNIT_PRICE = 3.8;
 
 export const PRICE_PACKS = [
 	{ quantity: 1, discount: 0 },
@@ -18,10 +18,6 @@ export const PRICE_PACKS = [
 		was: fromCents(originalCents),
 	};
 });
-
-export const FLAVOR_SURCHARGES = {
-	"Cardamom & Pistachio": 0.5,
-};
 
 function toCents(euros) {
 	return Math.round(euros * 100);
@@ -42,7 +38,7 @@ export function formatEuro(amount) {
 export function getFlavorPrice(name) {
 	const product = ALL_PRODUCTS.find((cookie) => cookie.name === name);
 	if (product?.price != null) return product.price;
-	return UNIT_PRICE + (FLAVOR_SURCHARGES[name] ?? 0);
+	return UNIT_PRICE;
 }
 
 export function isCookieItem(name) {

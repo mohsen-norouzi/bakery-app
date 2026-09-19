@@ -1,3 +1,4 @@
+import { formatEuro, getFlavorPrice, UNIT_PRICE } from "../lib/pricing";
 import FaqItem from "./FaqItem";
 import { HeartIcon } from "./icons";
 import Reveal from "./Reveal";
@@ -6,7 +7,7 @@ import RevealStagger from "./RevealStagger";
 const FAQS = [
 	{
 		question: "How does pricing work?",
-		answer: `Every cookie is 100g, with prices starting at ${formatEuro(UNIT_PRICE)} each. Mix any flavors — box savings apply automatically from 2 cookies. Cardamom & Pistachio is +${formatEuro(FLAVOR_SURCHARGES["Cardamom & Pistachio"])} per cookie. Brownies are ${formatEuro(getFlavorPrice("Fudgy Brownie"))} each and are priced separately from cookie boxes. We'll confirm the total when you order.`,
+		answer: `Every cookie is 100g, with prices starting at ${formatEuro(UNIT_PRICE)} each. Mix any flavors — box savings apply automatically from 2 cookies. Hazelnut + Chocolate and Raisin Cookie are ${formatEuro(getFlavorPrice("Hazelnut + Chocolate"))} each, and Cardamom & Pistachio is ${formatEuro(getFlavorPrice("Cardamom & Pistachio"))} each. Brownies are ${formatEuro(getFlavorPrice("Fudgy Brownie"))} each and are priced separately from cookie boxes. We'll confirm the total when you order.`,
 	},
 	{
 		question: "How do I place an order?",
@@ -105,10 +106,3 @@ function FaqSection() {
 }
 
 export default FaqSection;
-
-import {
-	FLAVOR_SURCHARGES,
-	formatEuro,
-	getFlavorPrice,
-	UNIT_PRICE,
-} from "../lib/pricing";

@@ -3,10 +3,10 @@ import { useCart } from "../context/CartContext";
 import { getCookieImageSrc } from "../lib/cookieImages";
 import { hasVeganOption } from "../lib/cookies";
 import { formatEuro, getFlavorPrice } from "../lib/pricing";
-import DashedRule from "./DashedRule";
 import ImagePlaceholder from "./ImagePlaceholder";
 import { CookieIcon, LeafIcon } from "./icons";
 import QuantityControls from "./QuantityControls";
+import VersionRow from "./VersionRow";
 
 const IMAGE_WIDTH = 480;
 const IMAGE_HEIGHT = 480;
@@ -44,39 +44,6 @@ function CookieImage({ name, layout }) {
 			onError={() => setFailed(true)}
 			className={className}
 		/>
-	);
-}
-
-function VersionRow({
-	label,
-	icon: Icon,
-	available,
-	quantity,
-	itemLabel,
-	name,
-	onAdd,
-	onRemove,
-}) {
-	return (
-		<div className="flex h-9 min-w-0 items-center gap-2">
-			<span className="flex shrink-0 items-center gap-1.5 text-[10px] font-medium tracking-widest text-brown/70">
-				<Icon className="h-3 w-3" />
-				{label}
-			</span>
-			<div className="min-w-4 flex-1">
-				<DashedRule />
-			</div>
-			<div className="shrink-0">
-				<QuantityControls
-					available={available}
-					quantity={quantity}
-					label={itemLabel}
-					name={name}
-					onAdd={onAdd}
-					onRemove={onRemove}
-				/>
-			</div>
-		</div>
 	);
 }
 

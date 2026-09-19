@@ -3,12 +3,14 @@ import Reveal from "./Reveal";
 
 const PHOTOS = [
 	{
-		src: "box-wide",
-		alt: "Our Halloween cookie box with pumpkins and a friendly ghost",
+		src: "gallery-halloween-box-six",
+		alt: "All six Halloween cookies in a gift box surrounded by cobwebs",
+		position: "50% 52%",
 	},
 	{
-		src: "kitchen",
-		alt: "A batch of homemade cookies fresh from the Bavo Bakes kitchen",
+		src: "gallery-halloween-box-three",
+		alt: "Little Ghosts, Patchwork Monster and Midnight Mummy cookies in a Halloween gift box",
+		position: "50% 55%",
 	},
 	{ src: "gift-box", alt: "A closer look at our Halloween cookie trio" },
 	{
@@ -50,8 +52,9 @@ function InstagramFeed() {
 							<img
 								src={`/img/halloween/${photo.src}.webp`}
 								alt={photo.alt}
-								width="400"
-								height="440"
+								width="600"
+								height="800"
+								style={{ objectPosition: photo.position }}
 								loading="lazy"
 							/>
 							<InstagramIcon />
