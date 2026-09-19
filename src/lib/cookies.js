@@ -58,66 +58,66 @@ export const COOKIES = [
 export const HALLOWEEN_COOKIES = [
 	{
 		name: "The Little Pumpkin",
+		flavour: "Pumpkin Purée & Pumpkin Spice",
 		image: "/img/halloween/pumpkin.webp",
 		imageHeight: 1080,
 		price: 3.8,
 		vegan: true,
-		tag: "A CHEEKY LITTLE TREAT",
 		description:
 			"A pumpkin grin, a chocolate smile. The cutest little troublemaker in the box.",
 		className: "pumpkin-treat",
 	},
 	{
 		name: "The Mummy",
+		flavour: "Red Velvet & Cheesecake",
 		image: "/img/halloween/mummy.webp",
 		imageHeight: 720,
 		price: 3.8,
 		vegan: true,
-		tag: "ALL WRAPPED UP",
 		description:
 			"Dressed in a tangle of sweet drizzle, with curious little eyes in every direction.",
 		className: "mummy-treat",
 	},
 	{
 		name: "The Spiderweb",
+		flavour: "Brownie Cookie & Red Cheesecake",
 		image: "/img/halloween/spiderweb.webp",
 		imageHeight: 820,
 		price: 3.8,
 		vegan: true,
-		tag: "LOVE AT FIRST FRIGHT",
 		description:
 			"A beautifully tangled web on a dark, dramatic cookie. Almost too good to share.",
 		className: "spiderweb-treat",
 	},
 	{
 		name: "The Midnight Mummy",
+		flavour: "Chocolate & Marshmallow",
 		image: "/img/halloween/midnight-mummy-cutout.webp",
 		imageHeight: 720,
 		price: 3.8,
 		vegan: false,
-		tag: "A SWEET MIDNIGHT MISCHIEF",
 		description:
 			"Two little eyes peeking through a wild tangle of sweet drizzle. A midnight mischief-maker.",
 		className: "midnight-mummy-treat",
 	},
 	{
 		name: "The Little Ghosts",
+		flavour: "Sea Salt Chocolate Chip",
 		image: "/img/halloween/little-ghosts-cutout.webp",
 		imageHeight: 720,
 		price: 3.8,
 		vegan: true,
-		tag: "THE FRIENDLIEST LITTLE FRIGHTS",
 		description:
 			"A gathering of sweet little ghosts on a golden cookie. Bringing a little boo to every bite.",
 		className: "little-ghosts-treat",
 	},
 	{
 		name: "The Patchwork Monster",
+		flavour: "Chocolate · Red Velvet · Pumpkin",
 		image: "/img/halloween/patchwork-monster-cutout.webp",
 		imageHeight: 720,
 		price: 3.8,
 		vegan: true,
-		tag: "STITCHED TOGETHER WITH SWEETNESS",
 		description:
 			"Three colourful patches, tiny sweet stitches and eyes everywhere. Our lovable little monster.",
 		className: "patchwork-monster-treat",

@@ -43,13 +43,16 @@ export default function HalloweenCollection() {
 									/>
 								</div>
 								<div className="treat-info">
-									<p className="treat-tag">{treat.tag}</p>
 									<div className="treat-heading">
 										<h3>{treat.name}</h3>
 										<span className="treat-price">
 											{formatEuro(getFlavorPrice(treat.name))}
 										</span>
 									</div>
+									<p className="treat-flavour">
+										<span className="sr-only">Flavour: </span>
+										{treat.flavour}
+									</p>
 									<p className="treat-description">{treat.description}</p>
 									<div className="treat-actions">
 										<VersionRow
