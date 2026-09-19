@@ -28,7 +28,7 @@ export default function HalloweenCollection() {
 				</Reveal>
 				<div className="halloween-treat-grid">
 					{HALLOWEEN_COOKIES.map((treat, index) => (
-						<Reveal key={treat.name} delay={index * 90}>
+						<Reveal key={treat.name} delay={(index % 3) * 90}>
 							<article className={`halloween-treat ${treat.className}`}>
 								<div className="treat-art">
 									<span className="treat-number">0{index + 1}</span>

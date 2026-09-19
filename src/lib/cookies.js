@@ -83,6 +83,39 @@ export const HALLOWEEN_COOKIES = [
 			"A beautifully tangled web on a dark, dramatic cookie. Almost too good to share.",
 		className: "spiderweb-treat",
 	},
+	{
+		name: "The Midnight Mummy",
+		image: "/img/halloween/midnight-mummy-cutout.webp",
+		imageHeight: 720,
+		price: 4,
+		vegan: false,
+		tag: "A SWEET MIDNIGHT MISCHIEF",
+		description:
+			"Two little eyes peeking through a wild tangle of sweet drizzle. A midnight mischief-maker.",
+		className: "midnight-mummy-treat",
+	},
+	{
+		name: "The Little Ghosts",
+		image: "/img/halloween/little-ghosts-cutout.webp",
+		imageHeight: 720,
+		price: 4,
+		vegan: false,
+		tag: "THE FRIENDLIEST LITTLE FRIGHTS",
+		description:
+			"A gathering of sweet little ghosts on a golden cookie. Bringing a little boo to every bite.",
+		className: "little-ghosts-treat",
+	},
+	{
+		name: "The Patchwork Monster",
+		image: "/img/halloween/patchwork-monster-cutout.webp",
+		imageHeight: 720,
+		price: 4,
+		vegan: false,
+		tag: "STITCHED TOGETHER WITH SWEETNESS",
+		description:
+			"Three colourful patches, tiny sweet stitches and eyes everywhere. Our lovable little monster.",
+		className: "patchwork-monster-treat",
+	},
 ];
 
 export const ALL_PRODUCTS = [...COOKIES, ...HALLOWEEN_COOKIES];

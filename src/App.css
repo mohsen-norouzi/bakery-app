@@ -342,9 +342,12 @@ body {
 }
 .halloween-treat {
 	height: 100%;
+	display: flex;
+	flex-direction: column;
 }
 .treat-art {
 	position: relative;
+	flex-shrink: 0;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -353,10 +356,12 @@ body {
 	border-radius: 140px 140px 5px 5px;
 	background: #eddec9;
 }
-.mummy-treat .treat-art {
+.mummy-treat .treat-art,
+.little-ghosts-treat .treat-art {
 	background: #e9d8c3;
 }
-.spiderweb-treat .treat-art {
+.spiderweb-treat .treat-art,
+.patchwork-monster-treat .treat-art {
 	background: #e5d6cb;
 }
 .treat-art::after {
@@ -384,6 +389,11 @@ body {
 	height: 88%;
 	margin-top: 25px;
 }
+.midnight-mummy-treat .treat-art img,
+.little-ghosts-treat .treat-art img,
+.patchwork-monster-treat .treat-art img {
+	padding-top: 14px;
+}
 .treat-number {
 	z-index: 2;
 	position: absolute;
@@ -407,6 +417,9 @@ body {
 }
 .treat-info {
 	padding: 25px 2px 0;
+	display: flex;
+	flex: 1;
+	flex-direction: column;
 }
 .treat-tag {
 	font-size: 8px;
@@ -422,6 +435,7 @@ body {
 	letter-spacing: -0.02em;
 }
 .treat-description {
+	flex: 1;
 	margin-top: 10px;
 	font-size: 12px;
 	line-height: 1.85;
