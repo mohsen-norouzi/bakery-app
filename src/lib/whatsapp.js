@@ -1,4 +1,4 @@
-import { formatCartContents, formatEuro, getQuote } from "./pricing";
+import { formatCartContents, formatEuro, getQuote } from "./pricing.js";
 
 const WHATSAPP_NUMBER = "34666611091";
 

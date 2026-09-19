@@ -1,5 +1,11 @@
 import { useCart } from "../context/CartContext";
-import { formatCartContents, formatEuro, PRICE_PACKS } from "../lib/pricing";
+import {
+	FLAVOR_SURCHARGES,
+	formatCartContents,
+	formatEuro,
+	getFlavorPrice,
+	PRICE_PACKS,
+} from "../lib/pricing";
 import { HeartIcon } from "./icons";
 import QuotePrice from "./QuotePrice";
 
@@ -25,15 +31,15 @@ function CookiePrices() {
 					</h3>
 
 					<p className="mt-4 max-w-md text-sm text-brown/70">
-						Baked fresh for your order. Mix any flavors
-						— the price is for the whole box, not each flavor on its own.
+						Baked fresh for your order. Mix any flavors — the price is for the
+						whole box, not each flavor on its own.
 					</p>
 				</div>
 
 				<div>
 					<ul>
 						{PRICE_PACKS.map((pack, index) => {
-							const isActive = quote.count === pack.quantity;
+							const isActive = quote.cookieCount === pack.quantity;
 							const hasDiscount = pack.was != null && pack.was > pack.price;
 
 							return (
@@ -49,7 +55,7 @@ function CookiePrices() {
 										</span>
 										<span className="flex items-baseline gap-2.5 text-brown">
 											{hasDiscount && (
-												<del className="text-sm text-brown/35">
+												<del className="text-sm text-brown/70">
 													<span className="sr-only">Was </span>
 													{formatEuro(pack.was)}
 												</del>
@@ -76,10 +82,13 @@ function CookiePrices() {
 
 					<div className="mt-6 space-y-3">
 						<div className="rounded-xl border border-dashed border-brown/25 px-4 py-3 text-sm text-brown/70">
-							Cardamom &amp; Pistachio is +€0.50 per cookie.
+							Cardamom &amp; Pistachio is +
+							{formatEuro(FLAVOR_SURCHARGES["Cardamom & Pistachio"])} per
+							cookie.
 						</div>
 						<div className="rounded-xl border border-dashed border-brown/25 px-4 py-3 text-sm text-brown/70">
-							Fudgy Brownie is €3.50 each.
+							Fudgy Brownie is {formatEuro(getFlavorPrice("Fudgy Brownie"))}{" "}
+							each.
 						</div>
 					</div>
 

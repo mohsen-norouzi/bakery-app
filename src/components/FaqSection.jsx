@@ -6,8 +6,7 @@ import RevealStagger from "./RevealStagger";
 const FAQS = [
 	{
 		question: "How does pricing work?",
-		answer:
-			"Every cookie is 100g and €5 on its own. Mix any flavors — boxes of 2, 4, 6, 8, or 10 are a little less than paying €5 each. Cardamom & Pistachio is +€0.50 per cookie. Brownies are €4.50 each and are priced separately from cookie boxes. We'll confirm the total when you order.",
+		answer: `Every cookie is 100g, with prices starting at ${formatEuro(UNIT_PRICE)} each. Mix any flavors — box savings apply automatically from 2 cookies. Cardamom & Pistachio is +${formatEuro(FLAVOR_SURCHARGES["Cardamom & Pistachio"])} per cookie. Brownies are ${formatEuro(getFlavorPrice("Fudgy Brownie"))} each and are priced separately from cookie boxes. We'll confirm the total when you order.`,
 	},
 	{
 		question: "How do I place an order?",
@@ -106,3 +105,10 @@ function FaqSection() {
 }
 
 export default FaqSection;
+
+import {
+	FLAVOR_SURCHARGES,
+	formatEuro,
+	getFlavorPrice,
+	UNIT_PRICE,
+} from "../lib/pricing";

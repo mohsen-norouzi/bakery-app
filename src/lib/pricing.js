@@ -1,15 +1,23 @@
-import { ALL_PRODUCTS } from "./cookies";
+import { ALL_PRODUCTS } from "./cookies.js";
 
 export const UNIT_PRICE = 4;
 
 export const PRICE_PACKS = [
-	{ quantity: 1, price: 4 },
-	{ quantity: 2, price: 8.5, was: 9 },
-	{ quantity: 4, price: 17.5, was: 19 },
-	{ quantity: 6, price: 25.5, was: 29 },
-	{ quantity: 8, price: 34.5, was: 39 },
-	{ quantity: 10, price: 44, was: 49 },
-];
+	{ quantity: 1, discount: 0 },
+	{ quantity: 2, discount: 0.5 },
+	{ quantity: 4, discount: 1.5 },
+	{ quantity: 6, discount: 3.5 },
+	{ quantity: 8, discount: 4.5 },
+	{ quantity: 10, discount: 5 },
+].map(({ quantity, discount }) => {
+	// Keep the existing box savings when the individual cookie price changes.
+	const originalCents = toCents(UNIT_PRICE) * quantity;
+	return {
+		quantity,
+		price: fromCents(originalCents - toCents(discount)),
+		was: fromCents(originalCents),
+	};
+});
 
 export const FLAVOR_SURCHARGES = {
 	"Cardamom & Pistachio": 0.5,

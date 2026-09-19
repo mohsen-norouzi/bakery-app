@@ -15,19 +15,17 @@ function QuotePrice({
 
 	if (stable) {
 		return (
-			<span className="flex flex-col items-end tracking-normal">
+			<span className="flex flex-col items-end gap-1 tracking-normal">
 				<span
 					className={`h-4 text-sm leading-4 ${
 						quote.saved > 0 ? wasClass : "invisible"
 					}`}
 					aria-hidden={quote.saved <= 0}
 				>
-					<del>
-						<span className="sr-only">Was </span>
-						{formatEuro(quote.was)}
-					</del>
+					<del>Was {formatEuro(quote.was)}</del>
 				</span>
 				<span className={`leading-none ${totalClass} ${totalClassName}`}>
+					{quote.saved > 0 && <span className="sr-only">Now </span>}
 					{formatEuro(quote.total)}
 				</span>
 			</span>
@@ -43,6 +41,7 @@ function QuotePrice({
 				</del>
 			)}
 			<span className={`${totalClass} ${totalClassName}`}>
+				{quote.saved > 0 && <span className="sr-only">Now </span>}
 				{formatEuro(quote.total)}
 			</span>
 		</span>

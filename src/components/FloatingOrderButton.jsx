@@ -3,6 +3,7 @@ import { useCart } from "../context/CartContext";
 import {
 	formatCartContents,
 	formatEuro,
+	getFlavorPrice,
 	getNextPack,
 	getPackSave,
 } from "../lib/pricing";
@@ -21,14 +22,18 @@ function FloatingOrderButton() {
 	const nextSave = nextPack ? getPackSave(nextPack) : 0;
 	const extra = nextPack ? nextPack.quantity - quote.cookieCount : 0;
 	const statusLine =
-		nextSave > 0
-			? `Add ${extra} more to save ${formatEuro(nextSave)}`
-			: quote.saved > 0
-				? `You save ${formatEuro(quote.saved)}`
-				: quote.brownieCount > 0
-					? "€4.50 each"
+		quote.saved > 0
+			? `You save ${formatEuro(quote.saved)}`
+			: nextSave > 0
+				? `Add ${extra} more to save ${formatEuro(nextSave)}`
+				: quote.brownieCount > 0 && quote.cookieCount === 0
+					? `${formatEuro(getFlavorPrice("Fudgy Brownie"))} each`
 					: "Mix any flavors";
 	const contentsLabel = formatCartContents(quote);
+	const priceLabel =
+		quote.saved > 0
+			? `was ${formatEuro(quote.was)}, now ${formatEuro(quote.total)}, you save ${formatEuro(quote.saved)}`
+			: formatEuro(quote.total);
 
 	useEffect(() => {
 		const onScroll = () => setVisible(window.scrollY > 120);
@@ -74,7 +79,7 @@ function FloatingOrderButton() {
 				rel="noopener noreferrer"
 				aria-label={
 					hasCart
-						? `Order on WhatsApp, ${contentsLabel}, ${formatEuro(quote.total)}`
+						? `Order on WhatsApp, ${contentsLabel}, ${priceLabel}`
 						: "Order on WhatsApp"
 				}
 				className={`flex items-center overflow-hidden shadow-lg hover:shadow-xl ${
@@ -127,6 +132,7 @@ function FloatingOrderButton() {
 					<div className="shrink-0">
 						<QuotePrice
 							quote={quote}
+							tone="brown"
 							stable
 							totalClassName="font-display text-xl"
 						/>
